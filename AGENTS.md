@@ -62,3 +62,13 @@ The wiki utilizes the **Citizen** MediaWiki skin.
    * @license  CC BY-SA 4.0
    */
   ```
+  ```lua
+  --[=[
+   * Module:InfoboxNeue
+   *
+   * @desc Mô đun cung cấp các hộp thông tin hiện đại theo style StarCitizenTools
+   * @author [[Thành viên:Pisces]] (https://songngu.xyz)
+   * @site https://lophocmatngu.wiki/Module:InfoboxNeue
+   * @license CC BY-SA 4.0
+   ]=]
+  ```
