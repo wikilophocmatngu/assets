@@ -1,307 +1,448 @@
-/***********************/
-/******BEGIN TEST*******/
-/***********************/
+/**
+ * MediaWiki:Citizen.css
+ *
+ * @desc     Bảng kiểu tùy chỉnh cho giao diện Citizen trên Wiki Lớp Học Mật Ngữ
+ * @author   [[Thành viên:Pisces]] (https://songngu.xyz)
+ * @site     https://lophocmatngu.wiki/MediaWiki:Citizen.css
+ * @license  CC BY-SA 4.0
+ */
+/** @import **/
 
-.mw-indicators {
-    font-size: 1.5rem;
-	filter: unset !important;
-	padding-bottom: 10px;
+/* Trống rỗng như chức lớp trưởng của [[Sư Tử nam]] vậy... */
+
+/** BIẾN **/
+
+/** MẶC ĐỊNH CHUNG **/
+:root {
+  /* FONT */
+  --lhmn-font-family-heading:
+    Quicksand, Nunito, var(--font-family-citizen-base), sans-serif;
+  --lhmn-font-family-body:
+    var(--font-family-citizen-base), var(--font-family-language-base),
+    system-ui, -apple-system, sans-serif;
+
+  /* CÁC BIẾN TÙY CHỈNH (được chuẩn hóa lại theo định dạng) */
+  --border-radius-medium: calc(var(--border-radius-base) * 2);
+  --color-primary__h: var(--color-progressive-hsl__h);
+  --color-primary__s: var(--color-progressive-hsl__s);
+  --color-primary__l: var(--color-progressive-hsl__l);
+  --font-weight-semibold: var(--font-weight-semi-bold);
+  --line-height-xs: var(--line-height-xxx-small);
+  --line-height-sm: var(--line-height-xx-small);
+  --box-shadow-card: var(--box-shadow-drop-medium);
+  --box-shadow-dialog: var(--box-shadow-drop-xx-large);
+  --backdrop-filter-frosted-glass: blur(10px) saturate(1.2);
+
+  --border-radius-main: 1.2rem;
+  --lhmn-header-v2: oklch(from var(--color-surface-1) l c h / 0.55);
 }
 
-.mw-indicator {
-	filter: unset !important;
+/* SÁNG (Day) */
+:root.skin-theme-clientpref-day {
+  /* MÀU NỀN */
+  --lhmn-color-surface-0: rgb(216, 228, 212);
+  --lhmn-color-surface-1: rgb(242, 242, 226);
+  --lhmn-color-surface-2: rgb(225, 198, 184);
+  --lhmn-color-surface-3: rgb(40, 213, 154);
+  --lhmn-color-surface-4: rgb(178, 195, 172);
+
+  /* MÀU CHỦ ĐẠO */
+  /* V1 */
+  --lhmn-color-progressive: rgb(254, 119, 67);
+  --lhmn-color-progressive--hover: rgb(255, 148, 106);
+  --lhmn-color-progressive--active: rgb(191, 104, 70);
+
+  /* V2 */
+  /* HSL (Fallback) - #FE7743 */
+  --color-progressive-hsl__h: 16.69;
+  --color-progressive-hsl__s: 99%;
+  --color-progressive-hsl__l: 63%;
+
+  /* OKLCH (Chuẩn mới nhất) - #FE7743 */
+  --color-progressive-oklch__l: 0.7207;
+  --color-progressive-oklch__c: 0.1778;
+  --color-progressive-oklch__h: 40.61;
+
+  --lhmn-site-background: url(https://static.wikitide.net/lhmnwiki/8/84/School_BG.png);
 }
 
-#mw-indicator-protection-sysop .mw-protection-indicator-icon--lock { /* Bảo quản viên */
-	background-image: url(https://upload.wikimedia.org/wikipedia/commons/b/b5/Logo-indef-full-protection.svg);
+/* TỐI CHUNG (Dành cho cả Đêm và Đen) */
+:root.skin-theme-clientpref-night {
+  /* MÀU CHỦ ĐẠO */
+  /* V1 */
+  --lhmn-color-progressive: rgb(193, 70, 140);
+  --lhmn-color-progressive--hover: rgb(114, 110, 179);
+  --lhmn-color-progressive--active: rgb(132, 71, 124);
+
+  /* V2 */
+  /* HSL (Fallback) - #F2557A */
+  --color-progressive-hsl__h: 321;
+  --color-progressive-hsl__s: 49%;
+  --color-progressive-hsl__l: 52%;
+
+  /* OKLCH (Chuẩn mới nhất) - #F2557A */
+  --color-progressive-oklch__l: 0.5966;
+  --color-progressive-oklch__c: 0.241;
+  --color-progressive-oklch__h: 328.25;
+
+  --lhmn-site-background: url(https://static.wikitide.net/lhmnwiki/1/13/Beast1.png);
 }
 
-#mw-indicator-protection-autoconfirmed .mw-protection-indicator-icon--lock { /* Tự động xác nhận */
-	background-image: url(https://upload.wikimedia.org/wikipedia/commons/b/be/Logo-edit-extended-semi-protection.svg);
+/* ĐÊM (Night - Cụ thể) */
+:root.skin-theme-clientpref-night.citizen-feature-pure-black-clientpref-0 {
+  /* MÀU NỀN */
+  --lhmn-color-surface-0: rgb(55, 0, 47);
+  --lhmn-color-surface-1: rgb(46, 45, 75);
+  --lhmn-color-surface-2: rgb(0, 27, 39);
+  --lhmn-color-surface-3: rgb(89, 0, 51);
+  --lhmn-color-surface-4: rgb(45, 45, 45);
 }
 
-#mw-indicator-protection-user .mw-protection-indicator-icon--lock { /* Đăng nhập */
-	background-image: url(https://upload.wikimedia.org/wikipedia/commons/4/48/Logo-edit-semi-protection.svg);
+/* ĐEN (Pure Black - Cụ thể) */
+:root.skin-theme-clientpref-night.citizen-feature-pure-black-clientpref-1 {
+  /* MÀU NỀN */
+  --lhmn-color-surface-0: #000;
+  --lhmn-color-surface-1: #111;
+  --lhmn-color-surface-2: #222;
+  --lhmn-color-surface-3: #333;
+  --lhmn-color-surface-4: #444;
+  --lhmn-color-surface-5: #555;
+  --delta-hover-state: 6%;
+  --shadow-strength: 0.04;
 }
 
-.mw-protection-indicator-icon--lock {
-	vertical-align: -webkit-baseline-middle;
-	-webkit-mask-image: none;
-	mask-image: none;
-	background-color: unset;
+@media screen and (prefers-color-scheme: dark) {
+  :root.skin-theme-clientpref-os.citizen-feature-pure-black-clientpref-1 {
+    --lhmn-color-surface-0: #000;
+    --lhmn-color-surface-1: #111;
+    --lhmn-color-surface-2: #222;
+    --lhmn-color-surface-3: #333;
+    --lhmn-color-surface-4: #444;
+    --lhmn-color-surface-5: #555;
+    --delta-hover-state: 6%;
+    --shadow-strength: 0.04;
+  }
+}
+
+/** GHI ĐÈ **/
+:root {
+  /* MAU CHỦ ĐẠO */
+  --color-primary: var(--lhmn-color-progressive);
+  --color-primary--hover: var(--lhmn-color-progressive--hover);
+  --color-primary--active: var(--lhmn-color-progressive--active);
+
+  /* MÀU NỀN */
+  --color-surface-0: var(--lhmn-color-surface-0);
+  --color-surface-1: var(--lhmn-color-surface-1);
+  --color-surface-2: var(--lhmn-color-surface-2);
+  --color-surface-3: var(--lhmn-color-surface-3);
+  --color-surface-4: var(--lhmn-color-surface-4);
+
+  /* FONT */
+  --font-family-base: var(--lhmn-font-family-body);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--lhmn-font-family-heading);
+}
+
+/** HÌNH NỀN **/
+
+@media screen {
+  .citizen-page-container:before {
+    background-image: var(--lhmn-site-background);
+    background-position: center;
+  }
+}
+
+/** TÙY CHỈNH KHÁC **/
+
+img.mw-logo-wordmark {
+  width: 100%;
+  height: 1rem;
+  margin: 0.125rem 0;
+  object-fit: contain;
+  object-position: left center;
+  filter: invert(0);
+}
+
+/* Các thay đổi ở chân trang */
+.citizen-footer__sitetitle .mw-logo-icon {
+  display: none;
 }
 
 #footer-sitetitle .mw-logo-wordmark {
-  width:initial !important;
-  height:60px !important;
-}
-
-img.mw-logo-wordmark {
-    width:100%;
-    height:1rem;
-    margin:0.125rem 0;
-    object-fit:contain;
-    object-position:left center;
-    filter:invert(0);
-}
-  
-#footer-info-lastmod { margin: auto }
-#footer-poweredbyico { margin-right: 10px; margin-left: -15px }
-#footer-places { width: 100% }
-#footer-desc { font-size: 14px; padding-left: 20px }
-
-.citizen-footer__content {
-	display: flex;
-	align-items: center;
-}
-
-.citizen-footer__siteinfo {
-	align-items: center;
-	justify-content: center;
-	vertical-align: middle;
-	max-width: 100%;
-	display: flex;
-	flex-direction: row!important;
-	margin-top: -15px
-}
-
-#footer-places ul {
-	display: flex!important;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: space-between!important;
-/* column-count: 2 */
+  width: initial !important;
+  height: 70px !important;
 }
 
 #footer-places a {
-	text-align: center;
+  display: block;
+  padding: var(--space-xs) var(--space-md);
+  border-radius: var(--border-radius-base);
 }
 
-#footer-sitetitle .mw-logo-wordmark {
-	width: initial !important;
-	height: 70px !important;
+.footer__siteinfo {
+  justify-content: space-between;
 }
 
-.citizen-footer a, #footer-sitetitle, .catlinks a, .citizen-header a, .citizen-page-header a {
-	transition: .5s all;
+.mw-portlet-Tài_nguyên_từ_chúng_tôi {
+  position: sticky;
+  bottom: 0;
+  margin-top: var(--space-md);
+  margin-inline: calc(var(--space-xs) * -1);
+  padding: var(--space-xs);
+  border-top: var(--border-base);
+  backdrop-filter: var(--backdrop-filter-frosted-glass);
+  font-size: var(--font-size-x-small);
+  grid-column: 1 / -1;
+  white-space: nowrap;
 }
 
-.citizen-footer a:hover, #footer-sitetitle:hover, .catlinks a:hover, .citizen-header a:hover, .citizen-page-header a:hover {
-	filter: drop-shadow( 0 0 16px var( --color-progressive ) );
-	font-weight: bold;
-	transition: .5s all;
-}
-
-/***********************/
-/*******END TEST********/
-/***********************/
-.mw-portlet-Tài_nguyên_từ_chúng_tôi,
-.mw-portlet-_sidebar-label-donate {
-	position: sticky;
-    bottom: 0;
-    margin-top: var(--space-md);
-    padding: var(--space-xs) 0;
-    border-top: 1px solid var(--border-color-base);
-    background: var(--color-surface-1);
-    font-size: var(--font-size-x-small);
-    grid-column-start: 1;
-    white-space: nowrap;
-}
 .citizen-drawer__menu {
-	margin-bottom: 0;
-	padding-bottom: 0;
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
-@media screen and ( min-width: 32.875rem ) {
-    .mw-portlet-Tài_nguyên_từ_chúng_tôi,
-    .mw-portlet-_sidebar-label-donate {
-		grid-column-end: span 2;
-	}
+.mw-portlet-Tài_nguyên_từ_chúng_tôi .citizen-menu__heading {
+  display: none;
 }
 
-.mw-portlet-Tài_nguyên_từ_chúng_tôi .citizen-menu__heading,
-.mw-portlet-_sidebar-label-donate .citizen-menu__heading{
-	display: none;
+.mw-portlet-Tài_nguyên_từ_chúng_tôi ul {
+  display: flex;
+  overflow: auto;
 }
 
-.mw-portlet-Tài_nguyên_từ_chúng_tôi ul,
-.mw-portlet-_sidebar-label-donate ul {
-	display: flex;
-	overflow: auto;
+.mw-portlet-Tài_nguyên_từ_chúng_tôi .mw-list-item a {
+  gap: 0;
 }
 
-.mw-portlet-Tài_nguyên_từ_chúng_tôi .mw-list-item a,
-.mw-portlet-_sidebar-label-donate .mw-list-item a {
-	gap: 0;
-}
-
-/* PageForm */
-.select2-container--default .select2-selection--multiple .select2-selection__choice,
-.select2-container--default .select2-selection--multiple {
-	background-color: transparent !important;
-}
-
-/* minor stuff */
+/* Các tùy chỉnh nhỏ gọn khác */
 hr {
-	border-top: 10px solid var(--border-color-base--darker);
+  border-top: 10px solid var(--border-color-base--darker);
 }
 
-/* Move main page page actions to the bottom of the page */
-.page-WLHMN .citizen-body-container {
-	grid-template-areas:
-        'content'
-        'header'
-        'footer';
-    gap: unset !important;
-}
-
-/* Label */
+/* Nhãn (Label) */
 .citizen-drawer__menu [id^="n-sidebar-label-"] a {
-	pointer-events: none;
-    margin-left: var( --space-xs );
-    padding-left: var( --space-md );
-	padding-right: var( --space-xs );
-	border-left: 1px solid var( --border-color-base );
-    border-radius: 0;
-    letter-spacing: 0.05em;
-    font-weight: var( --font-weight-normal );
-    color: var( --color-subtle ) !important;
+  pointer-events: none;
+  margin-left: var(--space-xs);
+  padding-left: var(--space-md);
+  padding-right: var(--space-xs);
+  border-left: 1px solid var(--border-color-base);
+  border-radius: 0;
+  letter-spacing: 0.05em;
+  font-weight: var(--font-weight-normal);
+  color: var(--color-subtle) !important;
 }
 
-/* Icons */
+/* Biểu tượng (Icons) */
+
 .citizen-drawer__menu [id^="n-sidebar-icon-"] a {
-	font-size: 0;
-}
-
-.citizen-drawer__menu [id^="n-sidebar-icon-"] a:before {
-	display: block;
-    content: "";
-    width: 1rem;
-    height: 1rem;
-    background: transparent center/contain no-repeat;
-    opacity: var( --opacity-icon-base );
+  font-size: 0;
+  content-visibility: auto;
 }
 
 .citizen-drawer__menu [id^="n-sidebar-icon-"] a:before,
-.citizen-drawer__menu #n-articlewizard a:before,
-.skin-citizen-dark .AWimg{
-  filter: var( --filter-invert );
+.citizen-drawer__menu #n-articlewizard a:before {
+  display: block;
+  content: "";
+  width: var(--size-icon);
+  height: var(--size-icon);
+  background: transparent center/contain no-repeat;
+  opacity: var(--opacity-icon-base);
+  filter: var(--filter-invert);
 }
 
 .citizen-drawer__menu #n-articlewizard a:before {
-  content: url(https://static.miraheze.org/lhmnwiki/9/97/ArticleWizard.svg);
-  width: var(--size-icon);
-  height: var(--size-icon);
-  opacity: var(--opacity-icon-base);
+  background-image: url(https://static.wikitide.net/lhmnwiki/9/97/ArticleWizard.svg);
 }
 
 #n-sidebar-icon-discord a:before {
-	background-image: url( https://static.miraheze.org/lhmnwiki/7/77/Discord_-_Simple_Icons.svg )
+  background-image: url(https://static.wikitide.net/lhmnwiki/7/77/Discord_-_Simple_Icons.svg);
 }
 
 #n-sidebar-icon-facebook a:before {
-	background-image: url( https://static.miraheze.org/lhmnwiki/c/c8/Facebook_-_Simple_Icons.svg )
+  background-image: url(https://static.wikitide.net/lhmnwiki/c/c8/Facebook_-_Simple_Icons.svg);
 }
 
 #n-sidebar-icon-kofi a:before {
-	background-image: url( https://static.miraheze.org/lhmnwiki/4/48/Kofi_-_Simple_Icons.svg )
+  background-image: url(https://static.wikitide.net/lhmnwiki/4/48/Kofi_-_Simple_Icons.svg);
 }
 
 #n-sidebar-icon-nguyet a:before {
-	background-image: url( https://static.miraheze.org/lhmnwiki/9/9c/NguYet.svg )
-}
-
-#n-sidebar-icon-hsck a:before {
-	background-image: url( https://static.miraheze.org/lhmnwiki/d/d4/Hsck_-_SVG_Repo.svg )
+  background-image: url(https://static.wikitide.net/lhmnwiki/9/9c/NguYet.svg);
 }
 
 #n-sidebar-icon-github a:before {
-	background-image: url( https://static.miraheze.org/lhmnwiki/9/91/Github.svg )
+  background-image: url(https://static.wikitide.net/lhmnwiki/9/91/Github.svg);
 }
 
 #n-sidebar-icon-paypal a:before {
-	background-image: url( https://static.miraheze.org/lhmnwiki/6/64/Paypal.svg )
+  background-image: url(https://static.wikitide.net/lhmnwiki/6/64/Paypal.svg);
 }
 
 #n-sidebar-icon-momo a:before {
-	background-image: url( https://static.miraheze.org/lhmnwiki/b/b9/MoMo_icon.svg )
+  background-image: url(https://static.wikitide.net/lhmnwiki/b/b9/MoMo_icon.svg);
 }
 
 #n-sidebar-icon-vietqr a:before {
-	background-image: url( https://static.miraheze.org/lhmnwiki/b/b9/Vietqr.svg )
+  background-image: url(https://static.wikitide.net/lhmnwiki/b/b9/Vietqr.svg);
 }
 
-/* CookieWarning tweaks */
+/* Tùy chỉnh thông báo Cookie (CookieWarning) */
 .mw-cookiewarning-container {
-	max-width: 480px;
+  max-width: 480px;
 }
 
 .mw-cookiewarning-text {
-	gap: var(--space-xs);
+  gap: var(--space-xs);
 }
 
 .mw-cookiewarning-text::before {
-	content: '🍪';
-    font-size: 2rem;
+  content: "🍪";
+  font-size: 2rem;
 }
 
-/* hide on pageload to prevent FoUC */
+/* Ẩn khi tải trang để tránh FoUC */
 .client-js .mw-cookiewarning-container {
-	opacity: 0;
-	visibility: hidden;
-	transition: opacity 250ms ease, visibility 250ms ease;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 250ms ease,
+    visibility 250ms ease;
 }
 
-/* citizen-animations-ready is added when scripts are loaded */
+/* class citizen-animations-ready được thêm vào khi mã JavaScript tải xong */
 .client-js.citizen-animations-ready .mw-cookiewarning-container {
-	opacity: 1;
-	visibility: visible;
+  opacity: 1;
+  visibility: visible;
 }
 
-/*
- * Footer icons
- * We use custom footer icons so we need to fine tune it
-*/
-#footer-icons a {
-	opacity: var( --opacity-icon-base );
-	transition: opacity 250ms ease;
-}
-
-#footer-icons a:hover {
-	opacity: var( --opacity-icon-base--hover );
-}
-
-#footer-icons a:active {
-	opacity: var( --opacity-icon-base--selected );
-}
-
-/* Fix misalignment in Safari and Firefox when using two columns */
+/* Sửa lỗi lệch hàng trên Safari và Firefox khi dùng hai cột */
 #footer-places ul {
-	display: initial;
-}
-
-/* Darken the footer icon in light mode */
-.skin-citizen-light #footer-icons a {
-	filter: var( --filter-invert );
+  display: initial;
 }
 
 img.mw-logo-wordmark {
-	filter: unset !important;
+  filter: unset !important;
 }
 
-/* Tạm thời dùng mã này cho đến khi StarCitizen sửa được RelatedArticle */
+/**
+ * Hỗ trợ hình nền nội dung
+ */
 
-.cdx-card {
-    background-color: var(--color-surface-4);
-    border-radius: var(--border-radius-base);
-}
-.cdx-card__text__title {
-    color: var(--color-emphasized);
-}
-.cdx-card__text__description, .cdx-card__text__supporting-text, .cdx-card__text__description .cdx-icon, .cdx-card__text__supporting-text .cdx-icon{
-    color: var(--color-subtle);
+.citizen-page-container,
+.citizen-body-container {
+  position: relative;
 }
 
-.cdx-thumbnail__placeholder, .cdx-thumbnail__image {
-	border: 1px solid var(--border-color-base);
+.citizen-header:before,
+.citizen-page-container::before,
+.mw-body::before,
+.citizen-body-container::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.citizen-header:before,
+.citizen-page-container::before {
+  background-repeat: no-repeat;
+}
+
+.mw-body::before,
+.citizen-body-container::after {
+  background-repeat: repeat-y;
+  filter: var(--filter-invert);
+}
+
+.citizen-header::before {
+  background-position: center left;
+  background-size: contain;
+  mask-image: linear-gradient(to right, rgba(0, 0, 0, 0.2), transparent 32px);
+  -webkit-mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.2),
+    transparent 32px
+  );
+}
+
+.citizen-page-container::before {
+  height: 1000px;
+  background-size: cover;
+  mask-image: linear-gradient(
+    rgba(0, 0, 0, 0.35),
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0.05) 60rem,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    rgba(0, 0, 0, 0.35),
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0.05) 60rem,
+    transparent 100%
+  );
+  background-attachment: fixed;
+}
+
+.page-WLHMN_Giới_thiệu .citizen-page-container::before {
+  height: 400px;
+  mask-image: linear-gradient(
+    rgba(0, 0, 0, 0.35),
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0.05) 23rem,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    rgba(0, 0, 0, 0.35),
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0.05) 23rem,
+    transparent 100%
+  );
+}
+
+.mw-body::before {
+  position: fixed; /* Tránh thay đổi bố cục */
+  opacity: calc(0.05 * 0.5); /* Vì phần này nằm dưới nội dung, nên làm mờ đi */
+  background-repeat: repeat;
+  mask-image: linear-gradient(
+    transparent,
+    #000 480px,
+    #000 calc(100% - 480px),
+    transparent
+  );
+  -webkit-mask-image: linear-gradient(
+    transparent,
+    #000 480px,
+    #000 calc(100% - 480px),
+    transparent
+  );
+}
+
+.citizen-body-container::after {
+  opacity: 0.05;
+  mask-image: linear-gradient(
+    transparent,
+    #000 160px,
+    #000 calc(100% - 160px),
+    transparent
+  );
+  -webkit-mask-image: linear-gradient(
+    transparent,
+    #000 160px,
+    #000 calc(100% - 160px),
+    transparent
+  );
+}
+
+@media screen and (min-width: 640px) {
+  img.mw-logo-wordmark {
+    height: 3rem;
+  }
 }

@@ -1,5 +1,0 @@
-/* Toàn bộ mã CSS đặt ở đây sẽ được tải cho người sử dụng trang di động */
-/* Logo bị glitch trên điện thoại nếu chỉ áp dụng Common.css */
-span.mw-wiki-logo {
-    height: 30px !important;
-}

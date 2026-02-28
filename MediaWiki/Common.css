@@ -1,63 +1,82 @@
-/* Mã CSS đặt ở đây sẽ áp dụng cho mọi giao diện */
+/**
+ * MediaWiki:Common.css
+ *
+ * @desc     Bảng kiểu toàn cục cho toàn bộ Wiki Lớp Học Mật Ngữ
+ * @author   [[Thành viên:Pisces]] (https://songngu.xyz)
+ * @site     https://lophocmatngu.wiki/MediaWiki:Common.css
+ * @license  CC BY-SA 4.0
+ */
 
-/* Kích hoạt cài đặt CSS từ các trang chứa CSS khác trong Wiki */
-@import url('/w/index.php?title=MediaWiki:Fonts.css&amp;action=raw&amp;ctype=text/css');
-@import url('/w/index.php?title=MediaWiki:Infobox.css&amp;action=raw&amp;ctype=text/css');
-@import url('/w/index.php?title=MediaWiki:Social.css&amp;action=raw&amp;ctype=text/css');
+/* @import */
+/* Google Font */
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Quicksand:wght@300..700&display=swap");
+/* CSS */
+@import url("/MediaWiki:Infobox.css?action=raw&ctype=text/css");
+@import url("/MediaWiki:HighlightLinks.css?action=raw&ctype=text/css");
 
-a.cdx-button.cdx-button--fake-button.cdx-button--size-large.cdx-button--fake-button--enabled {
-    background-color: unset !important;
-    color: unset !important;
-    border: unset !important;
+.profile-avatar-image {
+  height: 140px;
+  object-fit: unset;
+  width: 140px;
 }
 
-/* Dành cho vị lãnh đạo của dân tộc!
-   Đoạn mã này sẽ chỉ được kích hoạt khi quốc tang xảy ra.
-   
-.mw-logo-icon,
-.citizen-body-container {
-    filter: grayscale(1);
+.iwf-memberbox {
+  background:
+    url(https://static.wikitide.net/lhmnwiki/5/5f/IWF_Background.png) repeat
+      center,
+    var(--color-surface-2);
+  text-align: center;
+  background-blend-mode: overlay;
+  border-radius: var(--border-radius-base);
+  border: var(--border-base);
+  padding: 1em;
 }
 
-*/
+/*Tạo pseudo class cho điện thoại */
+@media screen and (max-width: 1119px) {
+  .mobile-hidden {
+    content-visibility: hidden !important;
+    display: none !important;
+  }
 
-.visualClear { /* Sửa lỗi hiển thị cho SocialProfile */
-	clear: both;
+  .desktop-hidden {
+    content-visibility: visible !important;
+  }
 }
-
-/* Mã này tùy chỉnh các ô nhân vật sao cho *đỉnh* hơn bên LHMN Offical. (Đừng dùng Google Site nữa được không BGVN ơi...) */
 
 .cwrapper {
-	align-items: center;
+  align-items: center;
 }
 
 .cportraits img {
-	width: 109px;
-	height: 109px;
-	overflow: hidden;
-	border-radius: var(--border-radius--medium);
-}
-
-.cportraits img {
-	transition: transform 0.2s ease;
+  width: 109px;
+  height: 109px;
+  overflow: hidden;
+  border-radius: var(--border-radius-base);
+  transition: transform 0.3s ease-in-out;
 }
 
 .cportraits img:hover {
-	transform: scale(1.2);
-	border-radius: var(--border-radius--small);
+  transform: scale(1.15);
+  border-radius: var(--border-radius-medium);
 }
 
 /* Tùy chỉnh nút Spoilers từ extension cùng tên */
 .spoilers-button {
-	background: none !important;
-	color: #5c85d6 !important;
-	border: 1px solid #5c85d6 !important;
+  background: none !important;
+  color: var(--lhmn-color-progressive) !important;
+  border: 1px solid var(--lhmn-color-progressive) !important;
 }
 
 .spoilers-body {
-	display: flex;
+  display: flex;
 }
 
+/* Căn giữa và thu nhỏ hình banner */
+.img-fluid img {
+  max-width: 100%;
+  height: auto;
+}
 
 /**********************************************************
 *KHÔNG CHÈN BẤT CỨ ĐOẠN MÃ NÀO KHÁC DƯỚI DÒNG NÀY. CÁM ƠN.*
