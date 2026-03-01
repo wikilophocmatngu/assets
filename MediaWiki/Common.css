@@ -120,6 +120,22 @@
     margin: 1em 0 0 0;
 }
 
+/*
+ * Như trên nhưng nó là MediaSpoiler
+ *
+ * @warning Tránh nhầm lẫn giữa `.spoilers-button` từ [[mw:Extension:Spoilers]]
+ *          và `.spoiler-button` từ tiện ích này (không có `s`)
+ */
+
+.spoiler-button .oo-ui-labelElement-label {
+    display: none !important; /* Ẩn label */
+}
+
+.spoiler-button .oo-ui-iconElement-icon { /* Căn giữa icon view (mắt) của OOUI/Codex */
+    left: unset;
+    margin-left: unset;
+}
+
 /*************************************************************
  * KHÔNG CHÈN BẤT CỨ ĐOẠN MÃ NÀO KHÁC DƯỚI DÒNG NÀY. CÁM ƠN. *
  *************************************************************/
