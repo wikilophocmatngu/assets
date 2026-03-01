@@ -1,10 +1,11 @@
 /**
  * MediaWiki:Common.css
  *
- * @desc     Bảng kiểu toàn cục cho toàn bộ Wiki Lớp Học Mật Ngữ
- * @author   [[Thành viên:Pisces]] (https://songngu.xyz)
- * @site     https://lophocmatngu.wiki/MediaWiki:Common.css
- * @license  CC BY-SA 4.0
+ * @desc       Bảng kiểu toàn cục cho toàn bộ Wiki Lớp Học Mật Ngữ
+ * @deprecated Gần như mọi mã ở đây sẽ phải được tích hợp vào [[MediaWiki:Citizen.css]]
+ * @author     [[Thành viên:Pisces]] (https://songngu.xyz)
+ * @site       https://lophocmatngu.wiki/MediaWiki:Common.css
+ * @license    CC BY-SA 4.0
  */
 
 /* @import */
@@ -14,11 +15,36 @@
 @import url("/MediaWiki:Infobox.css?action=raw&ctype=text/css");
 @import url("/MediaWiki:HighlightLinks.css?action=raw&ctype=text/css");
 
+/*
+ * UserProfileV2
+ *
+ * @deprecated
+ * @note Sẽ merge vào core của skin Citizen trong phiên bản tiếp theo
+ */
+
 .profile-avatar-image {
   height: 140px;
   object-fit: unset;
   width: 140px;
 }
+
+/*
+ * @deprecated
+ * @note Sẽ merge vào core của skin Citizen trong phiên bản tiếp theo
+ */
+
+.profile-header-attributes > h1, .profile-header-attributes > h2 {
+    font-family: var(--font-family-base) !important;
+    font-size: var(--font-size-xxx-large);
+    font-weight: var(--font-weight-bold);
+}
+
+/*
+ * Hộp thành viên IWF
+ *
+ * @deprecated
+ * @note Xung đột với bảng kiểu tại Trang chính, phải hợp nhất trong thời gian sớm nhất
+ */
 
 .iwf-memberbox {
   background:
@@ -32,7 +58,10 @@
   padding: 1em;
 }
 
-/*Tạo pseudo class cho điện thoại */
+/*
+ * Pseudo-class cho điện thoại, biết rằng MobileDetects không áp dụng tại wiki này.
+ */
+
 @media screen and (max-width: 1119px) {
   .mobile-hidden {
     content-visibility: hidden !important;
@@ -43,6 +72,13 @@
     content-visibility: visible !important;
   }
 }
+
+/*
+ * Hộp nhân vật tại trang chính
+ * 
+ * @deprecated
+ * @note Khá là xấu, tập trung hiện đại hóa trong các bản cập nhật tương lai
+ */
 
 .cwrapper {
   align-items: center;
@@ -61,23 +97,29 @@
   border-radius: var(--border-radius-medium);
 }
 
-/* Tùy chỉnh nút Spoilers từ extension cùng tên */
+/*
+ * Tùy chỉnh nút Spoilers từ extension cùng tên
+ *
+ * @deprecated
+ * @note Sẽ merge vào core của skin Citizen trong phiên bản tiếp theo
+ */
+
 .spoilers-button {
-  background: none !important;
-  color: var(--lhmn-color-progressive) !important;
-  border: 1px solid var(--lhmn-color-progressive) !important;
+  background: none;
+  color: var(--color-progressive);
+  border: 1px solid var(--color-progressive);
+  border-radius: var(--border-radius-medium);
 }
 
 .spoilers-body {
-  display: flex;
+    border: 1px dashed var(--border-color-base);
+    background-color: var(--color-surface-2);
+    padding: 10px;
+    color: var(--color-base);
+    border-radius: var(--border-radius-base);
+    margin: 1em 0 0 0;
 }
 
-/* Căn giữa và thu nhỏ hình banner */
-.img-fluid img {
-  max-width: 100%;
-  height: auto;
-}
-
-/**********************************************************
-*KHÔNG CHÈN BẤT CỨ ĐOẠN MÃ NÀO KHÁC DƯỚI DÒNG NÀY. CÁM ƠN.*
-**********************************************************/
+/*************************************************************
+ * KHÔNG CHÈN BẤT CỨ ĐOẠN MÃ NÀO KHÁC DƯỚI DÒNG NÀY. CÁM ƠN. *
+ *************************************************************/
