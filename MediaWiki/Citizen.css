@@ -20,21 +20,6 @@
   --lhmn-font-family-body:
     var(--font-family-citizen-base), var(--font-family-language-base),
     system-ui, -apple-system, sans-serif;
-
-  /* CÁC BIẾN TÙY CHỈNH (được chuẩn hóa lại theo định dạng) */
-  --border-radius-medium: calc(var(--border-radius-base) * 2);
-  --color-primary__h: var(--color-progressive-hsl__h);
-  --color-primary__s: var(--color-progressive-hsl__s);
-  --color-primary__l: var(--color-progressive-hsl__l);
-  --font-weight-semibold: var(--font-weight-semi-bold);
-  --line-height-xs: var(--line-height-xxx-small);
-  --line-height-sm: var(--line-height-xx-small);
-  --box-shadow-card: var(--box-shadow-drop-medium);
-  --box-shadow-dialog: var(--box-shadow-drop-xx-large);
-  --backdrop-filter-frosted-glass: blur(10px) saturate(1.2);
-
-  --border-radius-main: 1.2rem;
-  --lhmn-header-v2: oklch(from var(--color-surface-1) l c h / 0.55);
 }
 
 /* SÁNG (Day) */
