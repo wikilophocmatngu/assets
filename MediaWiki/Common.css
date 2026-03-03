@@ -18,25 +18,12 @@
 /*
  * UserProfileV2
  *
- * @deprecated
- * @note Sẽ merge vào core của skin Citizen trong phiên bản tiếp theo
  */
 
 .profile-avatar-image {
   height: 140px;
   object-fit: unset;
   width: 140px;
-}
-
-/*
- * @deprecated
- * @note Sẽ merge vào core của skin Citizen trong phiên bản tiếp theo
- */
-
-.profile-header-attributes > h1, .profile-header-attributes > h2 {
-    font-family: var(--font-family-base) !important;
-    font-size: var(--font-size-xxx-large);
-    font-weight: var(--font-weight-bold);
 }
 
 /*
@@ -95,29 +82,6 @@
 .cportraits img:hover {
   transform: scale(1.15);
   border-radius: var(--border-radius-medium);
-}
-
-/*
- * Tùy chỉnh nút Spoilers từ extension cùng tên
- *
- * @deprecated
- * @note Sẽ merge vào core của skin Citizen trong phiên bản tiếp theo
- */
-
-.spoilers-button {
-  background: none;
-  color: var(--color-progressive);
-  border: 1px solid var(--color-progressive);
-  border-radius: var(--border-radius-medium);
-}
-
-.spoilers-body {
-    border: 1px dashed var(--border-color-base);
-    background-color: var(--color-surface-2);
-    padding: 10px;
-    color: var(--color-base);
-    border-radius: var(--border-radius-base);
-    margin: 1em 0 0 0;
 }
 
 /*
