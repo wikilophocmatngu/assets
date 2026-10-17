@@ -1,0 +1,10 @@
+#home-editing {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	margin: 0 0 15px 0;
+}
+
+.home-editing__stats {
+	display: flex;
+}

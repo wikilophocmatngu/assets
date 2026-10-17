@@ -1,0 +1,106 @@
+/*
+ *
+ * Cung cấp bởi SongNgư.xyz
+ * https://songngu.xyz
+ *
+ */
+
+/***********************/
+
+/*
+
+ CHỊ EM
+ 
+ */
+
+/* HunggSMP Wiki */
+
+.lhmn-button.lhmn-mainpage-sisters-hunggsmp > a {
+    color: white !important;
+    background: #4c652f !important
+}
+
+.lhmn-button.lhmn-mainpage-sisters-hunggsmp > a:hover {
+    background: #66b110 !important
+}
+
+.lhmn-button.lhmn-mainpage-sisters-hunggsmp > a:active {
+    background: #4c652f !important
+}
+
+/* 100 Bạn Gái */
+
+.lhmn-button.lhmn-mainpage-sisters-100 > a {
+    color: white !important;
+    background: #b54d6f !important
+}
+
+.lhmn-button.lhmn-mainpage-sisters-100 > a:hover {
+    background: #f55e92 !important
+}
+
+.lhmn-button.lhmn-mainpage-sisters-100 > a:active {
+    background: #fca6b3 !important
+}
+
+/* CG Wiki */
+
+.lhmn-button.lhmn-mainpage-sisters-cg > a {
+    color: white !important;
+    background: #c67acf !important
+}
+
+.lhmn-button.lhmn-mainpage-sisters-cg > a:hover {
+    background: #dca1e2 !important
+}
+
+.lhmn-button.lhmn-mainpage-sisters-cg > a:active {
+    background: #00a2ff !important
+}
+
+/***********************/
+
+/*
+
+ TÀI NGUYÊN
+ 
+ */
+
+/* NNYN-STBK2T */
+
+.lhmn-button.lhmn-mainpage-resource-nguyet > a {
+    color: white !important;
+    background: #F2385A !important
+}
+
+.lhmn-button.lhmn-mainpage-resource-nguyet > a:hover {
+    background: #F25E86 !important
+}
+
+.lhmn-button.lhmn-mainpage-resource-nguyet > a:active {
+    background: #F25E86 !important
+}
+
+/* Fan-kit */
+
+.lhmn-button.lhmn-mainpage-resource-fankit > a {
+    color: white !important;
+    background: #BF7E04 !important
+}
+
+.lhmn-button.lhmn-mainpage-resource-fankit > a:hover {
+    background: #F2AB27 !important
+}
+
+.lhmn-button.lhmn-mainpage-resource-fankit > a:active {
+    background: #D9A404 !important
+}
+
+/***********************/
+
+/* Khác */
+
+.lhmn-mainpage-resource-nguyet img,
+.lhmn-mainpage-resource-fankit img {
+    filter: invert(1)
+}

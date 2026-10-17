@@ -1,0 +1,47 @@
+:root {
+    --pi-secondary-background: var(--color-progressive);
+    --pi-width: 300px !important;
+}
+
+.portable-infobox {
+    border: 1px solid var( --color-progressive );
+    border-radius: var( --border-radius-medium );
+}
+
+/*
+ * Nhắc Song Ngư xóa mục này khi đã vá ở cấp độ nguồn
+ * https://github.com/Universal-Omega/PortableInfobox/pull/161
+*/
+.portable-infobox ol,
+.portable-infobox ul {
+    list-style-position: outside;
+    margin: 0 0 0 15px;
+    text-align: initial;
+}
+/**/
+
+.pi-title, .pi-header,
+.pi-horizontal-group .pi-header {
+    background: var(--color-progressive);
+    text-align: center;
+    font-weight: bold;
+    color: var(--color-inverted-fixed);
+    font-family: var(--lhmn-font-family-heading) !important;
+}
+
+.pi-title {
+	border-radius: calc(var( --border-radius-medium ) - 1px) calc(var( --border-radius-medium ) - 1px) 0 0;
+	font-weight: 600;
+}
+
+.pi-image-thumbnail {
+	max-width: 100% !important;
+}
+
+/* Mã dùng cho hộp thông tin nhân vật */
+.pi-theme-characters .pi-image {
+    background-color: transparent;
+    background-position: center;
+    background-image: url(https://static.miraheze.org/lhmnwiki/1/1e/Infobox_BG.png);
+    background-size: cover;
+}

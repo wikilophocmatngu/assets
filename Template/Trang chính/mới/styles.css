@@ -1,0 +1,28 @@
+#home-featured {
+	overflow: hidden;
+	border-radius: var(--border-radius-medium);	
+}
+
+#home-featured .home-card__background a {
+	display: block;
+	height: 100%;
+}
+
+#home-featured .home-card__background:after {
+	top: unset;
+	height: 60%;
+	background: linear-gradient( to top, #000, transparent );
+}
+
+
+#home-featured .home-card__foreground {
+	justify-content: flex-end;
+}
+
+#home-featured .home-card__badge {
+	border-bottom-left-radius: var(--border-radius-base);
+}
+
+#home-featured.home-card--button:hover .home-card__background::after {
+	transform: translateY(100%);
+}

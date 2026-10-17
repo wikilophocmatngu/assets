@@ -1,0 +1,67 @@
+.t-specialversionpageheader {
+	margin-block: var(--space-md);
+}
+
+.t-card-content {
+	position: relative;
+}
+
+.t-specialversionpageheader-buttons {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-xs);
+}
+
+.t-specialversionpageheader-buttons .lhmn-button {
+	flex-grow: 1;
+}
+
+.lhmn-button.t-specialversionpageheader-github > a {
+	color: #fff !important;
+	background: #010409 !important;
+}
+
+.lhmn-button.t-specialversionpageheader-github > a:hover {
+	background: #0d1117 !important;
+}
+
+.lhmn-button.t-specialversionpageheader-github > a:active {
+	background: #161b22 !important;
+}
+
+.lhmn-button.t-specialversionpageheader-dockerhub > a {
+	color: #fff !important;
+	background: #1d63ed !important;
+}
+
+.lhmn-button.t-specialversionpageheader-dockerhub > a:hover {
+	background: #0c49c2 !important;
+}
+
+.lhmn-button.t-specialversionpageheader-dockerhub > a:active {
+	background: #1857d4 !important;
+}
+
+.lhmn-button.t-specialversionpageheader-packagist > a {
+	color: #000 !important;
+	background: #de9538 !important;
+}
+
+.lhmn-button.t-specialversionpageheader-packagist > a:hover {
+	background: #e5a44f !important;
+}
+
+.lhmn-button.t-specialversionpageheader-packagist > a:active {
+	background: #c78431 !important;
+}
+
+.t-specialversionpageheader-github img,
+.t-specialversionpageheader-dockerhub img {
+	filter: invert(1);
+}
+
+@media (min-width: 640px) {
+	.t-specialversionpageheader-buttons {
+		flex-direction: row;
+	}
+}

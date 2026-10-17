@@ -1,0 +1,7 @@
+.fileinfo-paramfield {
+	background: var(--background-color-primary--active);
+	text-align: right;
+	padding-right: 0.4em;
+	width: 15%;
+	font-weight: bold;
+}

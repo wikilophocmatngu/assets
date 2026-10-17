@@ -1,103 +1,96 @@
-/**
- * MediaWiki:Citizen.css
+/*
+ * Mã CSS đặt ở đây sẽ áp dụng cho giao diện Citizen
  *
- * @desc     Bảng kiểu tùy chỉnh cho giao diện Citizen trên Wiki Lớp Học Mật Ngữ
- * @author   [[Thành viên:Pisces]] (https://songngu.xyz)
- * @site     https://lophocmatngu.wiki/MediaWiki:Citizen.css
- * @license  CC BY-SA 4.0
+ * Cung cấp bởi SongNgư.xyz - mạng lưới wiki "rất rất rất rất rất yêu bạn"!
+ * https://songngu.xyz
+ *
  */
-/** @import **/
 
-/* Trống rỗng như chức lớp trưởng của [[Sư Tử nam]] vậy... */
+/** <h2>@import</h2> **/
 
-/** BIẾN **/
+/* Trống rỗng như ý nghĩa cuộc đời của [[Sư Tử nam]] */
 
-/** MẶC ĐỊNH CHUNG **/
+/** <h2>HÌNH NỀN</h2> **/
+
+@media screen {
+    .citizen-page-container:before { /* Sáng sủa - [[Tập tin:School_BG.png]] */
+        background-image: url(https://static.wikitide.net/lhmnwiki/8/84/School_BG.png);
+        background-position: center;
+    }
+    .skin-theme-clientpref-night .citizen-page-container:before { /* Trời sao - [[Tập tin:Beast1.png]] */
+        background-image: url(https://static.wikitide.net/lhmnwiki/1/13/Beast1.png);
+    }
+    .ns-4 .citizen-page-container:before {
+        background-image: url(https://static.wikitide.net/lhmnwiki/c/c6/About_Banner.png) !important;
+    }
+}
+ 
+/** <h2>BIẾN</h2> **/
+
+/** <h3>MẶC ĐỊNH<h3> **/
 :root {
-  /* FONT */
-  --lhmn-font-family-heading:
-    Quicksand, Nunito, var(--font-family-citizen-base), sans-serif;
-  --lhmn-font-family-body:
-    var(--font-family-citizen-base), var(--font-family-language-base),
-    system-ui, -apple-system, sans-serif;
+
+	/* MÀU NỀN */
+	--lhmn-color-surface-0:     rgb(216, 228, 212);
+	--lhmn-color-surface-1:     rgb(242, 242, 226);
+	--lhmn-color-surface-2:     rgb(225, 198, 184);
+	--lhmn-color-surface-3:     rgb(40, 213, 154);
+	--lhmn-color-surface-4:     rgb(178, 195, 172);
+
+	/* FONT */
+	--lhmn-font-family-heading: Quicksand, Nunito, var(--font-family-citizen-base), sans-serif;
+	--lhmn-font-family-body:    var(--font-family-citizen-base), var(--font-family-language-base), system-ui, -apple-system, sans-serif;
+
+	/* MÀU CHỦ ĐẠO */
+	/* V1 */
+	--lhmn-color-progressive:         rgb(254, 119, 67);
+	--lhmn-color-progressive--hover:  rgb(255, 148, 106);
+	--lhmn-color-progressive--active: rgb(191, 104, 70);
+
+    /* V2 */    
+    /* HSL (Fallback) - #FE7743 */
+	--color-progressive-hsl__h: 16.69;
+	--color-progressive-hsl__s: 99%;
+	--color-progressive-hsl__l: 63%;
+
+    /* OKLCH (Chuẩn mới nhất) - #FE7743 */
+	--color-progressive-oklch__l: 0.7207;
+	--color-progressive-oklch__c: 0.1778;
+	--color-progressive-oklch__h: 40.61;
+
 }
 
-/* SÁNG (Day) */
-:root.skin-theme-clientpref-day {
-  /* MÀU NỀN */
-  --lhmn-color-surface-0: rgb(216, 228, 212);
-  --lhmn-color-surface-1: rgb(242, 242, 226);
-  --lhmn-color-surface-2: rgb(225, 198, 184);
-  --lhmn-color-surface-3: rgb(40, 213, 154);
-  --lhmn-color-surface-4: rgb(178, 195, 172);
-
-  /* MÀU CHỦ ĐẠO */
-  /* V1 */
-  --lhmn-color-progressive: rgb(254, 119, 67);
-  --lhmn-color-progressive--hover: rgb(255, 148, 106);
-  --lhmn-color-progressive--active: rgb(191, 104, 70);
-
-  /* V2 */
-  /* HSL (Fallback) - #FE7743 */
-  --color-progressive-hsl__h: 16.69;
-  --color-progressive-hsl__s: 99%;
-  --color-progressive-hsl__l: 63%;
-
-  /* OKLCH (Chuẩn mới nhất) - #FE7743 */
-  --color-progressive-oklch__l: 0.7207;
-  --color-progressive-oklch__c: 0.1778;
-  --color-progressive-oklch__h: 40.61;
-
-  --lhmn-site-background: url(https://static.wikitide.net/lhmnwiki/8/84/School_BG.png);
-}
-
-/* TỐI CHUNG (Dành cho cả Đêm và Đen) */
+/* <h3>TỐI<h3> */
 :root.skin-theme-clientpref-night {
-  /* MÀU CHỦ ĐẠO */
-  /* V1 */
-  --lhmn-color-progressive: rgb(193, 70, 140);
-  --lhmn-color-progressive--hover: rgb(114, 110, 179);
-  --lhmn-color-progressive--active: rgb(132, 71, 124);
+    
+    /* MÀU NỀN */
+    --lhmn-color-surface-0: rgb(55, 0, 47);
+    --lhmn-color-surface-1: rgb(46, 45, 75);
+    --lhmn-color-surface-2: rgb(0, 27, 39);
+    --lhmn-color-surface-3: rgb(89, 0, 51);
+    --lhmn-color-surface-4: rgb(45, 45, 45);
 
-  /* V2 */
-  /* HSL (Fallback) - #F2557A */
-  --color-progressive-hsl__h: 321;
-  --color-progressive-hsl__s: 49%;
-  --color-progressive-hsl__l: 52%;
+    /* MÀU CHỦ ĐẠO */
+	/* V1 */
+    --lhmn-color-progressive:           rgb(193, 70, 140);
+    --lhmn-color-progressive--hover:    rgb(114, 110, 179);
+    --lhmn-color-progressive--active:   rgb(132, 71, 124);
 
-  /* OKLCH (Chuẩn mới nhất) - #F2557A */
-  --color-progressive-oklch__l: 0.5966;
-  --color-progressive-oklch__c: 0.241;
-  --color-progressive-oklch__h: 328.25;
+    /* V2 */    
+    /* HSL (Fallback) - #F2557A */
+	--color-progressive-hsl__h: 321;
+    --color-progressive-hsl__s: 49%;
+    --color-progressive-hsl__l: 52%;
 
-  --lhmn-site-background: url(https://static.wikitide.net/lhmnwiki/1/13/Beast1.png);
+    /* OKLCH (Chuẩn mới nhất) - #F2557A */
+	--color-progressive-oklch__l: 0.5966;
+    --color-progressive-oklch__c: 0.241;
+    --color-progressive-oklch__h: 328.25;
 }
 
-/* ĐÊM (Night - Cụ thể) */
-:root.skin-theme-clientpref-night.citizen-feature-pure-black-clientpref-0 {
-  /* MÀU NỀN */
-  --lhmn-color-surface-0: rgb(55, 0, 47);
-  --lhmn-color-surface-1: rgb(46, 45, 75);
-  --lhmn-color-surface-2: rgb(0, 27, 39);
-  --lhmn-color-surface-3: rgb(89, 0, 51);
-  --lhmn-color-surface-4: rgb(45, 45, 45);
-}
 
-/* ĐEN (Pure Black - Cụ thể) */
+/* <h3>ĐEN<h3> */
 :root.skin-theme-clientpref-night.citizen-feature-pure-black-clientpref-1 {
-  /* MÀU NỀN */
-  --lhmn-color-surface-0: #000;
-  --lhmn-color-surface-1: #111;
-  --lhmn-color-surface-2: #222;
-  --lhmn-color-surface-3: #333;
-  --lhmn-color-surface-4: #444;
-  --lhmn-color-surface-5: #555;
-  --delta-hover-state: 6%;
-  --shadow-strength: 0.04;
-}
-
-@media screen and (prefers-color-scheme: dark) {
-  :root.skin-theme-clientpref-os.citizen-feature-pure-black-clientpref-1 {
     --lhmn-color-surface-0: #000;
     --lhmn-color-surface-1: #111;
     --lhmn-color-surface-2: #222;
@@ -106,215 +99,216 @@
     --lhmn-color-surface-5: #555;
     --delta-hover-state: 6%;
     --shadow-strength: 0.04;
-  }
 }
 
-/** GHI ĐÈ **/
+@media screen and (prefers-color-scheme: dark) {
+    :root.skin-theme-clientpref-os.citizen-feature-pure-black-clientpref-1 {
+        --lhmn-color-surface-0: #000;
+        --lhmn-color-surface-1: #111;
+        --lhmn-color-surface-2: #222;
+        --lhmn-color-surface-3: #333;
+        --lhmn-color-surface-4: #444;
+        --lhmn-color-surface-5: #555;
+        --delta-hover-state: 6%;
+        --shadow-strength: 0.04;
+    }
+}
+
+/** <h2>GHI ĐÈ</h2> **/
 :root {
-  /* MAU CHỦ ĐẠO */
-  --color-primary: var(--lhmn-color-progressive);
-  --color-primary--hover: var(--lhmn-color-progressive--hover);
-  --color-primary--active: var(--lhmn-color-progressive--active);
+	
+		/* MAU CHỦ ĐẠO */
+	    --color-primary: var(--lhmn-color-progressive);
+	    --color-primary--hover: var(--lhmn-color-progressive--hover);
+	    --color-primary--active: var(--lhmn-color-progressive--active);
+		
+		/* MÀU NỀN */
+	    --color-surface-0: var(--lhmn-color-surface-0);
+	    --color-surface-1: var(--lhmn-color-surface-1);
+	    --color-surface-2: var(--lhmn-color-surface-2);
+	    --color-surface-3: var(--lhmn-color-surface-3);
+	    --color-surface-4: var(--lhmn-color-surface-4);
+	
+		/* FONT */
+	    --font-family-base: var(--lhmn-font-family-body);
 
-  /* MÀU NỀN */
-  --color-surface-0: var(--lhmn-color-surface-0);
-  --color-surface-1: var(--lhmn-color-surface-1);
-  --color-surface-2: var(--lhmn-color-surface-2);
-  --color-surface-3: var(--lhmn-color-surface-3);
-  --color-surface-4: var(--lhmn-color-surface-4);
+	}
 
-  /* FONT */
-  --font-family-base: var(--lhmn-font-family-body);
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--lhmn-font-family-heading);
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--lhmn-font-family-heading);
-}
-
-/** HÌNH NỀN **/
-
-@media screen {
-  .citizen-page-container:before {
-    background-image: var(--lhmn-site-background);
-    background-position: center;
-  }
-}
-
-/** TÙY CHỈNH KHÁC **/
+/**
+  <h2>TÙY CHỈNH KHÁC</h2>
+ **/
 
 img.mw-logo-wordmark {
-  width: 100%;
-  height: 1rem;
-  margin: 0.125rem 0;
-  object-fit: contain;
-  object-position: left center;
-  filter: invert(0);
+    width:100%;
+    height:1rem;
+    margin:0.125rem 0;
+    object-fit:contain;
+    object-position:left center;
+    filter:invert(0);
 }
 
-/* Các thay đổi ở chân trang */
+
+/* Footer changes */
 .citizen-footer__sitetitle .mw-logo-icon {
-  display: none;
+	display: none;
 }
 
 #footer-sitetitle .mw-logo-wordmark {
-  width: initial !important;
-  height: 70px !important;
+	width: initial !important;
+	height: 70px !important;
 }
 
 #footer-places a {
-  display: block;
-  padding: var(--space-xs) var(--space-md);
-  border-radius: var(--border-radius-base);
+    display: block;
+    padding: var(--space-xs) var(--space-md);
+    border-radius: var(--border-radius-base);
 }
 
 .footer__siteinfo {
-  justify-content: space-between;
+    justify-content: space-between;
 }
 
 .mw-portlet-Tài_nguyên_từ_chúng_tôi {
-  position: sticky;
-  bottom: 0;
-  margin-top: var(--space-md);
-  margin-inline: calc(var(--space-xs) * -1);
-  padding: var(--space-xs);
-  border-top: var(--border-base);
-  backdrop-filter: var(--backdrop-filter-frosted-glass);
-  font-size: var(--font-size-x-small);
-  grid-column: 1 / -1;
-  white-space: nowrap;
+    position: sticky;
+    bottom: 0;
+    margin-top: var(--space-md);
+    margin-inline: calc(var(--space-xs) * -1);
+    padding: var(--space-xs);
+    border-top: var(--border-base);
+    backdrop-filter: var(--backdrop-filter-frosted-glass);
+    font-size: var(--font-size-x-small);
+    grid-column: 1 / -1;
+    white-space: nowrap;
 }
 
 .citizen-drawer__menu {
-  margin-bottom: 0;
-  padding-bottom: 0;
+	margin-bottom: 0;
+	padding-bottom: 0;
 }
 
 .mw-portlet-Tài_nguyên_từ_chúng_tôi .citizen-menu__heading {
-  display: none;
+	display: none;
 }
 
 .mw-portlet-Tài_nguyên_từ_chúng_tôi ul {
-  display: flex;
-  overflow: auto;
+	display: flex;
+	overflow: auto;
 }
 
 .mw-portlet-Tài_nguyên_từ_chúng_tôi .mw-list-item a {
-  gap: 0;
+	gap: 0;
 }
 
-/* Các tùy chỉnh nhỏ gọn khác */
+/* minor stuff */
 hr {
-  border-top: 10px solid var(--border-color-base--darker);
+	border-top: 10px solid var(--border-color-base--darker);
 }
 
-/* Nhãn (Label) */
+/* Label */
 .citizen-drawer__menu [id^="n-sidebar-label-"] a {
-  pointer-events: none;
-  margin-left: var(--space-xs);
-  padding-left: var(--space-md);
-  padding-right: var(--space-xs);
-  border-left: 1px solid var(--border-color-base);
-  border-radius: 0;
-  letter-spacing: 0.05em;
-  font-weight: var(--font-weight-normal);
-  color: var(--color-subtle) !important;
+    pointer-events: none;
+    margin-left: var(--space-xs);
+    padding-left: var(--space-md);
+    padding-right: var(--space-xs);
+    border-left: 1px solid var(--border-color-base);
+    border-radius: 0;
+    letter-spacing: 0.05em;
+    font-weight: var(--font-weight-normal);
+    color: var(--color-subtle) !important;
 }
 
-/* Biểu tượng (Icons) */
+/* Icons */
 
 .citizen-drawer__menu [id^="n-sidebar-icon-"] a {
-  font-size: 0;
-  content-visibility: auto;
+    font-size: 0;
+    content-visibility: auto;
 }
 
 .citizen-drawer__menu [id^="n-sidebar-icon-"] a:before,
 .citizen-drawer__menu #n-articlewizard a:before {
-  display: block;
-  content: "";
-  width: var(--size-icon);
-  height: var(--size-icon);
-  background: transparent center/contain no-repeat;
-  opacity: var(--opacity-icon-base);
-  filter: var(--filter-invert);
+	display: block;
+	content: "";
+	width: var(--size-icon);
+	height: var(--size-icon);
+	background: transparent center/contain no-repeat;
+	opacity: var(--opacity-icon-base);
+	filter: var(--filter-invert);
 }
 
 .citizen-drawer__menu #n-articlewizard a:before {
-  background-image: url(https://static.wikitide.net/lhmnwiki/9/97/ArticleWizard.svg);
+    background-image: url( https://static.wikitide.net/lhmnwiki/9/97/ArticleWizard.svg );
 }
 
 #n-sidebar-icon-discord a:before {
-  background-image: url(https://static.wikitide.net/lhmnwiki/7/77/Discord_-_Simple_Icons.svg);
+	background-image: url( https://static.wikitide.net/lhmnwiki/7/77/Discord_-_Simple_Icons.svg )
 }
 
 #n-sidebar-icon-facebook a:before {
-  background-image: url(https://static.wikitide.net/lhmnwiki/c/c8/Facebook_-_Simple_Icons.svg);
+	background-image: url( https://static.wikitide.net/lhmnwiki/c/c8/Facebook_-_Simple_Icons.svg )
 }
 
 #n-sidebar-icon-kofi a:before {
-  background-image: url(https://static.wikitide.net/lhmnwiki/4/48/Kofi_-_Simple_Icons.svg);
+	background-image: url( https://static.wikitide.net/lhmnwiki/4/48/Kofi_-_Simple_Icons.svg )
 }
 
 #n-sidebar-icon-nguyet a:before {
-  background-image: url(https://static.wikitide.net/lhmnwiki/9/9c/NguYet.svg);
+	background-image: url( https://static.wikitide.net/lhmnwiki/9/9c/NguYet.svg )
 }
 
 #n-sidebar-icon-github a:before {
-  background-image: url(https://static.wikitide.net/lhmnwiki/9/91/Github.svg);
+	background-image: url( https://static.wikitide.net/lhmnwiki/9/91/Github.svg )
 }
 
 #n-sidebar-icon-paypal a:before {
-  background-image: url(https://static.wikitide.net/lhmnwiki/6/64/Paypal.svg);
+	background-image: url( https://static.wikitide.net/lhmnwiki/6/64/Paypal.svg )
 }
 
 #n-sidebar-icon-momo a:before {
-  background-image: url(https://static.wikitide.net/lhmnwiki/b/b9/MoMo_icon.svg);
+	background-image: url( https://static.wikitide.net/lhmnwiki/b/b9/MoMo_icon.svg )
 }
 
 #n-sidebar-icon-vietqr a:before {
-  background-image: url(https://static.wikitide.net/lhmnwiki/b/b9/Vietqr.svg);
+	background-image: url( https://static.wikitide.net/lhmnwiki/b/b9/Vietqr.svg )
 }
 
-/* Tùy chỉnh thông báo Cookie (CookieWarning) */
+/* CookieWarning tweaks */
 .mw-cookiewarning-container {
-  max-width: 480px;
+	max-width: 480px;
 }
 
 .mw-cookiewarning-text {
-  gap: var(--space-xs);
+	gap: var(--space-xs);
 }
 
 .mw-cookiewarning-text::before {
-  content: "🍪";
-  font-size: 2rem;
+	content: '🍪';
+    font-size: 2rem;
 }
 
-/* Ẩn khi tải trang để tránh FoUC */
+/* hide on pageload to prevent FoUC */
 .client-js .mw-cookiewarning-container {
-  opacity: 0;
-  visibility: hidden;
-  transition:
-    opacity 250ms ease,
-    visibility 250ms ease;
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 250ms ease, visibility 250ms ease;
 }
 
-/* class citizen-animations-ready được thêm vào khi mã JavaScript tải xong */
+/* citizen-animations-ready is added when scripts are loaded */
 .client-js.citizen-animations-ready .mw-cookiewarning-container {
-  opacity: 1;
-  visibility: visible;
+	opacity: 1;
+	visibility: visible;
 }
 
-/* Sửa lỗi lệch hàng trên Safari và Firefox khi dùng hai cột */
+/* Fix misalignment in Safari and Firefox when using two columns */
 #footer-places ul {
-  display: initial;
+	display: initial;
 }
 
 img.mw-logo-wordmark {
-  filter: unset !important;
+	filter: unset !important;
 }
 
 /**
@@ -323,111 +317,113 @@ img.mw-logo-wordmark {
 
 .citizen-page-container,
 .citizen-body-container {
-  position: relative;
+    position: relative;
 }
 
 .citizen-header:before,
 .citizen-page-container::before,
 .mw-body::before,
 .citizen-body-container::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
 }
 
 .citizen-header:before,
 .citizen-page-container::before {
-  background-repeat: no-repeat;
+    background-repeat: no-repeat;
 }
 
 .mw-body::before,
 .citizen-body-container::after {
-  background-repeat: repeat-y;
-  filter: var(--filter-invert);
+    background-repeat: repeat-y;
+    filter: var(--filter-invert);
 }
 
 .citizen-header::before {
-  background-position: center left;
-  background-size: contain;
-  mask-image: linear-gradient(to right, rgba(0, 0, 0, 0.2), transparent 32px);
-  -webkit-mask-image: linear-gradient(
-    to right,
-    rgba(0, 0, 0, 0.2),
-    transparent 32px
-  );
+    background-position: center left;
+    background-size: contain;
+    mask-image: linear-gradient(to right, rgba(0, 0, 0, 0.2), transparent 32px);
+    -webkit-mask-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.2),
+        transparent 32px
+    );
 }
 
 .citizen-page-container::before {
-  height: 1000px;
-  background-size: cover;
-  mask-image: linear-gradient(
-    rgba(0, 0, 0, 0.35),
-    rgba(0, 0, 0, 0.2),
-    rgba(0, 0, 0, 0.05) 60rem,
-    transparent 100%
-  );
-  -webkit-mask-image: linear-gradient(
-    rgba(0, 0, 0, 0.35),
-    rgba(0, 0, 0, 0.2),
-    rgba(0, 0, 0, 0.05) 60rem,
-    transparent 100%
-  );
-  background-attachment: fixed;
+    height: 1000px;
+    background-size: cover;
+    mask-image: linear-gradient(
+	    rgba(0, 0, 0, 0.35),
+	    rgba(0, 0, 0, 0.2),
+	    rgba(0, 0, 0, 0.05) 60rem,
+	    transparent 100%
+    );
+    -webkit-mask-image: linear-gradient(
+	    rgba(0, 0, 0, 0.35),
+	    rgba(0, 0, 0, 0.2),
+	    rgba(0, 0, 0, 0.05) 60rem,
+	    transparent 100%
+    );
 }
 
-.page-WLHMN_Giới_thiệu .citizen-page-container::before {
-  height: 400px;
-  mask-image: linear-gradient(
-    rgba(0, 0, 0, 0.35),
-    rgba(0, 0, 0, 0.2),
-    rgba(0, 0, 0, 0.05) 23rem,
-    transparent 100%
-  );
-  -webkit-mask-image: linear-gradient(
-    rgba(0, 0, 0, 0.35),
-    rgba(0, 0, 0, 0.2),
-    rgba(0, 0, 0, 0.05) 23rem,
-    transparent 100%
-  );
+.ns-4 .citizen-page-container::before {
+    height: 400px;
+    mask-image: linear-gradient(
+	    rgba(0, 0, 0, 0.35),
+	    rgba(0, 0, 0, 0.2),
+	    rgba(0, 0, 0, 0.05) 23rem,
+	    transparent 100%
+    );
+    -webkit-mask-image: linear-gradient(
+	    rgba(0, 0, 0, 0.35),
+	    rgba(0, 0, 0, 0.2),
+	    rgba(0, 0, 0, 0.05) 23rem,
+	    transparent 100%
+    );
 }
+
 
 .mw-body::before {
-  position: fixed; /* Tránh thay đổi bố cục */
-  opacity: calc(0.05 * 0.5); /* Vì phần này nằm dưới nội dung, nên làm mờ đi */
-  background-repeat: repeat;
-  mask-image: linear-gradient(
-    transparent,
-    #000 480px,
-    #000 calc(100% - 480px),
-    transparent
-  );
-  -webkit-mask-image: linear-gradient(
-    transparent,
-    #000 480px,
-    #000 calc(100% - 480px),
-    transparent
-  );
+    position: fixed; /* Avoid layout shift */
+    opacity: calc(
+        0.05 * 0.5
+    ); /* Since this is behind content, it should be more subtle */
+    background-repeat: repeat;
+    mask-image: linear-gradient(
+        transparent,
+        #000 480px,
+        #000 calc(100% - 480px),
+        transparent
+    );
+    -webkit-mask-image: linear-gradient(
+        transparent,
+        #000 480px,
+        #000 calc(100% - 480px),
+        transparent
+    );
 }
 
 .citizen-body-container::after {
-  opacity: 0.05;
-  mask-image: linear-gradient(
-    transparent,
-    #000 160px,
-    #000 calc(100% - 160px),
-    transparent
-  );
-  -webkit-mask-image: linear-gradient(
-    transparent,
-    #000 160px,
-    #000 calc(100% - 160px),
-    transparent
-  );
+    opacity: 0.05;
+    mask-image: linear-gradient(
+        transparent,
+        #000 160px,
+        #000 calc(100% - 160px),
+        transparent
+    );
+    -webkit-mask-image: linear-gradient(
+        transparent,
+        #000 160px,
+        #000 calc(100% - 160px),
+        transparent
+    );
 }
 
 @media screen and (min-width: 640px) {
-  img.mw-logo-wordmark {
-    height: 3rem;
-  }
+    img.mw-logo-wordmark {
+        height: 3rem;
+    }
 }

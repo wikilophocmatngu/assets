@@ -1,0 +1,18 @@
+/* Thêm icon đánh dấu trước liên kết người dùng */
+/* SongNgư.xyz (Webmaster) - hiện nay là [[Thành viên:Pisces]] */
+.mw-userlink[href="/Th%C3%A0nh_vi%C3%AAn:Pisces"], .mw-userlink[href="/Th%C3%A0nh_vi%C3%AAn:Pisces?action=edit&redlink=1"] {
+	padding: 5px 25px 5px 25px;
+    background: url(https://static.wikitide.net/lhmnwiki/9/9e/SongNguXYZ-icon.svg) no-repeat left center, url(https://static.wikitide.net/lhmnwiki/a/a5/Independent_Wiki_Federation.png) no-repeat right center;
+    background-size: 23px;
+}
+
+/* Thành viên thuộc nhóm quản trị */
+/* Gồm [[Thành viên:Hiuthecomrade]] */
+.mw-userlink[href="/Th%C3%A0nh_vi%C3%AAn:Hiuthecomrade"], .mw-userlink[href="/Th%C3%A0nh_vi%C3%AAn:Hiuthecomrade?action=edit&redlink=1"] {
+	padding: 5px 0 5px 25px;
+	background: url('https://static.wikitide.net/lhmnwiki/7/7c/Logo-Phone.png') no-repeat left center;
+	background-size: 24px;
+}
+
+/* Thành viên thuộc IWF */
+/* Webmaster mặc định là một thành viên */

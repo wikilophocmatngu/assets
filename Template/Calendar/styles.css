@@ -1,0 +1,68 @@
+.template-calendar {
+	width: 300px;
+	background: var( --color-surface-2 );
+	border-radius: var( --border-radius--medium );
+	font-size: 0.875rem;
+	font-weight: 500;
+}
+
+/* Reset styles for using in calendar */
+.template-calendar__header .template-prevnext {
+	margin-top: 0;
+	margin-bottom: 0;
+	background-color: transparent;
+}
+
+.template-calendar__grid {
+	border-top: 1px solid var( --border-color-base );
+	border-bottom: 1px solid var( --border-color-base );
+	padding: var( --space-xs );
+	display: grid;
+	grid-template-columns: repeat(7, 1fr);
+	text-align: center;
+	gap: var( --space-xxs );
+}
+
+.template-calendar__day > a {
+	display: flex;
+	color: var( --color-base--emphasized );
+	border-radius: var( --border-radius--small );
+	aspect-ratio: 1;
+	justify-content: center;
+	align-items: center;
+}
+
+.template-calendar__day--nextmonth > a {
+	color: var( --color-base--subtle );
+}
+
+.template-calendar__day > a.selflink {
+	background-color: var( --background-color-primary--active );
+}
+
+.template-calendar__day > a:hover {
+	background-color: var( --background-color-quiet--hover );
+}
+
+.template-calendar__day > a:active {
+	background-color: var( --background-color-quiet--active );
+}
+
+.template-calendar__footer {
+	padding: var( --space-xxs );
+}
+
+.template-calendar__footer > a {
+	padding: var( --space-xxs );
+	border-radius: var(--border-radius--small);
+	text-align: center;
+	display: block;
+}
+
+.template-calendar__footer > a:hover {
+	background-color: var( --background-color-quiet--hover );
+}
+
+.template-calendar__footer > a:active {
+	background-color: var( --background-color-quiet--active );
+}

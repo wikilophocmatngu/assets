@@ -1,0 +1,25 @@
+.noarticletext-title {
+    margin-bottom: 1.6rem;
+    text-align: center;
+    clear: both;
+}
+
+.noarticletext-title .byline {
+    color: var( --color-base--subtle );
+    font-size: 0.825rem;
+}
+
+.noarticletext-title .headline {
+    margin-top: 0;
+    line-height: 1.2;
+}
+
+.subheader {
+    display: block !important;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.subheader+.card-container {
+    margin-top: 0.8rem !important;
+}

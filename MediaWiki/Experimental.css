@@ -1,0 +1,21 @@
+body::before {
+    background: linear-gradient(rgb(25,119,228, 0.3), rgb(25,119,228,0.3)), url(https://static.wikitide.net/lhmnwiki/1/13/Beast1.png);
+    background-size: cover;
+    transition: .5s background, .25s filter;
+    background-repeat: no-repeat !important;
+    background-position: center;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    content: '';
+    z-index: -2;
+    mask-image: linear-gradient(rgb(0, 0, 0, 0.1) 20%, rgb(0, 0, 0, 0.4), transparent 80%);
+}
+
+@media screen and (min-width: 1119px) {
+    .citizen-header {
+        background: transparent !important;
+    }
+}

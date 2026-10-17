@@ -1,0 +1,12 @@
+.keyboard-key {
+	padding: 0.25em 0.5em;
+	display: inline-block;
+    line-height: 1;
+    font-weight: var( --font-weight-medium );
+    font-size: 0.875rem;
+    border-radius: var( --border-radius-base );
+    border: 1px solid;
+    border-color: var( --border-color-base );
+    background: var( --color-surface-3 );
+    color: var( --color-emphasized );
+}

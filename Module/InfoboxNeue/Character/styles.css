@@ -1,0 +1,14 @@
+/**
+ * Mô đun:InfoboxNeue/Character/styles.css
+ *
+ * @description	Bảng kiểu đặc biệt cho hộp thông tin nhân vật
+ * @author		[[User:Pisces]] (https://songngu.xyz)
+ * @see			https://lophocmatngu.wiki/Mô_đun:InfoboxNeue/Character/styles.css
+ * @license		CC BY-SA 4.0
+ */
+
+.infobox__image { /* Thêm hình nền vào hộp hình ảnh nhân vật */
+    background-position: center;
+    background-image: url(https://static.miraheze.org/lhmnwiki/1/1e/Infobox_BG.png);
+    background-size: cover;
+}

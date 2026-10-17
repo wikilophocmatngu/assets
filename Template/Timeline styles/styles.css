@@ -1,0 +1,50 @@
+table.timeline, table.timeline tbody {
+    display: block;
+}
+
+table.timeline tr {
+	position: relative;
+	margin-left: 8px;
+	padding: var( --space-xs ) var( --space-xs ) var( --space-xs ) 20px;
+    display: flex;
+    flex-direction: column;
+    border-top-right-radius: var( --border-radius--small );
+    border-bottom-right-radius: var( --border-radius--small );
+}
+
+table.timeline tr:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    display: block;
+    width: 1px;
+    background-color: var( --border-color-base--darker );
+}
+
+table.timeline tr td:first-child {
+    font-size: 1rem;
+    font-weight: var( --font-weight-semibold );
+    color: var( --color-base--emphasized );
+}
+
+table.timeline tr td:first-child:before {
+	content: "";
+    width: 8px;
+    height: 8px;
+    display: block;
+    background-color: var( --color-base--subtle );
+    border-radius: 100%;
+    position: absolute;
+    left: -4px;
+    margin-top: 8px;
+}
+
+table.timeline tr td {
+	padding: 0;
+}
+
+table.timeline tr + tr {
+	border-top: 0;
+}

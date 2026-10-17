@@ -1,105 +1,73 @@
-/**
- * MediaWiki:Common.css
- *
- * @desc       Bảng kiểu toàn cục cho toàn bộ Wiki Lớp Học Mật Ngữ
- * @deprecated Gần như mọi mã ở đây sẽ phải được tích hợp vào [[MediaWiki:Citizen.css]]
- * @author     [[Thành viên:Pisces]] (https://songngu.xyz)
- * @site       https://lophocmatngu.wiki/MediaWiki:Common.css
- * @license    CC BY-SA 4.0
- */
+/* Mã CSS đặt ở đây sẽ áp dụng cho mọi giao diện */
 
 /* @import */
 /* Google Font */
-@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Quicksand:wght@300..700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Quicksand:wght@300..700&display=swap');
 /* CSS */
-@import url("/MediaWiki:Infobox.css?action=raw&ctype=text/css");
-@import url("/MediaWiki:HighlightLinks.css?action=raw&ctype=text/css");
-
-/*
- * UserProfileV2
- *
- */
+@import url('/w/index.php?title=MediaWiki:Infobox.css&action=raw&ctype=text/css');
+@import url('/w/index.php?title=MediaWiki:HighlightLinks.css&action=raw&ctype=text/css');
 
 .profile-avatar-image {
-  height: 140px;
-  object-fit: unset;
-  width: 140px;
+    height: 140px;
+    object-fit: unset;
+    width: 140px;
 }
-
-/*
- * Hộp thành viên IWF
- *
- * @deprecated
- * @note Xung đột với bảng kiểu tại Trang chính, phải hợp nhất trong thời gian sớm nhất
- */
 
 .iwf-memberbox {
-  background:
-    url(https://static.wikitide.net/lhmnwiki/5/5f/IWF_Background.png) repeat
-      center,
-    var(--color-surface-2);
-  text-align: center;
-  background-blend-mode: overlay;
-  border-radius: var(--border-radius-base);
-  border: var(--border-base);
-  padding: 1em;
+    background: url(https://static.wikitide.net/lhmnwiki/5/5f/IWF_Background.png) repeat center, var(--color-surface-2);
+    text-align: center;
+    background-blend-mode: overlay;
+    border-radius: var(--border-radius-base);
+    border: var(--border-base);
+    padding: 1em
 }
 
-/*
- * Pseudo-class cho điện thoại, biết rằng MobileDetects không áp dụng tại wiki này.
- */
-
+/*Tạo pseudo class cho điện thoại */
 @media screen and (max-width: 1119px) {
-  .mobile-hidden {
-    content-visibility: hidden !important;
-    display: none !important;
-  }
-
-  .desktop-hidden {
-    content-visibility: visible !important;
-  }
+    .mobile-hidden {
+        content-visibility: hidden !important;
+        display: none !important;
+    }
+    
+    .desktop-hidden {
+        content-visibility: visible !important
+    }
 }
-
-/*
- * Hộp nhân vật tại trang chính
- * 
- * @deprecated
- * @note Khá là xấu, tập trung hiện đại hóa trong các bản cập nhật tương lai
- */
 
 .cwrapper {
-  align-items: center;
+	align-items: center;
 }
 
 .cportraits img {
-  width: 109px;
-  height: 109px;
-  overflow: hidden;
-  border-radius: var(--border-radius-base);
-  transition: transform 0.3s ease-in-out;
+	width: 109px;
+	height: 109px;
+	overflow: hidden;
+	border-radius: var(--border-radius-base);
+	transition: transform 0.3s ease-in-out;
 }
 
 .cportraits img:hover {
-  transform: scale(1.15);
-  border-radius: var(--border-radius-medium);
+	transform: scale(1.15);
+	border-radius: var(--border-radius-medium);
 }
 
-/*
- * Như trên nhưng nó là MediaSpoiler
- *
- * @warning Tránh nhầm lẫn giữa `.spoilers-button` từ [[mw:Extension:Spoilers]]
- *          và `.spoiler-button` từ tiện ích này (không có `s`)
- */
-
-.spoiler-button .oo-ui-labelElement-label {
-    display: none !important; /* Ẩn label */
+/* Tùy chỉnh nút Spoilers từ extension cùng tên */
+.spoilers-button {
+	background: none !important;
+	color: var(--lhmn-color-progressive) !important;
+	border: 1px solid var(--lhmn-color-progressive) !important;
 }
 
-.spoiler-button .oo-ui-iconElement-icon { /* Căn giữa icon view (mắt) của OOUI/Codex */
-    left: unset;
-    margin-left: unset;
+.spoilers-body {
+	display: flex;
 }
 
-/*************************************************************
- * KHÔNG CHÈN BẤT CỨ ĐOẠN MÃ NÀO KHÁC DƯỚI DÒNG NÀY. CÁM ƠN. *
- *************************************************************/
+/* Căn giữa và thu nhỏ hình banner */
+.img-fluid img{
+  max-width: 100%;
+  height: auto;
+}
+
+/**********************************************************
+*KHÔNG CHÈN BẤT CỨ ĐOẠN MÃ NÀO KHÁC DƯỚI DÒNG NÀY. CÁM ƠN.*
+**********************************************************/

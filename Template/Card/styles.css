@@ -1,0 +1,208 @@
+.lhmn-card {
+    --lhmn-card-image-color_r: 0;
+    --lhmn-card-image-color_g: 0;
+    --lhmn-card-image-color_b: 0;
+
+    position: relative;
+    background-color: var(--lhmn-color-surface-1);
+    border: var(--border-base);
+    border-radius: var(--border-radius-medium);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.lhmn-card-header,
+.lhmn-card-footer {
+    padding: 0.5rem 1rem;
+    background: var(--lhmn-color-surface-3);
+}
+
+.lhmn-card-footer {
+    font-size: var(--font-size-small);
+}
+
+.template-flexbox-item .lhmn-card {
+    height: 100%;
+}
+
+.lhmn-card blockquote {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.lhmn-card-image {
+    position: relative;
+    display: flex;
+    flex-grow: 1;
+}
+
+.lhmn-card-afterImage {
+    position: relative;
+    margin-top: -0.5rem;
+    padding: 0 1rem 1rem 1rem;
+    background-color: rgb(0, 0, 0);
+}
+
+.lhmn-card-afterImage a {
+    color: #fff;
+}
+
+.lhmn-card-afterImage,
+.lhmn-card-label,
+.lhmn-card-caption {
+    font-size: var(--font-size-x-small);
+}
+
+.lhmn-card-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.lhmn-card-label--right {
+    right: 0;
+    left: unset !important;
+}
+
+.lhmn-card-label > a,
+.lhmn-card-label > span {
+    display: flex;
+    align-items: center;
+    height: 32px;
+    padding: 0 12px;
+    border-bottom-right-radius: var(--border-radius-medium);
+    background: var(--lhmn-color-progressive);
+    color: white;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.lhmn-card-label--right > a,
+.lhmn-card-label--right > span {
+    border-bottom-right-radius: unset !important;
+    border-bottom-left-radius: var(--border-radius-medium) !important;
+}
+
+.lhmn-card-label > a:hover {
+    background: var(--lhmn-color-progressive--hover);
+}
+
+.lhmn-card-label > a:active {
+    background: var(--lhmn-color-progressive--hover);
+}
+
+.lhmn-card-content {
+    padding: 1rem;
+}
+
+.lhmn-card-label + .lhmn-card-content {
+    margin-top: 1.5rem;
+}
+
+.lhmn-card-title {
+    color: var(--color-emphasized);
+    font-family: var(--lhmn-font-family-heading);
+    font-size: var(--font-size-x-large);
+    line-height: var(--line-height-xxx-small);
+    font-weight: 600;
+}
+
+.lhmn-card-caption {
+    margin-top: 0.25rem;
+    color: var(--color-subtle);
+    line-height: var(--line-height-xx-small);
+    font-size: var(--font-size-small);
+}
+
+.lhmn-card-title + .lhmn-card-body,
+.lhmn-card-caption + .lhmn-card-body {
+    margin-top: 1rem;
+}
+
+.lhmn-card-background,
+.lhmn-card-link {
+    position: absolute;
+    inset: 0;
+}
+
+.lhmn-card-background {
+    pointer-events: none;
+}
+
+.lhmn-card-background::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 50%;
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 1) 0%,
+        rgba(0, 0, 0, 0.987) 8.1%,
+        rgba(0, 0, 0, 0.951) 15.5%,
+        rgba(0, 0, 0, 0.896) 22.5%,
+        rgba(0, 0, 0, 0.825) 29%,
+        rgba(0, 0, 0, 0.741) 35.3%,
+        rgba(0, 0, 0, 0.648) 41.2%,
+        rgba(0, 0, 0, 0.55) 47.1%,
+        rgba(0, 0, 0, 0.45) 52.9%,
+        rgba(0, 0, 0, 0.352) 58.8%,
+        rgba(0, 0, 0, 0.259) 64.7%,
+        rgba(0, 0, 0, 0.175) 71%,
+        rgba(0, 0, 0, 0.104) 77.5%,
+        rgba(0, 0, 0, 0.049) 84.5%,
+        rgba(0, 0, 0, 0.013) 91.9%,
+        rgba(0, 0, 0, 0) 100%
+    );
+}
+
+.lhmn-card-background--top img {
+    object-position: top;
+}
+
+.lhmn-card-background--bottom img {
+    object-position: bottom;
+}
+
+.lhmn-card-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 100ms ease;
+    transition-property: transform;
+}
+
+.lhmn-card:hover .lhmn-card-background img {
+    transform: scale(1.1);
+}
+
+.lhmn-card-link {
+    opacity: 0;
+}
+
+.lhmn-card-link > a {
+    display: block;
+    height: 100%;
+}
+
+.lhmn-card-image .lhmn-card-content {
+    position: relative;
+}
+
+.lhmn-card-image .lhmn-card-content {
+    margin-top: auto;
+    line-height: var(--line-height-xx-small);
+    flex-grow: 1;
+}
+
+.lhmn-card-image .lhmn-card-title {
+    color: #fff;
+}
+
+.lhmn-card-image .lhmn-card-caption,
+.lhmn-card-afterImage {
+    color: #ddd;
+}

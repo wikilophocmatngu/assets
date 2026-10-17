@@ -1,0 +1,65 @@
+/* Important is needed because of weird external link rules */
+.lhmn-button > a {
+    border: 1px solid transparent;
+    border-radius: var(--border-radius-base);
+    height: 36px;
+    padding: 0 1rem !important;
+    color: var(--color-emphasized) !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    line-height: 1;
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-medium);
+    text-decoration: none;
+}
+
+.lhmn-button > a:hover {
+    background-color: var(--background-color-button-quiet--hover) !important;
+}
+
+.lhmn-button > a:active {
+    background-color: var(--background-color-button-quiet--active) !important;
+}
+
+.lhmn-button.lhmn-button--framed > a {
+    border-color: var(--lhmn-border-color-interactive);
+}
+
+.lhmn-button.lhmn-button--icon > a {
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+    font-size: 0;
+    gap: 0;
+}
+
+.lhmn-button.lhmn-button--primary > a {
+    color: var(--color-inverted-progressive) !important;
+    background-color: var(--lhmn-color-progressive) !important;
+}
+
+.lhmn-button.lhmn-button--primary > a:hover {
+    background-color: var(--lhmn-color-progressive--hover) !important;
+}
+
+.lhmn-button.lhmn-button--primary > a:active {
+    background-color: var(--lhmn-color-progressive--active) !important;
+}
+
+.lhmn-button.lhmn-button--secondary > a {
+    border-color: var(--lhmn-color-progressive) !important;
+    color: var(--lhmn-color-progressive) !important;
+}
+
+.lhmn-button.lhmn-button--secondary > a:hover {
+    border-color: var(--lhmn-color-progressive--hover) !important;
+    background-color: var(--lhmn-color-progressive--hover) !important;
+    color: var(--lhmn-color-inverted-progressive) !important;
+}
+
+.lhmn-button.lhmn-button--secondary > a:active {
+    border-color: var(--lhmn-color-progressive--active) !important;
+    background-color: var(--lhmn-color-progressive--active) !important;
+    color: var(--lhmn-color-inverted-progressive) !important;
+}
