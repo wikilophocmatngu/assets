@@ -1,0 +1,1 @@
+Add a link to edit articles in [http://vscode.dev/ VSCode] using the [https://marketplace.visualstudio.com/items?itemName=RoweWilsonFrederiskHolme.wikitext Wikitext] extension ([[MediaWiki:Gadget-Wikitext-Extension.js|source]])

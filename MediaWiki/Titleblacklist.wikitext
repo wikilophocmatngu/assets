@@ -1,0 +1,115 @@
+ #Bộ lọc được sao chép từ Wikipedia Tiếng Việt. Mọi sửa đổi vào bộ lọc này thuộc về những người đóng góp trên Wikipedia TV.
+ .*sysop.* <autoconfirmed>
+ .*[Mm][Ee]\s*[Mm][Aa][Yy].*
+ .*[Dd][Ii][Tt]\s*[Mm][Ee].*
+ .*[Dd][Ii][Tt]\s*[Cc][Oo][Nn]\s*[Mm][Ee].*
+ .*[Tt][Uu][Aa][Nn]\s*[Mn][Ii][Nn][Hh][0\d]\d*.*
+ .*[Dd][Aa][Ff][Aa][Bb][Ee][Tt]\s*.[Cc][Oo][Mm].*
+ .*[Dd][Aa][Ff][Aa][Bb][Ee][Tt].*
+ .*[cC][ẩẨ][Mm]\s*[lL][Aa][Nn]\s*[SsXx][ỤụUu][Cc].*
+ .*[cC][ặẶ][tT].*
+ .*[lL]\s*[Ồồ]\s*[nN]\b.*
+ .*[Cc]\s*[ỨứƯư]\s*[TtCc]\b.*
+ .*Đ M.*
+ .*đ[ụù]\b.*
+ .*Cường đô la.*
+ .*хуй* 
+ .*х у й* 
+ .*бля*
+ .*б л я*
+ .*Росси*
+ .*Р о с с и*
+ .*собач*
+ .*с о б а ч*
+ .*Росі*
+ .*Р о с і*
+ .*пизда*
+ .*п и з д а*
+ .*вандал*
+ .*[Сc]ука\s*блять.*
+ .*Cường dollar.*
+ .*"cường $$".*
+ .*Kường.*
+ .*[ck]\W*[ặẶ]\W*[tc].*
+ .*t\W*h\W*ằ\W*n\W*g.*<autoconfirmed>
+ .*v.*hải.*triều.*
+ .*Việt Nam Dân Quốc.*
+ .*Bá Hiến.*
+ .*nguyễn thanh liêm.*
+ .*Cưu Tiên.*
+ .*ON WHE.* <casesensitive>
+ .*[!?]{3,}.*
+ .*(?:http|https|ftp|mailto|torrent|ed2k)\:\/\/[\w\d:@\-]+\.[\w\d\-]+.*
+ .*\bis\s+(?:a|an)\s+(?:dick|cunt|fag|bitch|shit|fuck|loser|ass|gay|ghey|moron|retard|stupid|slut).* <autoconfirmed>
+ .*B\.*[AẢ]\.*O.*Q\.*U\.*[AẢ]\.*N.*V\.*I\.*[EÊ]\.*N.* <autoconfirmed>
+ .*T\.*r\.*[aầâà]\.*n.*V\.*[iị\|1l]\.*[eêệẹ]{0,1}\.*t.*D\.*z{0,1}[uũ]\.*n\.*g.*
+ .*T\W*m\W*c\W*t.*
+ .*T.*h.*a\w*n.*h.*Q.*u.*a.*n.*g.* <casesensitive><autoconfirmed>
+ .*H.*[ưữu].*u.*D.*[uụ].*n.*g.* <casesensitive><autoconfirmed>
+ .*K\.*h\.*[ưu]\.*[ơo]\.*n\.*g.*V\.*[i|1l]\.*[eêệẹ]\.*t.*H\.*[àa].*<autoconfirmed>
+ .*T\.*r\.*[âầa]\.*n.*V\.*[i|1lĩ]\.*n\.*h.*T\.*[âa]\.*n.*<autoconfirmed>
+ .*lon c[uủ]a.*
+ .*lon m[ẹe].*
+ .*vuongdinhtien*
+ .*con [dđ][ĩiị].*
+ .*Thể loại:Loài vật lai người.*
+ .*胡志明.*
+ .*nhuconbo.*
+ .*ngusi.*
+ .*m[il]nh.*râu.*
+ .*suân.*
+ .*阮文雄.*
+ .*(hồ chí minh|ho chi minh).* <autoconfirmed>
+ .*阮富仲.*
+
+ # CÁC KÝ TỰ HIẾM NHÌN GIỐNG KÝ TỰ ASCII
+ .*[คℂ℃℄ɕยี่ƌʥℇ℈℉ℊๆℋℌℍℎℏℐ‼ℑℒℕ℗℘ℙℚℛℜℝ℞℟๔℣ℤℨ℩ℬℭ℮ℯℰℱℲℳℴℹ℺⅁⅂⅃⅄ⅅⅆⅇⅈⅉⅎ].* <casesensitive> # Select Unicode Letterlike Symbols (excluding Kelvin, Angstrom and Ohm signs, see talk)
+ .*[\x{249C}-\x{24E9}].* <casesensitive> # Circled and parenthesized Latin letters
+ .*[\x{FF21}-\x{FF3A}\x{FF41}-\x{FF5A}].* <casesensitive | errmsg=titleblacklist-custom-fullwidth> # Fullwidth Latin letters
+ .*[？ʖ؟ʔ].* <casesensitive | moveonly> # Question mark lookalikes, used for page move vandalism
+ .*[\x{1D00}-\x{1DBF}].* <casesensitive> # Phonetic extensions, almost never used in valid titles
+ .*[\x{0250}-\x{02AF}].* <casesensitive | moveonly> # IPA extensions, somewhat more common, so blocking only moves for now
+ .*[∀-∑∟-∳⊂-⋕⋲-⋿].* <casesensitive | moveonly> # Select mathematical operators (excluding "−", "∞" and some other common ones)
+ .*[\x{27C0}-\x{27ef}\x{2980}-\x{29ff}\x{2a00}-\x{2aff}].* <casesensitive | moveonly> # Misc./supplemental mathematical symbols
+ .*[ⱧȢƪƪҤҺԊѓԍҥҩԌЃϓғҒЊӷⱤɌɍᵲᶉɼᵃᵍᴱᵣᔮᓂᑫᓈᒦ٨٣ץױוזשלﬨטּפּבּڠɆɇᶒⱸȺⱥᶏ١].* <casesensitive | moveonly> # Letter lookalikes; none of these are currently used in any mainspace title
+
+ # Không gian tên ảo "Thông báo sửa đổi" và bản mẫu nhạy cảm
+ Bản mẫu:Các thông báo sửa đổi\/.* <noedit|errmsg=titleblacklist-custom-editnotice>
+
+ # Tránh người dùng xác nhận mình là chủ wiki trong Google Analytics
+ .*[Gg]oogle[A-Za-z0-9]*\.html*
+
+ # TÊN TẬP TIN CHUNG CHUNG (có [[MediaWiki:titleblacklist-custom-imagename|thông báo tùy biến]])
+ # ít nhất ba chữ có thể có ý nghĩa:
+ Tập tin:\P{L}*((Ima?ge?|Pict?(ure)?|Media|Photo)\P{L}+)?(\p{L}\P{L}*){0,3}((orig|copy|thumb|small)\P{L}*)?\.[^.]+  <reupload | errmsg=titleblacklist-custom-imagename>
+ # no more than two contiguous letters (raising to three would be tempting, but needs more testing):
+ Tập tin:\P{L}*((Ima?ge?|Pict?(ure)?|Media|Photo)[^\p{L}\p{M}]\P{L}*)?((\p{L}\p{M}*){1,2}[^\p{L}\p{M}]\P{L}*)*((orig|copy|thumb|small)\P{L}*|(\p{L}\p{M}*){1,2})?\.[^.]+  <reupload | errmsg=titleblacklist-custom-imagename>
+ # month name followed by no more than two contiguous letters, JPEG suffix (be careful if you edit this, easy to trigger false positives):
+ Tập tin:\P{L}*(January|Jan|February|Febr?|March|Mar|April|Apr|May|June?|July?|August|Aug|September|Sept?|October|Oct|November|Nov|December|Dec)(\P{L}+\p{L}{1,2})*\P{L}*\.JPE?G  <reupload | errmsg=titleblacklist-custom-imagename>
+ # Common digital camera file names, based on list at http://diddly.com/random/about.html
+ # See also [[MediaWiki:Filename-prefix-blacklist]], used to generate a warning on the upload form
+ Tập tin:DCP\d+\.JPG  <reupload | errmsg=titleblacklist-custom-imagename>  # Kodak
+ Tập tin:DSC.\d+\.JPG  <reupload | errmsg=titleblacklist-custom-imagename>  # [[:en:Design rule for Camera File system]] (Nikon, Fuji, Polaroid)
+ Tập tin:MVC-?\d+\.JPG  <reupload | errmsg=titleblacklist-custom-imagename>  # Sony Mavica
+ Tập tin:P[\dA-F]\d+\.JPG  <reupload | errmsg=titleblacklist-custom-imagename>  # Olympus, Kodak
+ Tập tin:I?MG[P_\s-]?\d+\.JPG  <reupload | errmsg=titleblacklist-custom-imagename>  # Canon, Pentax
+ Tập tin:1\d+-\d+(_IMG)?\.JPG  <reupload | errmsg=titleblacklist-custom-imagename>  # Canon
+ Tập tin:(IM|EX)\d+\.JPG  <reupload | errmsg=titleblacklist-custom-imagename>  # HP Photosmart
+ Tập tin:DC\d+[SML]\.JPG  <reupload | errmsg=titleblacklist-custom-imagename>  # Kodak
+ Tập tin:P[Ii][Cc][T_\s-]?\d+\.JPG  <reupload | errmsg=titleblacklist-custom-imagename>  # Minolta
+ Tập tin:PANA\d+\.JPG  <reupload | errmsg=titleblacklist-custom-imagename>  # Panasonic
+ Tập tin:DUW\d+\.JPG  <reupload | errmsg=titleblacklist-custom-imagename>  # some mobile phones
+ Tập tin:CIMG\d+\.JPG  <reupload | errmsg=titleblacklist-custom-imagename>  # Casio
+ Tập tin:JD\d+\.JPG  <reupload | errmsg=titleblacklist-custom-imagename>  # Jenoptik
+ # Other common patterns
+ Tập tin:\d{9}[A-Z]{6}_[A-Z]{2}\P{L}*\.\w+  <reupload | errmsg=titleblacklist-custom-imagename>  # some image hosting site?
+ Tập tin:\d+_[\da-f]+(_[a-z])?\P{L}*\.\w+  <reupload | errmsg=titleblacklist-custom-imagename>  # Flickr; see http://www.flickr.com/services/api/misc.urls.html
+ # Tập tin:(\d{9,10}[A-Z])+[A-Z]?\.\w+  <reupload | errmsg=titleblacklist-custom-imagename>  # yet another image hosting site? (redundant to "no more than two contiguous letters")
+ Tập tin:([\dA-F]{8}-)?[\dA-F]{4}-[\dA-F]{4}-[\dA-F]{4}-?[\dA-F]{12}.*  <reupload | errmsg=titleblacklist-custom-imagename>  # UUID (with some variations included)
+ Tập tin:([SML]|\d+)_[\dA-F]{10,}(-\d+-|_?(\w\w?|full))?\.[^.]+  <reupload | errmsg=titleblacklist-custom-imagename>  # L_9173c67eae58edc35ba7f2df08a7d5c6.jpg, 1_bf38bcd9c5512a5ab99ca2219a4b1e2f_full.gif, etc.
+ Tập tin:\P{L}*No\P{L}*name\P{L}*\.[^.]+  <reupload | errmsg=titleblacklist-custom-imagename>  # Noname2.jpg
+ Tập tin:AT[AEIMQUYcgkosw048]AAA[A-D][-_A-Za-z0-9]+\.jpg  <reupload | errmsg=titleblacklist-custom-imagename>  # see [[commons:Commons:Village pump#File ATgAAA...]]
+ #Pict or Picture followed by numbers
+ Tập tin:Pict(ure)?[\s_-]?\d*\..* <reupload | errmsg=titleblacklist-custom-imagename>
+ # Only numbers in the filename
+ Tập tin:\d+\.\w+ <reupload|errmsg=titleblacklist-custom-imagename>

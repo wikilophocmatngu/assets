@@ -1,0 +1,26 @@
+*navigation
+**mainpage | mainpage-description
+**recentchanges-url | recentchanges
+**randompage-url | randompage
+**articlewizard-url | articlewizard
+* Khám phá
+** Lớp Học Mật Ngữ | Lớp Học Mật Ngữ
+** :Thể loại: Nhân vật | Nhân vật
+** :Thể loại: Chương truyện | Chương truyện
+** :Thể loại: Tác phẩm | Tác phẩm
+** :Thể loại: Boardgame | Boardgame
+** Show Your Star (series hoạt hình) | Series hoạt hình
+** FollowMe | Cạc bo góc
+* Tài nguyên từ chúng tôi
+** https://wikitidestatus.net|Trạng thái
+** https://fankit.lophocmatngu.wiki|Fan-kit
+** https://www.facebook.com/wikilophocmatngu|sidebar-icon-facebook
+** https://go.lophocmatngu.wiki/discord|sidebar-icon-discord
+** https://github.com/wikilophocmatngu|sidebar-icon-github
+** |sidebar-label-donate
+** https://ko-fi.com/wikilophocmatngu|sidebar-icon-kofi
+** https://paypal.me/songngunam|sidebar-icon-paypal
+** https://me.momo.vn/songngu|sidebar-icon-momo
+** WLHMN:Ủng hộ|sidebar-icon-vietqr
+** |sidebar-label-related
+** https://nguyet.songngu.xyz|sidebar-icon-nguyet

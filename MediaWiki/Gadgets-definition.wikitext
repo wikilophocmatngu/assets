@@ -1,0 +1,4 @@
+== Tính năng hỗ trợ ==
+* dynamiccategories[ResourceLoader|default|type=general]]|dynamiccategories.js
+* Wikitext-Extension-VSCode[ResourceLoader|dependencies=mediawiki.util]|Wikitext-Extension.js|Wikitext-Extension.css
+* instantDiffs [ResourceLoader | dependencies=site, mediawiki.api, mediawiki.util, mediawiki.storage, mediawiki.notification, mediawiki.Title, oojs] | instantDiffs.js

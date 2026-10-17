@@ -1,0 +1,9 @@
+{{Hộp tập tin <!--- Nhập thêm thông tin về tập tin vào đây trước khi tải lên! ---->
+| <!-- 1. Mô tả -->
+| <!-- 2. Nguồn -->
+| <!-- 3. Tác giả -->
+| <!-- 4. Giấy phép -->
+| <!-- 5. Ngày -->
+| <!-- 6. Phiên bản khác -->
+| <!-- 7. Thông tin bổ sung -->
+}}

@@ -1,0 +1,22 @@
+* Khóa sửa đổi
+** Thường xuyên bị phá hoại
+** Thường xuyên bị spam
+** Thường xuyên bị tài khoản rối sửa
+** Thường xuyên bị sửa đổi gây hại
+** Thường xuyên bị các tài khoản lách lệnh cấm sửa
+** Trang nội dung về tiểu sử người đang sống
+** Thêm nội dung không nguồn hoặc nguồn yếu
+** Bút chiến thiếu tính xây dựng
+** Trang quan trọng có nhiều người xem
+** Theo yêu cầu của thành viên
+** Bản mẫu hay mô đun được sử dụng rất nhiều
+* Khóa di chuyển
+** Bị phá hoại di chuyển nhiều lần
+** Có tranh chấp về tên trang
+** Trang quan trọng có nhiều người xem
+* Hình ảnh
+** Hình ảnh chọn lọc trên Trang Chính
+** Hình ảnh chọn lọc cho bài viết
+** Hình ảnh cần thiết để giúp wiki hoạt động đúng cách
+* Mở khóa
+** Không còn cần thiết

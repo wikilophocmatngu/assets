@@ -1,0 +1,25 @@
+{
+	"MNDbLink": {
+		"module": "SpecialVaiLon/MNDbLink",
+		"group": "redirects",
+		"aliases": {
+			"en": [
+				"MNDbLink",
+				"MNDb Link",
+				"MNDb link",
+				"mndb link",
+				"MNDB Link"
+			],
+			"vi": [
+				"Liên kết MNDb",
+				"liên kết MNDb",
+				"liên kết mndb",
+				"Liên Kết MNDB",
+				"Liên Kết MNDb"
+			]
+		}
+	},
+	"RandomFacts": {
+		"module": "SpecialVaiLon/RandomFacts"
+	}
+}

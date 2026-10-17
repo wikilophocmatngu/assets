@@ -1,0 +1,51 @@
+{
+	"dir": "ltr",
+	"lang": "vi",
+	"name": "Wiki Lớp Học Mật Ngữ",
+	"scope": "https://lophocmatngu.wiki/",
+	"icons": [
+		{
+			"src": "https://static.miraheze.org/lhmnwiki/7/7c/Logo-Phone.png",
+			"sizes": "any",
+			"type": "image/png"
+		}
+	],
+	"display": "standalone",
+	"orientation": "portrait",
+	"start_url": "?pwa-id=main",
+	"shortcuts": [
+		{
+			"name": "Tìm kiếm",
+			"url": "/Special:Search?pwa-id=main",
+			"description": "Cần thông tin cụ thể?",
+			"icons": [
+				{
+					"src": "",
+					"sizes": "192x192"
+				}
+			]
+		},
+		{
+			"name": "Ngẫu nhiên",
+			"url": "/Special:Random?pwa-id=main",
+			"description": "Thích gì đó ngẫu nhiên?",
+			"icons": [
+				{
+					"src": "data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E%3Ctitle%3E die %3C/title%3E%3Cpath d=%22M3 1a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2zm2 16a2 2 0 1 1 2-2 2 2 0 0 1-2 2zM5 7a2 2 0 1 1 2-2 2 2 0 0 1-2 2zm5 5a2 2 0 1 1 2-2 2 2 0 0 1-2 2zm5 5a2 2 0 1 1 2-2 2 2 0 0 1-2 2zm0-10a2 2 0 1 1 2-2 2 2 0 0 1-2 2z%22/%3E%3C/svg%3E",
+					"sizes": "192x192"
+				}
+			]
+		},
+		{
+			"name": "Thay đổi gần đây",
+			"url": "/Special:RecentChanges?pwa-id=main",
+			"description": "Thay đổi gần đây",
+			"icons": [
+				{
+					"src": "/w/load.php?modules=skins.citizen.icons.wmui\u0026image=recentChanges\u0026format=original\u0026lang=vi\u0026skin=citizen\u0026version=8rd75",
+					"sizes": "192x192"
+				}
+			]
+		}
+	]
+}

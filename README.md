@@ -8,6 +8,8 @@ Cấu trúc thư mục mang tính ánh xạ 1-1 với các tựa trang trên Med
 - `MediaWiki/Citizen.css` tương ứng với trang `MediaWiki:Citizen.css`.
 - `MediaWiki/Common.js` tương ứng với trang `MediaWiki:Common.js`.
 - Bất kỳ Module Lua nào đều được đặt trong thư mục `Module/` (ví dụ: `Module/Example.lua` ánh xạ tới `Module:Example`).
+- TemplateStyles của bản mẫu nằm trong `Template/` (ví dụ: `Template/Card/styles.css` ánh xạ tới `Bản mẫu:Card/styles.css`).
+- Trang wikitext (thông điệp hệ thống, trang tài liệu mô đun) mang đuôi `.wikitext` (ví dụ: `MediaWiki/Sidebar.wikitext` ánh xạ tới `MediaWiki:Sidebar`).
 
 ## 🔄 Quy trình đồng bộ
 
