@@ -307,10 +307,16 @@
 	mask-image: url( https://static.wikitide.net/lhmnwiki/9/91/Github.svg );
 }
 
-/* ---- Dưới desktop (< 1120px): thẻ wiki xuống dưới thẻ nổi bật ---- */
+/* ---- Dưới desktop (< 1120px): thẻ chào mừng lên trên cùng ----
+ * display: contents gỡ lớp lưới trung gian, để thẻ wiki và thẻ nổi bật thành
+ * phần tử trực tiếp của .home-header (flex dọc), rồi order đưa thẻ wiki lên đầu. */
 @media screen and ( max-width: 1119.98px ) {
 	.home-header__main {
-		grid-template-columns: minmax( 0, 1fr );
+		display: contents;
+	}
+
+	.home-header__site {
+		order: -1;
 	}
 }
 
