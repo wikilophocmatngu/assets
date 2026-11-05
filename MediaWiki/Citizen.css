@@ -361,7 +361,7 @@ hr {
 }
 
 img.mw-logo-wordmark {
-	filter: unset !important;
+	filter: var(--lhmn-wordmark-filter, none) !important; /* làm sáng logo chữ ở chế độ tối; !important để thắng quy tắc filter của skin */
 }
 
 /**
