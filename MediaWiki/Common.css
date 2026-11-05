@@ -54,8 +54,8 @@
 /* Tùy chỉnh nút Spoilers từ extension cùng tên */
 .spoilers-button {
 	background: none !important;
-	color: var(--lhmn-color-progressive) !important;
-	border: 1px solid var(--lhmn-color-progressive) !important;
+	color: var(--color-progressive) !important; /* màu chữ nhấn đủ tương phản ở cả sáng/tối */
+	border: 1px solid var(--color-progressive) !important;
 }
 
 .spoilers-body {

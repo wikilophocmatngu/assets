@@ -1,0 +1,6 @@
+{{#invoke:Mbox|mbox
+|title = '''Nội dung chưa phát hành chính thức'''
+|text = Trang/đề mục này nói về một vật phẩm/tác phẩm/nội dung đã được xác nhận nhưng chưa được phát hành chính thức. Nội dung hiển thị ở đây vẫn rất sơ khai và có thể thay đổi với tốc độ chóng mặt!
+|icon = Gnome-image-loading.svg
+|extraclasses = mbox-med
+}}<noinclude>{{Documentation}}</noinclude>

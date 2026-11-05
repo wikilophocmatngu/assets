@@ -1,0 +1,6 @@
+<includeonly>{{#invoke:Mbox|mbox
+|title = '''Mầm cây này cần được tưới!'''
+|text = Bài viết này vẫn còn sơ khai, chưa hoàn thiện. Hãy giúp bài viết hoàn thiện hơn bằng cách chỉnh sửa, thêm nội dung,... À, và tất nhiên là đừng tưới "nước bẩn" nếu không cây sẽ hư, nhé.
+|icon = Củ Cải.png
+|extraclasses = lhmn-stub
+}}[[Thể loại:Bài viết cần phải "ươm mầm"]]</includeonly><noinclude>{{Documentation}}</noinclude>

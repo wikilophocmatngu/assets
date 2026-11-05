@@ -1,0 +1,79 @@
+/**
+ * Module:Navbox/styles.css
+ *
+ * @desc     Bảng kiểu cho hộp điều hướng do [[Module:Navbox]] tạo ra; dùng token của Citizen để tự theo chế độ sáng/tối
+ * @author   [[Thành viên:Pisces]] (https://songngu.xyz)
+ * @site     https://lophocmatngu.wiki/Module:Navbox/styles.css
+ * @license  CC BY-SA 4.0
+ */
+
+/* Khung hộp: chiếm hết chiều ngang, bo góc theo Citizen */
+.navbox {
+	width: 100%;
+	margin: var( --space-md, 1rem ) 0;
+	font-size: var( --font-size-small, 0.875rem );
+}
+
+/* Tiêu đề hộp */
+.navbox-title {
+	background-color: var( --color-surface-3, #eaecf0 );
+	font-family: var( --lhmn-font-family-heading, inherit );
+	text-align: center;
+}
+
+/* Cột tên nhóm */
+.navbox-group {
+	width: 1%;
+	white-space: nowrap;
+	text-align: right;
+	background-color: var( --color-surface-2, #f8f9fa );
+}
+
+.navbox-list {
+	width: 100%;
+	text-align: left;
+}
+
+.navbox-even {
+	background-color: var( --color-surface-1, transparent );
+}
+
+.navbox-image {
+	width: 1%;
+	vertical-align: middle;
+}
+
+.navbox-above,
+.navbox-below {
+	text-align: center;
+}
+
+/* Hộp con: bỏ viền, lồng khít vào ô cha */
+.navbox-subgroup {
+	width: 100%;
+	margin: 0;
+	border: 0;
+	border-collapse: collapse;
+}
+
+.navbox-subgroup th,
+.navbox-subgroup td {
+	padding: var( --space-xxs, 0.25rem ) var( --space-xs, 0.5rem );
+	border-bottom: var( --border-width-base, 1px ) solid var( --border-color-base, #c8ccd1 );
+}
+
+.navbox-subgroup tr:last-child > * {
+	border-bottom: 0;
+}
+
+/* Màn hình hẹp: nhóm xếp chồng lên danh sách */
+@media screen and ( max-width: 639.98px ) {
+	.navbox-group {
+		white-space: normal;
+		text-align: left;
+	}
+
+	.navbox-image {
+		display: none;
+	}
+}

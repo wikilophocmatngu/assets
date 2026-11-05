@@ -1,9 +1,13 @@
-/*
- * Mã CSS đặt ở đây sẽ áp dụng cho giao diện Citizen
+/**
+ * MediaWiki:Citizen.css
  *
- * Cung cấp bởi SongNgư.xyz - mạng lưới wiki "rất rất rất rất rất yêu bạn"!
- * https://songngu.xyz
+ * @desc     Giao diện Citizen cho Wiki Lớp Học Mật Ngữ: bảng màu Cam (sáng) / Chàm (tối), ảnh nền ghim khi cuộn, font tiêu đề, thanh bên và chân trang
+ * @author   [[Thành viên:Pisces]] (https://songngu.xyz)
+ * @site     https://lophocmatngu.wiki/MediaWiki:Citizen.css
+ * @license  CC BY-SA 4.0
  *
+ * Kiểm tra trên Citizen 3.24 (kênh token ổn định, chưa có html.citizen-v4), MW 1.46. Chế độ tối: có.
+ * Khi nâng lên Citizen 4.0 (kênh v4) cần chuyển phần TOKEN sang light-dark().
  */
 
 /** <h2>@import</h2> **/
@@ -13,126 +17,175 @@
 /** <h2>HÌNH NỀN</h2> **/
 
 @media screen {
-    .citizen-page-container:before { /* Sáng sủa - [[Tập tin:School_BG.png]] */
+    .citizen-page-container::before { /* Sáng sủa - [[Tập tin:School_BG.png]] */
         background-image: url(https://static.wikitide.net/lhmnwiki/8/84/School_BG.png);
-        background-position: center;
+        background-position: center 30%;
     }
-    .skin-theme-clientpref-night .citizen-page-container:before { /* Trời sao - [[Tập tin:Beast1.png]] */
+    .skin-theme-clientpref-night .citizen-page-container::before { /* Trời sao - [[Tập tin:Beast1.png]] */
         background-image: url(https://static.wikitide.net/lhmnwiki/1/13/Beast1.png);
     }
-    .ns-4 .citizen-page-container:before {
-        background-image: url(https://static.wikitide.net/lhmnwiki/c/c6/About_Banner.png) !important;
+    .ns-4 .citizen-page-container::before {
+        background-image: url(https://static.wikitide.net/lhmnwiki/c/c6/About_Banner.png) !important; /* !important: thắng khối tối ở trên */
     }
 }
- 
-/** <h2>BIẾN</h2> **/
 
-/** <h3>MẶC ĐỊNH<h3> **/
+@media screen and (prefers-color-scheme: dark) {
+    .skin-theme-clientpref-os .citizen-page-container::before { /* Trời sao khi tối theo hệ điều hành */
+        background-image: url(https://static.wikitide.net/lhmnwiki/1/13/Beast1.png);
+    }
+}
+
+/** <h2>TOKEN MÀU</h2> **/
+
+/*
+ * Sáng: Cam. Màu nhấn đậm #B8461A cho chữ/liên kết (5.05:1 trên nền #FBF8F6),
+ * cam thương hiệu #FE7743 chỉ dùng làm nền nút với chữ tối #231A16 (6.45:1).
+ * Núm OKLCH để Citizen tự phái sinh các sắc thái còn lại; các token ngữ nghĩa
+ * gán thẳng để bề mặt/chữ đúng bảng màu đã duyệt.
+ */
 :root {
+    --color-progressive-oklch__l: 54.4%;
+    --color-progressive-oklch__c: 0.1573;
+    --color-progressive-oklch__h: 39.3;
+    --color-progressive-hsl__h: 17;
+    --color-progressive-hsl__s: 75%;
+    --color-progressive-hsl__l: 41%;
 
-	/* MÀU NỀN */
-	--lhmn-color-surface-0:     rgb(216, 228, 212);
-	--lhmn-color-surface-1:     rgb(242, 242, 226);
-	--lhmn-color-surface-2:     rgb(225, 198, 184);
-	--lhmn-color-surface-3:     rgb(40, 213, 154);
-	--lhmn-color-surface-4:     rgb(178, 195, 172);
+    /* Bề mặt và chữ */
+    --lhmn-color-surface-0: #FBF8F6;
+    --lhmn-color-surface-1: #F4EFEB;
+    --lhmn-color-surface-2: #EBE4DF;
+    --lhmn-color-surface-3: #E2D8D1;
+    --lhmn-color-surface-4: #D6CAC2;
+    --lhmn-color-border:    #DDD3CC;
+    --lhmn-color-base:      #231A16;
+    --lhmn-color-subtle:    #6A5B54;
+    --lhmn-color-link:      #B8461A;
 
-	/* FONT */
-	--lhmn-font-family-heading: Quicksand, Nunito, var(--font-family-citizen-base), sans-serif;
-	--lhmn-font-family-body:    var(--font-family-citizen-base), var(--font-family-language-base), system-ui, -apple-system, sans-serif;
+    /* Nền nút/nhãn và chữ trên nền đó */
+    --lhmn-color-progressive:          #FE7743;
+    --lhmn-color-progressive--hover:   #FF8F63;
+    --lhmn-color-progressive--active:  #E5622F;
+    --lhmn-color-inverted-progressive: #231A16;
 
-	/* MÀU CHỦ ĐẠO */
-	/* V1 */
-	--lhmn-color-progressive:         rgb(254, 119, 67);
-	--lhmn-color-progressive--hover:  rgb(255, 148, 106);
-	--lhmn-color-progressive--active: rgb(191, 104, 70);
+    /* Nền nút chính của Codex/OOUI (chữ luôn trắng cố định) — dùng cam đậm để đạt 5.05:1 */
+    --lhmn-color-progressive-bg: #B8461A;
 
-    /* V2 */    
-    /* HSL (Fallback) - #FE7743 */
-	--color-progressive-hsl__h: 16.69;
-	--color-progressive-hsl__s: 99%;
-	--color-progressive-hsl__l: 63%;
+    /* Bộ lọc logo chữ ở trang chính */
+    --lhmn-wordmark-filter: none;
 
-    /* OKLCH (Chuẩn mới nhất) - #FE7743 */
-	--color-progressive-oklch__l: 0.7207;
-	--color-progressive-oklch__c: 0.1778;
-	--color-progressive-oklch__h: 40.61;
-
+    /* FONT */
+    --lhmn-font-family-heading: Quicksand, Nunito, var(--font-family-citizen-base), sans-serif;
+    --lhmn-font-family-body:    var(--font-family-citizen-base), var(--font-family-language-base), system-ui, -apple-system, sans-serif;
 }
 
-/* <h3>TỐI<h3> */
+/*
+ * Tối: Chàm. Liên kết #A9AAF5 (8.39:1 trên #14142A), nút chàm #4B4BB0 chữ trắng (7.16:1).
+ * Phải lặp lại cho cả night (người dùng chọn) và os (theo hệ điều hành).
+ */
 :root.skin-theme-clientpref-night {
-    
-    /* MÀU NỀN */
-    --lhmn-color-surface-0: rgb(55, 0, 47);
-    --lhmn-color-surface-1: rgb(46, 45, 75);
-    --lhmn-color-surface-2: rgb(0, 27, 39);
-    --lhmn-color-surface-3: rgb(89, 0, 51);
-    --lhmn-color-surface-4: rgb(45, 45, 45);
+    --color-progressive-oklch__l: 76.5%;
+    --color-progressive-oklch__c: 0.1068;
+    --color-progressive-oklch__h: 283;
+    --color-progressive-hsl__h: 239;
+    --color-progressive-hsl__s: 79%;
+    --color-progressive-hsl__l: 81%;
 
-    /* MÀU CHỦ ĐẠO */
-	/* V1 */
-    --lhmn-color-progressive:           rgb(193, 70, 140);
-    --lhmn-color-progressive--hover:    rgb(114, 110, 179);
-    --lhmn-color-progressive--active:   rgb(132, 71, 124);
+    --lhmn-color-surface-0: #14142A;
+    --lhmn-color-surface-1: #1C1C36;
+    --lhmn-color-surface-2: #262645;
+    --lhmn-color-surface-3: #2E2E52;
+    --lhmn-color-surface-4: #38385F;
+    --lhmn-color-border:    #34345A;
+    --lhmn-color-base:      #ECECF7;
+    --lhmn-color-subtle:    #A7A8C4;
+    --lhmn-color-link:      #A9AAF5;
 
-    /* V2 */    
-    /* HSL (Fallback) - #F2557A */
-	--color-progressive-hsl__h: 321;
-    --color-progressive-hsl__s: 49%;
-    --color-progressive-hsl__l: 52%;
+    --lhmn-color-progressive:          #4B4BB0;
+    --lhmn-color-progressive--hover:   #5C5CC4;
+    --lhmn-color-progressive--active:  #3E3E96;
+    --lhmn-color-inverted-progressive: #FFFFFF;
 
-    /* OKLCH (Chuẩn mới nhất) - #F2557A */
-	--color-progressive-oklch__l: 0.5966;
-    --color-progressive-oklch__c: 0.241;
-    --color-progressive-oklch__h: 328.25;
+    --lhmn-color-progressive-bg: #4B4BB0;
+    --lhmn-wordmark-filter: brightness(2.6) saturate(0.85);
 }
 
+@media screen and (prefers-color-scheme: dark) {
+    :root.skin-theme-clientpref-os {
+        --color-progressive-oklch__l: 76.5%;
+        --color-progressive-oklch__c: 0.1068;
+        --color-progressive-oklch__h: 283;
+        --color-progressive-hsl__h: 239;
+        --color-progressive-hsl__s: 79%;
+        --color-progressive-hsl__l: 81%;
 
-/* <h3>ĐEN<h3> */
+        --lhmn-color-surface-0: #14142A;
+        --lhmn-color-surface-1: #1C1C36;
+        --lhmn-color-surface-2: #262645;
+        --lhmn-color-surface-3: #2E2E52;
+        --lhmn-color-surface-4: #38385F;
+        --lhmn-color-border:    #34345A;
+        --lhmn-color-base:      #ECECF7;
+        --lhmn-color-subtle:    #A7A8C4;
+        --lhmn-color-link:      #A9AAF5;
+
+        --lhmn-color-progressive:          #4B4BB0;
+        --lhmn-color-progressive--hover:   #5C5CC4;
+        --lhmn-color-progressive--active:  #3E3E96;
+        --lhmn-color-inverted-progressive: #FFFFFF;
+
+        --lhmn-color-progressive-bg: #4B4BB0;
+        --lhmn-wordmark-filter: brightness(2.6) saturate(0.85);
+    }
+}
+
+/* <h3>ĐEN TUYỀN</h3> — tôn trọng tùy chọn "đen tuyền" của người đọc */
 :root.skin-theme-clientpref-night.citizen-feature-pure-black-clientpref-1 {
     --lhmn-color-surface-0: #000;
-    --lhmn-color-surface-1: #111;
-    --lhmn-color-surface-2: #222;
-    --lhmn-color-surface-3: #333;
-    --lhmn-color-surface-4: #444;
-    --lhmn-color-surface-5: #555;
-    --delta-hover-state: 6%;
-    --shadow-strength: 0.04;
+    --lhmn-color-surface-1: #0B0B16;
+    --lhmn-color-surface-2: #151528;
+    --lhmn-color-surface-3: #1E1E38;
+    --lhmn-color-surface-4: #282848;
 }
 
 @media screen and (prefers-color-scheme: dark) {
     :root.skin-theme-clientpref-os.citizen-feature-pure-black-clientpref-1 {
         --lhmn-color-surface-0: #000;
-        --lhmn-color-surface-1: #111;
-        --lhmn-color-surface-2: #222;
-        --lhmn-color-surface-3: #333;
-        --lhmn-color-surface-4: #444;
-        --lhmn-color-surface-5: #555;
-        --delta-hover-state: 6%;
-        --shadow-strength: 0.04;
+        --lhmn-color-surface-1: #0B0B16;
+        --lhmn-color-surface-2: #151528;
+        --lhmn-color-surface-3: #1E1E38;
+        --lhmn-color-surface-4: #282848;
     }
 }
 
-/** <h2>GHI ĐÈ</h2> **/
+/** <h2>GHI ĐÈ TOKEN CỦA CITIZEN</h2> **/
+/* Không nằm trong @layer nên luôn thắng @layer citizen-tokens, không cần !important */
 :root {
-	
-		/* MAU CHỦ ĐẠO */
-	    --color-primary: var(--lhmn-color-progressive);
-	    --color-primary--hover: var(--lhmn-color-progressive--hover);
-	    --color-primary--active: var(--lhmn-color-progressive--active);
-		
-		/* MÀU NỀN */
-	    --color-surface-0: var(--lhmn-color-surface-0);
-	    --color-surface-1: var(--lhmn-color-surface-1);
-	    --color-surface-2: var(--lhmn-color-surface-2);
-	    --color-surface-3: var(--lhmn-color-surface-3);
-	    --color-surface-4: var(--lhmn-color-surface-4);
-	
-		/* FONT */
-	    --font-family-base: var(--lhmn-font-family-body);
+    /* Màu nhấn: liên kết, nút, viền focus */
+    --color-progressive:          var(--lhmn-color-link);
+    --color-primary:              var(--lhmn-color-link);
+    --color-link:                 var(--lhmn-color-link);
+    --background-color-progressive:          var(--lhmn-color-progressive-bg);
+    --background-color-progressive--hover:   color-mix(in oklab, var(--lhmn-color-progressive-bg), #000 12%);
+    --background-color-progressive--active:  color-mix(in oklab, var(--lhmn-color-progressive-bg), #000 24%);
 
-	}
+    /* Bề mặt */
+    --color-surface-0: var(--lhmn-color-surface-0);
+    --color-surface-1: var(--lhmn-color-surface-1);
+    --color-surface-2: var(--lhmn-color-surface-2);
+    --color-surface-3: var(--lhmn-color-surface-3);
+    --color-surface-4: var(--lhmn-color-surface-4);
+    --background-color-base: var(--lhmn-color-surface-0);
+    --border-color-base:     var(--lhmn-color-border);
+
+    /* Chữ */
+    --color-base:       var(--lhmn-color-base);
+    --color-emphasized: var(--lhmn-color-base);
+    --color-subtle:     var(--lhmn-color-subtle);
+
+    /* FONT */
+    --font-family-base: var(--lhmn-font-family-body);
+}
 
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--lhmn-font-family-heading);
@@ -352,8 +405,11 @@ img.mw-logo-wordmark {
     );
 }
 
+/* Ảnh nền ghim theo khung nhìn khi cuộn; z-index âm để luôn nằm dưới nội dung */
 .citizen-page-container::before {
-    height: 1000px;
+    position: fixed;
+    z-index: -1;
+    height: 100vh;
     background-size: cover;
     mask-image: linear-gradient(
 	    rgba(0, 0, 0, 0.35),

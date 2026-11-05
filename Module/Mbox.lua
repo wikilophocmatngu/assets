@@ -22,10 +22,14 @@ function p.mbox( frame )
 	local args = mArguments.getArgs( frame )
 	local title = args[ 1 ] or args[ 'title' ]
 	local text = args[ 2 ] or args[ 'text' ]
-	if not title or not text then
+	-- Chỉ cần ít nhất một trong hai: tiêu đề hoặc nội dung
+	if not title and not text then
 		return makeWikitextError(
 			'no title or text specified'
 		)
+	end
+	if not title then
+		title, text = text, nil
 	end
 	return p._mbox( title, text, {
 		extraclasses = args.extraclasses,
@@ -35,7 +39,7 @@ end
 
 function p._mbox( title, text, options )
 	checkType( '_mbox', 1, title, 'string' )
-	checkType( '_mbox', 2, text, 'string' )
+	checkType( '_mbox', 2, text, 'string', true )
 	checkType( '_mbox', 3, options, 'table', true )
 
 	options = options or {}
@@ -63,9 +67,12 @@ function p._mbox( title, text, options )
 		mboxTitle:wikitext( title )
 	end
 
-	mbox:tag( 'div' )
-		:addClass( 'mbox-text' )
-		:wikitext( text )
+	-- Không có nội dung thì không tạo khối .mbox-text (tránh popup rỗng)
+	if text then
+		mbox:tag( 'div' )
+			:addClass( 'mbox-text' )
+			:wikitext( text )
+	end
 
 	return mw.getCurrentFrame():extensionTag {
 		name = 'templatestyles', args = { src = 'Module:Mbox/styles.css' }

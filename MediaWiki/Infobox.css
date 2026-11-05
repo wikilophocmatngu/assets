@@ -1,5 +1,5 @@
 :root {
-    --pi-secondary-background: var(--color-progressive);
+    --pi-secondary-background: var(--background-color-progressive); /* nền nút: cam đậm (sáng) / chàm (tối), chữ trắng đủ tương phản */
     --pi-width: 300px !important;
 }
 
@@ -22,7 +22,7 @@
 
 .pi-title, .pi-header,
 .pi-horizontal-group .pi-header {
-    background: var(--color-progressive);
+    background: var(--background-color-progressive); /* không dùng --color-progressive: ở chế độ tối đó là màu chữ sáng */
     text-align: center;
     font-weight: bold;
     color: var(--color-inverted-fixed);

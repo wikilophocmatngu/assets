@@ -18,7 +18,7 @@
 	opacity: var( --opacity-icon-base );
 }
 
-/* Dark theme */
-html.skin-citizen-dark .hatnote-icon img {
-	filter: invert( 1 );
+/* Chế độ tối: đảo màu biểu tượng theo token của Citizen */
+.hatnote-icon img {
+	filter: var( --filter-invert );
 }

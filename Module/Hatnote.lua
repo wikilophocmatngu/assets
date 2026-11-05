@@ -200,4 +200,81 @@ function p._hatnote(s, options)
     } .. tostring(hatnote)
 end
 
+--------------------------------------------------------------------------------
+-- Các bản mẫu dẫn hướng: {{Main}}, {{See also}}, {{Further}}, {{For}}
+--
+-- Trước đây các bản mẫu này gọi tới những hàm chưa tồn tại trong mô đun nên
+-- hiển thị lỗi Lua. Phần dưới đây bổ sung đủ bốn hàm, dùng [[Module:Format link]]
+-- để định dạng liên kết (hỗ trợ "Trang#Mục" → "Trang § Mục").
+--------------------------------------------------------------------------------
+
+-- Gom các tham số vị trí liên tiếp (1, 2, 3, ...) thành danh sách liên kết
+local function collectPages(args, from)
+    local pages = {}
+    local i = from or 1
+    while args[i] do
+        pages[#pages + 1] = args[i]
+        i = i + 1
+    end
+    return pages
+end
+
+-- Định dạng danh sách trang thành "[[A]], [[B]] và [[C]]"
+local function pageList(pages, catMissing)
+    local links = require('Module:Format link').formatPages(
+        { categorizeMissing = catMissing }, pages
+    )
+    return mw.text.listToText(links, ', ', ' và ')
+end
+
+-- Khung dùng chung: "<tiền tố> <danh sách>", có thể đổi nhãn bằng |label=
+local function listHatnote(frame, prefix, template, defaultToCurrent)
+    local args = getArgs(frame)
+    local pages = collectPages(args)
+    if #pages == 0 then
+        if not defaultToCurrent then
+            return p.makeWikitextError(
+                'không có trang nào được chỉ định',
+                template .. '#Lỗi',
+                args.category
+            )
+        end
+        pages = { mw.title.getCurrentTitle().text }
+    end
+    return p._hatnote(
+        (args.label or prefix) .. ' ' .. pageList(pages, p.missingTargetCat),
+        { extraclasses = args.extraclasses, selfref = args.selfref }
+    )
+end
+
+-- {{Main|Trang 1|Trang 2|...}} → "Bài chính: ..."
+function p.main(frame)
+    return listHatnote(frame, 'Bài chính:', 'Bản mẫu:Main', true)
+end
+
+-- {{See also|Trang 1|Trang 2|...}} → "Xem thêm: ..."
+function p.seeAlso(frame)
+    return listHatnote(frame, 'Xem thêm:', 'Bản mẫu:See also')
+end
+
+-- {{Further|Trang 1|Trang 2|...}} → "Thông tin thêm: ..."
+function p.further(frame)
+    return listHatnote(frame, 'Thông tin thêm:', 'Bản mẫu:Further')
+end
+
+-- {{For|chủ đề|Trang 1|Trang 2|...}} → "Đối với chủ đề, xem ..."
+-- Thiếu trang thì trỏ tới trang định hướng "<Tên trang> (định hướng)".
+function p.For(frame)
+    local args = getArgs(frame)
+    local use = args[1] or 'các nghĩa khác'
+    local pages = collectPages(args, 2)
+    if #pages == 0 then
+        pages = { p.disambiguate(mw.title.getCurrentTitle().text, 'định hướng') }
+    end
+    return p._hatnote(
+        mw.ustring.format('Đối với %s, xem %s.', use, pageList(pages, p.missingTargetCat)),
+        { extraclasses = args.extraclasses, selfref = args.selfref }
+    )
+end
+
 return p

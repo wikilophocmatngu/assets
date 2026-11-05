@@ -1,113 +1,334 @@
+/**
+ * Bản mẫu:Trang chính/Chào mừng/styles.css
+ *
+ * @desc     Header trang chính kiểu H (90%) + F (10%): hàng tab cổng chủ đề, hai thẻ nổi bật, thẻ giới thiệu wiki với ô tìm kiếm rộng, thanh chỉ số một dòng và nút mạng xã hội
+ * @author   [[Thành viên:Pisces]] (https://songngu.xyz)
+ * @site     https://lophocmatngu.wiki/Bản_mẫu:Trang_chính/Chào_mừng/styles.css
+ * @license  CC BY-SA 4.0
+ */
+
 .home-header {
-	position: relative;
-	margin-top: -2rem;
-	margin-bottom: 1rem;
-	padding-top: 6rem;
-	padding-bottom: 6rem;
-	clear: both;
-	overflow: hidden; /* Prevent circular inscription from affecting element size */
-	pointer-events: none !important; /* So that you can click elements overlap with the header */
-	align-items: center;
 	display: flex;
 	flex-direction: column;
-	text-align: center;
+	gap: var( --space-sm, 0.75rem );
+	margin: 0 0 var( --space-lg, 1.5rem );
+	padding-top: var( --space-xl, 2rem );
+	clear: both;
 }
 
-.home-header:before {
-    content: '';
+/* ---- Hàng tab cổng chủ đề ---- */
+.home-header__tabs {
+	display: grid;
+	grid-template-columns: repeat( 4, minmax( 0, 1fr ) );
+	gap: var( --space-xs, 0.5rem );
+}
+
+.home-header__tab {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.625rem;
+	min-height: 3rem;
+	padding: 0 0.75rem;
+	border: var( --border-width-base, 1px ) solid var( --border-color-base, #c8ccd1 );
+	border-radius: var( --border-radius-medium, 8px );
+	background-color: var( --color-surface-1, #f8f9fa );
+	font-weight: 600;
+	transition: background-color 150ms ease, border-color 150ms ease;
+}
+
+.home-header__tab img {
+	display: block;
+	border-radius: 6px;
+	object-fit: cover;
+}
+
+/* Liên kết chữ phủ toàn tab để bấm ở đâu cũng được */
+.home-header__tab > a::after {
+	content: '';
 	position: absolute;
 	inset: 0;
-	background-image: url(https://static.wikitide.net/lhmnwiki/5/5c/12_zodiac_circle.svg);
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: contain;
-	opacity: 0.1;
-	filter: var(--filter-invert);
-	pointer-events: none;
-	animation: spin 60s infinite linear;
 }
 
-.home-header__title {
+.home-header__tab > a {
+	color: var( --color-emphasized, #101418 );
+}
+
+.home-header__tab:hover {
+	border-color: var( --lhmn-color-progressive, #36c );
+	background-color: var( --lhmn-color-progressive, #36c );
+}
+
+.home-header__tab:hover > a {
+	color: var( --lhmn-color-inverted-progressive, #fff );
+	text-decoration: none;
+}
+
+/* ---- Lưới chính: thẻ nổi bật (2 phần) + thẻ wiki (1 phần) ---- */
+.home-header__main {
+	display: grid;
+	grid-template-columns: minmax( 0, 2fr ) minmax( 0, 1fr );
+	gap: var( --space-sm, 0.75rem );
+}
+
+.home-header__highlights {
+	display: grid;
+	grid-template-columns: repeat( 2, minmax( 0, 1fr ) );
+	gap: var( --space-sm, 0.75rem );
+}
+
+/* Thẻ nổi bật: ảnh phủ kín, lớp phủ tối để chữ trắng luôn đọc được */
+.home-header__highlight {
 	position: relative;
-    margin-top: 2.5rem;
-    width: 420px;
-    max-width: 100%;
-    padding-top: 0.75rem;
-}
-
-.home-header__title img {
-    width: 100%;
-    height: 100%;
-    filter: var(--filter-invert);
-}
-
-.home-header__subtitle {
-	margin-top: var( --space-xxs );
-	font-size: var( --font-size-small );
-}
-
-.home-header__search {
-	align-items: center;
-	background-color: var(--lhmn-color-progressive);
-	border-radius: var(--border-radius-pill);
-	color: var(--lhmn-color-inverted-progressive);
-	cursor: pointer;
 	display: flex;
-	font-size: 1rem;
-	font-weight: var(--font-weight-medium);
-	gap: 0.5rem;
-	line-height: 1;
-	margin-top: 1rem;
-	padding: 1rem 2rem;
-	user-select: none;
-	pointer-events: auto !important;
+	flex-direction: column;
+	justify-content: flex-end;
+	min-height: 13rem;
+	overflow: hidden;
+	border-radius: var( --border-radius-medium, 8px );
+	background-color: #000;
 }
 
-.home-header__search:before {
-	content: '';
-	width: 1rem;
-	height: 1rem;
-	mask-image: url(https://static.wikitide.net/lhmnwiki/c/c5/WikimediaUI-Search.svg);
-	mask-size: contain;
-	background-color: currentColor;
+.home-header__highlight > span:first-child,
+.home-header__highlight > span:first-child a {
+	position: absolute;
+	inset: 0;
 	display: block;
 }
 
-/* Keyboard hint */
-@media (hover: hover) {
-	.home-header__search:after {
-		content: '/';
-		margin-top: -2px;
-		margin-bottom: -2px;
-		margin-left: 2px;
-		width: 18px;
-		height: 18px;
-		display: flex;
-		background-color: var(--color-inverted);
-		color: var(--lhmn-color-progressive);
-		border-radius: var(--border-radius-base);
-		line-height: 1;
-		align-items: center;
-		justify-content: center;
-		font-size: 10px;
-		font-weight: 900;
-		opacity: 0.6;
+.home-header__highlight img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: transform 250ms ease;
+}
+
+.home-header__highlight:hover img {
+	transform: scale( 1.05 );
+}
+
+.home-header__highlight-body {
+	position: relative;
+	padding: 2.5rem 1rem 0.875rem;
+	background: linear-gradient( transparent, rgba( 0, 0, 0, 0.8 ) );
+	color: #fff;
+	pointer-events: none;
+}
+
+.home-header__highlight-body a {
+	color: #fff;
+	pointer-events: auto;
+}
+
+.home-header__badge {
+	display: inline-block;
+	padding: 0.125rem 0.5rem;
+	border-radius: var( --border-radius-base, 4px );
+	background-color: var( --lhmn-color-progressive, #36c );
+	color: var( --lhmn-color-inverted-progressive, #fff );
+	font-size: var( --font-size-x-small, 0.75rem );
+	font-weight: 700;
+}
+
+.home-header__highlight-title {
+	margin-top: 0.375rem;
+	font-family: var( --lhmn-font-family-heading, inherit );
+	font-size: 1.125rem;
+	font-weight: 700;
+	line-height: 1.25;
+}
+
+.home-header__highlight-caption {
+	margin-top: 0.25rem;
+	font-size: var( --font-size-small, 0.875rem );
+	opacity: 0.9;
+}
+
+/* ---- Thẻ giới thiệu wiki ---- */
+.home-header__site {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: var( --space-xs, 0.5rem );
+	padding: 1rem 1.125rem;
+	border: var( --border-width-base, 1px ) solid var( --border-color-base, #c8ccd1 );
+	border-radius: var( --border-radius-medium, 8px );
+	background-color: var( --color-surface-1, #f8f9fa );
+	text-align: center;
+}
+
+.home-header__title {
+	width: 100%;
+	max-width: 16rem;
+}
+
+.home-header__title img {
+	width: 100%;
+	height: auto;
+	/* Biến khai báo ở MediaWiki:Citizen.css: làm sáng logo ở chế độ tối */
+	filter: var( --lhmn-wordmark-filter, none );
+}
+
+.home-header__intro {
+	font-size: var( --font-size-small, 0.875rem );
+	line-height: 1.5;
+}
+
+/* Ô tìm kiếm rộng (phần F): bấm để mở hộp tìm kiếm của Citizen */
+.home-header__search {
+	display: flex;
+	align-items: center;
+	gap: var( --space-xs, 0.5rem );
+	box-sizing: border-box;
+	width: 100%;
+	padding: 0.375rem 0.375rem 0.375rem 0.875rem;
+	border: var( --border-width-base, 1px ) solid var( --border-color-base, #c8ccd1 );
+	border-radius: var( --border-radius-pill, 9999px );
+	background-color: var( --color-surface-0, #fff );
+	color: var( --color-subtle, #54595d );
+	font-size: var( --font-size-small, 0.875rem );
+	cursor: pointer;
+	text-align: left;
+	user-select: none;
+}
+
+/* Biểu tượng kính lúp (mặt nạ để ăn theo màu chữ) */
+.home-header__search::before {
+	content: '';
+	flex-shrink: 0;
+	width: 1rem;
+	height: 1rem;
+	background-color: currentColor;
+	mask: url( https://static.wikitide.net/lhmnwiki/c/c5/WikimediaUI-Search.svg ) center / contain no-repeat;
+}
+
+/* Nút "Tìm" ở cuối ô */
+.home-header__search::after {
+	content: 'Tìm';
+	margin-left: auto;
+	padding: 0.375rem 0.875rem;
+	border-radius: var( --border-radius-pill, 9999px );
+	background-color: var( --lhmn-color-progressive, #36c );
+	color: var( --lhmn-color-inverted-progressive, #fff );
+	font-weight: 600;
+	line-height: 1;
+}
+
+.home-header__search:hover,
+.home-header__search:focus-visible {
+	border-color: var( --color-progressive, #36c );
+	box-shadow: 0 0 0 1px var( --color-progressive, #36c );
+	outline: 0;
+}
+
+/* Thanh chỉ số: luôn một dòng, cuộn ngang nếu quá hẹp */
+.home-header__stats {
+	max-width: 100%;
+	overflow-x: auto;
+	white-space: nowrap;
+	color: var( --color-subtle, #54595d );
+	font-size: var( --font-size-small, 0.875rem );
+	scrollbar-width: none;
+}
+
+.home-header__stats b {
+	color: var( --color-emphasized, #101418 );
+}
+
+/* ---- Nút mạng xã hội: chỉ biểu tượng, màu thương hiệu ---- */
+.home-header__social {
+	display: flex;
+	gap: 0.375rem;
+	width: 100%;
+	margin-top: auto;
+}
+
+.home-header__social-link {
+	flex: 1;
+	display: flex;
+}
+
+.home-header__social-link a {
+	flex: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 2.5rem;
+	border-radius: var( --border-radius-medium, 8px );
+	color: #fff;
+}
+
+.home-header__social-link a::before {
+	content: '';
+	width: 1.25rem;
+	height: 1.25rem;
+	background-color: currentColor;
+	mask: center / contain no-repeat;
+}
+
+.home-header__social-link a:hover {
+	filter: brightness( 1.1 );
+}
+
+/* Chữ chỉ dành cho trình đọc màn hình */
+.home-header__sr {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip: rect( 0 0 0 0 );
+	white-space: nowrap;
+}
+
+.home-header__social-link--discord a {
+	background-color: #5865f2;
+}
+
+.home-header__social-link--discord a::before {
+	mask-image: url( https://static.wikitide.net/lhmnwiki/7/77/Discord_-_Simple_Icons.svg );
+}
+
+.home-header__social-link--facebook a {
+	background-color: #1877f2;
+}
+
+.home-header__social-link--facebook a::before {
+	mask-image: url( https://static.wikitide.net/lhmnwiki/c/c8/Facebook_-_Simple_Icons.svg );
+}
+
+/* GitHub: đảo theo chủ đề (nền màu chữ, biểu tượng màu nền) để không chìm ở chế độ tối */
+.home-header__social-link--github a {
+	background-color: var( --color-emphasized, #24292f );
+	color: var( --color-surface-0, #fff );
+}
+
+.home-header__social-link--github a::before {
+	mask-image: url( https://static.wikitide.net/lhmnwiki/9/91/Github.svg );
+}
+
+/* ---- Dưới desktop (< 1120px): thẻ wiki xuống dưới thẻ nổi bật ---- */
+@media screen and ( max-width: 1119.98px ) {
+	.home-header__main {
+		grid-template-columns: minmax( 0, 1fr );
 	}
 }
 
-.home-header__search:hover {
-	background-color: var(--lhmn-color-progressive--hover);
-}
-
-.home-header__search:active {
-	background-color: var(--lhmn-color-progressive--active);
-}
-
-@keyframes spin {
-	from {
-		transform: rotate(0deg);
+/* ---- Di động (< 640px): tab 2 cột, thẻ nổi bật xếp dọc ---- */
+@media screen and ( max-width: 639.98px ) {
+	.home-header {
+		padding-top: var( --space-md, 1rem );
 	}
-	to {
-		transform: rotate(360deg);
+
+	.home-header__tabs {
+		grid-template-columns: repeat( 2, minmax( 0, 1fr ) );
+	}
+
+	.home-header__highlights {
+		grid-template-columns: minmax( 0, 1fr );
+	}
+
+	.home-header__tab {
+		justify-content: flex-start;
 	}
 }

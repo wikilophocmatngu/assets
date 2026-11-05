@@ -35,7 +35,7 @@
 }
 
 .lhmn-button.lhmn-button--primary > a {
-    color: var(--color-inverted-progressive) !important;
+    color: var(--lhmn-color-inverted-progressive) !important;
     background-color: var(--lhmn-color-progressive) !important;
 }
 
@@ -48,8 +48,8 @@
 }
 
 .lhmn-button.lhmn-button--secondary > a {
-    border-color: var(--lhmn-color-progressive) !important;
-    color: var(--lhmn-color-progressive) !important;
+    border-color: var(--color-progressive) !important;
+    color: var(--color-progressive) !important; /* chữ dùng màu nhấn đậm để đủ tương phản */
 }
 
 .lhmn-button.lhmn-button--secondary > a:hover {

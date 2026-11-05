@@ -1,0 +1,7 @@
+<includeonly><nowiki /><!-- This nowiki tag helps prevent whitespace at the top of articles. -->{{#tag:indicator|[[File:{{{image|{{{imagename|{{{1|}}}}}}}}}|{{#if:{{{width|}}}|{{{width}}}|20}}x{{#if:{{{height|}}}|{{{height}}}|20}}px
+ |{{#ifeq:{{{link|+}}}|{{{link|-}}}|link={{{link}}}|{{#ifeq:{{{wikilink|+}}}|{{{wikilink|-}}}|link={{{wikilink}}}|{{#ifeq:{{{2|+}}}|{{{2|-}}}|link={{{2}}}|}}}}}}
+ |{{#if:{{{alt|}}}|alt={{{alt}}}}}
+ |{{{text|{{{description|{{{3|}}}}}}}}}]]
+|name = {{#if:{{{sortkey|}}}|{{{sortkey}}}-}}{{#if:{{{name|}}}|{{{name}}}|{{#if:{{{id|}}}|{{{id}}}|{{{image|{{{imagename|{{{1|}}}}}}}}}}}}}}}</includeonly><noinclude>
+{{Documentation}}
+</noinclude>

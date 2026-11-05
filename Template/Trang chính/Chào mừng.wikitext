@@ -1,0 +1,21 @@
+<div class="home-header">
+<div class="home-header__tabs">
+<div class="home-header__tab">[[File:Tập 19 (Mini).jpg|32x32px|link=Thể loại:Chương truyện|]][[:Thể loại:Chương truyện|Truyện tranh]]</div>
+<div class="home-header__tab">[[File:BG - GSBH.jpg|32x32px|link=Thể loại:Boardgame|]][[:Thể loại:Boardgame|Boardgame]]</div>
+<div class="home-header__tab">[[File:Poster Phim CĐSC 2027.jpg|32x32px|link=Show Your Star (series hoạt hình)|]][[Show Your Star (series hoạt hình)|Hoạt hình]]</div>
+<div class="home-header__tab">[[File:Bạch Dương nam icon.png|32x32px|link=Thể loại:Nhân vật|]][[:Thể loại:Nhân vật|Nhân vật]]</div>
+</div>
+<div class="home-header__main">
+<div class="home-header__highlights">
+<div class="home-header__highlight">[[File:{{Trang chính/cài đặt|newestreleaseimage}}|480px|link={{Trang chính/cài đặt|newestrelease}}|]]<div class="home-header__highlight-body"><span class="home-header__badge">Mới nhất</span><div class="home-header__highlight-title">[[{{Trang chính/cài đặt|newestrelease}}]]</div><div class="home-header__highlight-caption">{{Trang chính/cài đặt|newestreleasecaption}}</div></div></div>
+<div class="home-header__highlight">[[File:{{Trang chính/cài đặt|boardgameimage}}|480px|link={{Trang chính/cài đặt|boardgame}}|]]<div class="home-header__highlight-body"><span class="home-header__badge">Nổi bật</span><div class="home-header__highlight-title">[[{{Trang chính/cài đặt|boardgame}}]]</div><div class="home-header__highlight-caption">{{Trang chính/cài đặt|boardgamecaption}}</div></div></div>
+</div>
+<div class="home-header__site">
+<div class="home-header__title">[[File:Wiki Logo.svg|320px|link=WLHMN:Giới thiệu|Wiki Lớp Học Mật Ngữ]]</div>
+<div class="home-header__intro">Bách khoa toàn thư về [[Lớp Học Mật Ngữ]], do cộng đồng người hâm mộ duy trì. '''[[WLHMN:Giới thiệu|Ai cũng có thể đóng góp!]]'''</div>
+<div class="home-header__search citizen-search-trigger" role="button" tabindex="0">Tìm kiếm trên wiki…</div>
+<div class="home-header__stats">'''{{NUMBEROFARTICLES}}''' bài viết · '''{{NUMBEROFFILES}}''' tập tin · '''{{NUMBEROFUSERS}}''' thành viên</div>
+<!-- Viết liền một dòng để trình phân tích không bọc <p> --><div class="home-header__social plainlinks"><span class="home-header__social-link home-header__social-link--discord" title="Discord">[https://go.lophocmatngu.wiki/discord <span class="home-header__sr">Discord</span>]</span><span class="home-header__social-link home-header__social-link--facebook" title="Facebook">[https://www.facebook.com/wikilophocmatngu <span class="home-header__sr">Facebook</span>]</span><span class="home-header__social-link home-header__social-link--github" title="GitHub">[https://github.com/wikilophocmatngu <span class="home-header__sr">GitHub</span>]</span></div>
+</div>
+</div>
+</div><templatestyles src="Trang_chính/Chào_mừng/styles.css"/><noinclude>{{/doc}}</noinclude>

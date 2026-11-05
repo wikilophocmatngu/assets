@@ -1,0 +1,32 @@
+/**
+ * Module:Quote/styles.css
+ *
+ * @desc     Bảng kiểu trích dẫn cho [[Module:Quote]] và lời thoại của [[Module:Dialogue]]
+ * @author   [[Thành viên:Pisces]] (https://songngu.xyz)
+ * @site     https://lophocmatngu.wiki/Module:Quote/styles.css
+ * @license  CC BY-SA 4.0
+ */
+
+/* Khối trích dẫn: viền trái màu nhấn, nền bề mặt của Citizen */
+.lhmn-quote {
+	margin: var( --space-md, 1rem ) 0;
+	padding: var( --space-sm, 0.75rem ) var( --space-md, 1rem );
+	border-left: 4px solid var( --color-progressive, #36c );
+	border-radius: 0 var( --border-radius-medium, 8px ) var( --border-radius-medium, 8px ) 0;
+	background-color: var( --color-surface-1, #f8f9fa );
+}
+
+.lhmn-quote > p {
+	margin: 0;
+	font-style: italic;
+}
+
+/* Dòng ghi nguồn */
+.lhmn-quote-cite {
+	display: block;
+	margin-top: var( --space-xs, 0.5rem );
+	color: var( --color-subtle, #54595d );
+	font-size: var( --font-size-small, 0.875rem );
+	font-style: normal;
+	text-align: right;
+}
