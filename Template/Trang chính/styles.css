@@ -226,3 +226,39 @@
 	font-family: var( --font-family-monospace );
 	text-align: center;
 }
+
+/* ---- Lưới nhân vật: chia đều theo cỡ màn hình ----
+ * 12 cột trên desktop (mỗi lớp một hàng), 6 cột ở màn vừa, 4 cột trên điện thoại.
+ * !important để thắng style nội tuyến display: flex của .cwrapper trong bản mẫu điều hướng. */
+.lhmn-mainpage-characters .cwrapper {
+	display: grid !important;
+	grid-template-columns: repeat( 12, minmax( 0, 1fr ) );
+	gap: var( --space-xxs, 0.25rem ) var( --space-xs, 0.5rem );
+	justify-items: center;
+}
+
+/* Đường kẻ ngăn giữa Lớp Hoàng Đạo và Lớp Hoàng Cung */
+.lhmn-mainpage-characters .cwrapper ~ .cwrapper {
+	margin-top: var( --space-md, 1rem );
+	padding-top: var( --space-md, 1rem );
+	border-top: var( --border-width-base, 1px ) solid var( --border-color-base, #c8ccd1 );
+}
+
+.lhmn-mainpage-characters .cportraits img {
+	width: 100%;
+	max-width: 76px;
+	height: auto;
+	aspect-ratio: 1;
+}
+
+@media screen and ( max-width: 1119.98px ) {
+	.lhmn-mainpage-characters .cwrapper {
+		grid-template-columns: repeat( 6, minmax( 0, 1fr ) );
+	}
+}
+
+@media screen and ( max-width: 639.98px ) {
+	.lhmn-mainpage-characters .cwrapper {
+		grid-template-columns: repeat( 4, minmax( 0, 1fr ) );
+	}
+}

@@ -1,0 +1,10 @@
+{{Trang chính/Chào mừng}}
+{{Trang chính/Nhân vật}}
+{{Trang chính/Liên kết}}
+----
+{{Trang chính/External}}
+<div class="home-footer">[{{Plain link|url=https://lophocmatngu.wiki/Bản_mẫu:Trang_chính?action=edit|name=sửa đổi}}][{{Plain link|url=https://lophocmatngu.wiki/Bản_mẫu:Trang_chính/cài_đặt?action=edit|name=cài đặt}}]</div>
+<!--- Mã CSS chung cho toàn bộ trang chính --->
+<templatestyles src="Bản mẫu:Trang chính/styles.css" />
+__NOTOC__
+<!--- ĐẶT BẢN MẪU NÀY Ở PHÍA DƯỚI DỮ LIỆU SEO! --->
