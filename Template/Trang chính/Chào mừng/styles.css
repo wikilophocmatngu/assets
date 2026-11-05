@@ -1,7 +1,7 @@
 /**
  * Bản mẫu:Trang chính/Chào mừng/styles.css
  *
- * @desc     Header trang chính kiểu H (90%) + F (10%): hàng tab cổng chủ đề, hai thẻ nổi bật, thẻ giới thiệu wiki với ô tìm kiếm rộng, thanh chỉ số một dòng và nút mạng xã hội
+ * @desc     Header trang chính kiểu H (90%) + F (10%): hàng tab cổng chủ đề, ba thẻ nổi bật, thẻ giới thiệu wiki với ô tìm kiếm rộng, thanh chỉ số một dòng và nút mạng xã hội
  * @author   [[Thành viên:Pisces]] (https://songngu.xyz)
  * @site     https://lophocmatngu.wiki/Bản_mẫu:Trang_chính/Chào_mừng/styles.css
  * @license  CC BY-SA 4.0
@@ -78,13 +78,18 @@
 	gap: var( --space-sm, 0.75rem );
 }
 
+/* Thẻ "Mới nhất" cao gấp đôi bên trái, hai thẻ còn lại xếp chồng bên phải */
+.home-header__highlight--lead {
+	grid-row: span 2;
+}
+
 /* Thẻ nổi bật: ảnh phủ kín, lớp phủ tối để chữ trắng luôn đọc được */
 .home-header__highlight {
 	position: relative;
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-end;
-	min-height: 13rem;
+	min-height: 10rem;
 	overflow: hidden;
 	border-radius: var( --border-radius-medium, 8px );
 	background-color: #000;
@@ -332,6 +337,11 @@
 
 	.home-header__highlights {
 		grid-template-columns: minmax( 0, 1fr );
+	}
+
+	.home-header__highlight--lead {
+		grid-row: auto;
+		min-height: 13rem;
 	}
 
 	.home-header__tab {
