@@ -1,7 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
 <!-- Tập tin:Trang chính - Hoạt hình.svg — icon tab trang chính Wiki Lớp Học Mật Ngữ. Tác giả: [[Thành viên:Pisces]] (https://songngu.xyz). Giấy phép: CC BY-SA 4.0 -->
 <rect width="64" height="64" rx="14" fill="#6A4BC4"/>
-<rect x="11" y="18" width="42" height="32" rx="5" fill="#fff"/>
-<path d="M12 13l40-5 1 7-40 5z" fill="#fff"/>
-<path d="M28 26v16l13-8z" fill="#6A4BC4"/>
+<g transform="translate(2.56 4.56) scale(0.92)">
+<g transform="rotate(-10 10 19)"><rect x="10" y="12" width="44" height="7" rx="1.5" fill="#fff"/><path d="M17 12h6l-4 7h-6zM29 12h6l-4 7h-6zM41 12h6l-4 7h-6z" fill="#6A4BC4"/></g>
+<path d="M10 21h44v27a5 5 0 0 1-5 5H15a5 5 0 0 1-5-5z" fill="#fff"/>
+<path d="M17 21h6l-4 7h-6zM29 21h6l-4 7h-6zM41 21h6l-4 7h-6z" fill="#6A4BC4"/>
+<path d="M28 33v14l12-7z" fill="#6A4BC4"/>
+</g>
 </svg>
