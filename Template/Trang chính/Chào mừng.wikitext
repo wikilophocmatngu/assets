@@ -1,9 +1,9 @@
 <div class="home-header">
 <div class="home-header__tabs">
-<div class="home-header__tab">[[File:Tập 19 (Mini).jpg|32x32px|link=Thể loại:Chương truyện|]][[:Thể loại:Chương truyện|Truyện tranh]]</div>
-<div class="home-header__tab">[[File:BG - GSBH.jpg|32x32px|link=Thể loại:Boardgame|]][[:Thể loại:Boardgame|Boardgame]]</div>
-<div class="home-header__tab">[[File:Poster Phim CĐSC 2027.jpg|32x32px|link=Show Your Star (series hoạt hình)|]][[Show Your Star (series hoạt hình)|Hoạt hình]]</div>
-<div class="home-header__tab">[[File:Bạch Dương nam icon.png|32x32px|link=Thể loại:Nhân vật|]][[:Thể loại:Nhân vật|Nhân vật]]</div>
+<div class="home-header__tab">[[File:Trang chính - Truyện tranh.svg|32x32px|link=Thể loại:Chương truyện|]][[:Thể loại:Chương truyện|Truyện tranh]]</div>
+<div class="home-header__tab">[[File:Trang chính - Boardgame.svg|32x32px|link=Thể loại:Boardgame|]][[:Thể loại:Boardgame|Boardgame]]</div>
+<div class="home-header__tab">[[File:Trang chính - Hoạt hình.svg|32x32px|link=Show Your Star (series hoạt hình)|]][[Show Your Star (series hoạt hình)|Hoạt hình]]</div>
+<div class="home-header__tab">[[File:Trang chính - Nhân vật.svg|32x32px|link=Thể loại:Nhân vật|]][[:Thể loại:Nhân vật|Nhân vật]]</div>
 </div>
 <div class="home-header__main">
 <div class="home-header__highlights">
