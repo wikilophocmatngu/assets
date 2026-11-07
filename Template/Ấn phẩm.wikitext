@@ -10,6 +10,8 @@
 |-|Thông tin cơ bản=
 {{Hộp thông tin ấn phẩm
 |image={{{image|}}}
+|series={{{series|}}}
+|publisher={{{publisher|}}}
 |release_date={{{release_date|}}}
 |pages={{{pages|}}}
 |previous={{{previous|}}}
