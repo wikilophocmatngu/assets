@@ -33,7 +33,8 @@ function p.mbox( frame )
 	end
 	return p._mbox( title, text, {
 		extraclasses = args.extraclasses,
-		icon = args.icon
+		icon = args.icon,
+		iconsize = args.iconsize
 	} )
 end
 
@@ -59,7 +60,8 @@ function p._mbox( title, text, options )
 	if options.icon and type( options.icon ) == 'string' then
 		mboxTitle:tag( 'div' )
 			:addClass( 'mbox-icon metadata' )
-			:wikitext( '[[File:' .. options.icon .. '|14px|link=]]' )
+			-- iconsize: cỡ ảnh thu nhỏ (mặc định 14px); icon to hơn cần kèm CSS đặt width tương ứng
+			:wikitext( '[[File:' .. options.icon .. '|' .. ( options.iconsize or '14px' ) .. '|link=]]' )
 			:done()
 			:tag( 'div' )
 			:wikitext( title )
