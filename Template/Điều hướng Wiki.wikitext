@@ -3,7 +3,6 @@
 |name = Bản mẫu:Wikinavbox
 |state = plain
 |navbar = off
-|image = [[Tập tin:Wiki Logo.svg]]
 <!----------------------- Tiêu đề cho hộp ------------------------------------>
 |title = Wiki Lớp Học Mật Ngữ
 <!----------------------- Nhóm 1: Wiki ---------------------------------------->

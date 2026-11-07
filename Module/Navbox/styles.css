@@ -34,8 +34,18 @@
 	text-align: left;
 }
 
+.navbox-odd {
+	background-color: var( --color-surface-0, #fff );
+}
+
 .navbox-even {
-	background-color: var( --color-surface-1, transparent );
+	background-color: var( --color-surface-1, #f8f9fa );
+}
+
+/* Ảnh minh họa: giới hạn cỡ để không phá bố cục */
+.navbox-image img {
+	max-width: 10rem;
+	height: auto;
 }
 
 .navbox-image {
