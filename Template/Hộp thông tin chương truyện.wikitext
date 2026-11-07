@@ -1,1 +1,1 @@
-<includeonly>{{#invoke:InfoboxNeue/Chapter|main}}[[Thể loại:Chương truyện]]{{#switch:{{lc:{{{ttn|}}}}}|#default=[[Thể loại:Chương truyện được phát hành trên báo TTN]]|không=|}}</includeonly><noinclude>{{Documentation}}[[Thể loại:Hộp thông tin|Chương truyện]]</noinclude>
+<includeonly>{{#invoke:InfoboxNeue/Chapter|main}}[[Thể loại:Chương truyện]]{{#switch:{{lc:{{{ttn|}}}}}|không|=|#default=[[Thể loại:Chương truyện được phát hành trên báo TTN]]}}</includeonly><noinclude>{{Documentation}}[[Thể loại:Hộp thông tin|Chương truyện]]</noinclude>
