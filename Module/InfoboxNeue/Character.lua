@@ -9,6 +9,14 @@ function p.main( frame )
 	return p._main( args, frame )
 end
 
+--- Tự gắn liên kết nếu giá trị chưa có [[...]]
+local function autoLink( s )
+	if not s or s:find( '[[', 1, true ) then
+		return s
+	end
+	return '[[' .. s .. ']]'
+end
+
 --- Điểm neo nội bộ
 function p._main( args, frame )
 	frame = frame or mw.getCurrentFrame()
@@ -53,7 +61,7 @@ function p._main( args, frame )
 	if args.affiliation then
 		table.insert( basicSection, infobox:renderItem( { 
 			label = 'Thành viên', 
-			data = args.affiliation,
+			data = autoLink( args.affiliation ),
 			iconClass = 'citizen-ui-icon mw-ui-icon-wikimedia-userGroup'
 		} ) )
 	end
@@ -61,7 +69,8 @@ function p._main( args, frame )
 	if args.first_appearance then
 		table.insert( basicSection, infobox:renderItem( { 
 			label = 'Xuất hiện lần đầu', 
-			data = args.first_appearance,
+			data = autoLink( args.first_appearance ) ..
+				( args.first_appearance_year and ( ' (' .. args.first_appearance_year .. ')' ) or '' ),
 			iconClass = 'citizen-ui-icon mw-ui-icon-wikimedia-history'
 		} ) )
 	end

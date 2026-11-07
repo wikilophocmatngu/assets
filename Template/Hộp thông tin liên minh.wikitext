@@ -1,0 +1,1 @@
+<includeonly>{{#invoke:InfoboxNeue|fromArgs|title={{{title|{{PAGENAME}}}}}|image={{{image|}}}|section1=Thông tin|label1=Liên kết|content1={{{link|}}}|label2=Thành viên liên hệ|content2={{{contacts|}}}}}</includeonly><noinclude>{{Documentation}}[[Thể loại:Hộp thông tin|Liên minh]]</noinclude>

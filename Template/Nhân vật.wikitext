@@ -1,0 +1,26 @@
+<includeonly>
+{{{templates|}}}
+{{Hộp thông tin nhân vật
+|image={{{image|{{PAGENAME}}.png}}}
+|gender={{{gender|}}}
+|affiliation={{{affiliation|}}}
+|occupation={{{occupation|}}}
+|first_appearance={{{first_appearance|}}}
+|first_appearance_year={{{first_appearance_year|}}}
+}}
+
+{{{content|Không có thông tin.}}}
+==Hình ảnh==
+{{Thư viện hình ảnh|{{{gallery|}}}}}
+{{#if: {{{affiliation|}}} | {{{{{affiliation|}}}}} | {{Điều hướng nhân vật}}}} <!--- THÊM HỘP ĐIỀU HƯỚNG THEO LỚP, NẾU CÓ -->
+[[Thể loại:Nhân vật]]
+[[Thể loại:Nhân vật {{{gender}}}]]
+{{#if: {{{affiliation|}}}|[[Thể loại: {{{affiliation|}}}]]|}}
+{{#seo:
+ |image = {{{image|}}}
+ |image_alt = Hình ảnh của nhân vật {{PAGENAME}} trong Lớp Học Mật Ngữ.
+ |description = {{{description|}}}
+ |locale = vi_VN
+ |keywords = {{PAGENAME}}, {{SITENAME}}, wiki, lớp học mật ngữ, nhân vật, thú cưng, nhân vật phụ, mật ngữ, lớp học, {{{gender}}}, {{{nickname|}}}, {{{affiliation|}}}, {{{occupation|}}}, {{{first_appearance|}}}
+}} {{SHORTDESC:Một {{#if:{{{affiliation|}}}|thành viên của {{{affiliation|}}}.|nhân vật trong Lớp Học Mật Ngữ.}}}} {{#if: {{{wikibase|}}} | {{MNDb|{{{wikibase|}}}}} {{#unlinkedwikibase: id=Q{{{wikibase|}}}}} | }} <!--- Tích hợp liên kết tới MNDb -->
+</includeonly><noinclude>{{Documentation}}</noinclude>

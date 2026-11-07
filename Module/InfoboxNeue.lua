@@ -140,6 +140,16 @@ end
 ---
 --- @param filename string
 --- @return string html
+--- Bỏ tiền tố không gian tên tập tin (File:, Tập tin:…) nhưng giữ dấu ":" nằm trong tên tệp
+local FILE_NS = { ['file'] = true, ['tập tin'] = true, ['image'] = true, ['hình'] = true }
+local function stripFileNamespace( name )
+	local prefix, rest = mw.ustring.match( name, '^%s*([^:]+)%s*:(.*)$' )
+	if prefix and FILE_NS[ mw.ustring.lower( mw.text.trim( prefix ) ) ] then
+		return mw.text.trim( rest )
+	end
+	return name
+end
+
 function methodtable.renderImage( self, filename )
 	checkType( 'Module:InfoboxNeue.renderImage', 1, self, 'table' )
 
@@ -181,12 +191,7 @@ function methodtable.renderImage( self, filename )
 			imgName = mw.text.trim( imgName )
 			tabLabel = mw.text.trim( tabLabel )
 
-			-- Strip namespace if present
-			local parts = mw.text.split( imgName, ':', true )
-			if #parts > 1 then
-				table.remove( parts, 1 )
-				imgName = table.concat( parts, ':' )
-			end
+			imgName = stripFileNamespace( imgName )
 
 			local imgWikitext = tostring( mw.html.create( 'div' )
 				:addClass( 'infobox__tabber-image-wrapper' )
@@ -204,11 +209,7 @@ function methodtable.renderImage( self, filename )
 		html:wikitext( self.modules.Tabber.renderTabber( tabberData ) )
 	else
 		-- Render single image
-		local parts = mw.text.split( filename, ':', true )
-		if #parts > 1 then
-			table.remove( parts, 1 )
-			filename = table.concat( parts, ':' )
-		end
+		filename = stripFileNamespace( filename )
 
 		html:wikitext( string.format( '[[File:%s|400px]]', mw.text.trim( filename ) ) )
 	end

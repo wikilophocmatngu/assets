@@ -1,0 +1,1 @@
+<includeonly>{{#invoke:InfoboxNeue/LHMN|main}}</includeonly><noinclude>{{Documentation}}[[Thể loại:Hộp thông tin|LHMN]]</noinclude>

@@ -1,0 +1,35 @@
+<includeonly>
+{{#seo:
+ |image = {{{image|}}}
+ |image_alt = Hình ảnh của ấn phẩm {{PAGENAME}} trong Lớp Học Mật Ngữ.
+ |description = {{{description|}}}
+ |locale = vi_VN
+ |keywords = {{PAGENAME}}, {{SITENAME}}, wiki, lớp học mật ngữ, tác phẩm, ấn phẩm, truyện tranh, mật ngữ, lớp học, {{{type|}}}, {{{previous|}}}, {{{next|}}}
+}}{{SHORTDESC:Chỉ là một trang về một cuốn {{#ifeq:{{{version|}}}|Mini|Phiên bản Mini|{{{type|}}}}}.}}
+<tabber>
+|-|Thông tin cơ bản=
+{{Hộp thông tin ấn phẩm
+|image={{{image|}}}
+|release_date={{{release_date|}}}
+|pages={{{pages|}}}
+|previous={{{previous|}}}
+|next={{{next|}}}
+}}
+{{{description|}}}
+{{#if:{{{cover|}}}|
+==Thiết kế bìa==
+{{{cover|}}}|}}
+==Mục lục==
+{{{contents|Nhập thêm thông tin đê bạn ơi!}}}
+==Quà tặng kèm==
+{{{gifts|Nhập thêm thông tin đê bạn ơi!}}}
+{{#if:{{{background|}}}|==Thông tin cơ sở==
+{{{background|}}}|}}
+|-|Thư viện hình ảnh=
+{{Thư viện hình ảnh|{{{gallery|}}}}}
+</tabber>
+<mw-navigation title="Tác phẩm" />
+[[Thể_loại:Ấn phẩm]]
+[[Thể_loại:{{{type|}}}]]
+[[Thể loại: Phiên bản {{{version|}}}]]
+</includeonly><noinclude>{{Documentation}}</noinclude>

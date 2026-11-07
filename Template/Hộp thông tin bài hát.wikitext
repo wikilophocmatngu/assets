@@ -1,0 +1,1 @@
+<includeonly>{{#invoke:InfoboxNeue/Song|main}}</includeonly><noinclude>{{Documentation}}[[Thể loại:Hộp thông tin|Bài hát]]</noinclude>

@@ -1,0 +1,1 @@
+<includeonly>{{#invoke:InfoboxNeue/Character|main}}</includeonly><noinclude>{{Documentation}}[[Thể loại:Hộp thông tin|Nhân vật]]</noinclude>

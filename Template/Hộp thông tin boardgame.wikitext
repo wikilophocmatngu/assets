@@ -1,0 +1,1 @@
+<includeonly>{{#invoke:InfoboxNeue/Boardgame|main}}[[Thể loại:Boardgame|{{BASEPAGENAME}}]]</includeonly><noinclude>{{Documentation}}[[Thể loại:Hộp thông tin|Boardgame]]</noinclude>

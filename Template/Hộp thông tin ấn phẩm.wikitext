@@ -1,0 +1,1 @@
+<includeonly>{{#invoke:InfoboxNeue/Publication|main|pages={{#if:{{{pages|}}}|{{{pages}}} trang}}}}</includeonly><noinclude>{{Documentation}}[[Thể loại:Hộp thông tin|Ấn phẩm]]</noinclude>
