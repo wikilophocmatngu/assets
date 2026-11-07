@@ -1,1 +1,1 @@
-[[Tập tin:{{{1}}}{{{2|}}}.png|{{{size|48px}}}|link={{{1}}}|alt={{{1}}}]]<br />[[{{{1}}}]]<noinclude>{{Documentation}}</noinclude>
+<includeonly>[[Tập tin:{{{1}}}{{{2|}}}.png|{{{size|48px}}}|link={{{1}}}|alt={{{1}}}]]<br />[[{{{1}}}]]</includeonly><noinclude>{{Documentation}}</noinclude>
