@@ -58,12 +58,17 @@
 	text-align: center;
 }
 
-/* Hộp con: bỏ viền, lồng khít vào ô cha */
+/* Hộp con: bỏ viền và bo góc, lồng khít vào ô cha */
 .navbox-subgroup {
 	width: 100%;
 	margin: 0;
 	border: 0;
 	border-collapse: collapse;
+	border-radius: 0;
+}
+
+.navbox-list--subgroup {
+	padding: 0;
 }
 
 .navbox-subgroup th,

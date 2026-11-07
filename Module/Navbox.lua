@@ -68,6 +68,8 @@ function p._navbox( args )
 			tr:tag( 'td' )
 				:addClass( 'navbox-list' )
 				:addClass( odd and 'navbox-odd' or 'navbox-even' )
+				-- Ô chứa hộp con: bỏ đệm để hộp con nằm khít, thẳng hàng với hộp cha
+				:addClass( list:find( 'navbox-subgroup', 1, true ) and 'navbox-list--subgroup' or nil )
 				:attr( 'colspan', group and 1 or 2 )
 				:wikitext( '\n' .. list .. '\n' )
 			if image and i == 1 then
