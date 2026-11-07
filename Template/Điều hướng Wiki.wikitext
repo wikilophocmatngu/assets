@@ -24,11 +24,11 @@
   |border = none
   |evenodd = swap
   |group1 = [[:Thể loại:Nhân vật|Nhân vật]]
-  |list1  = [[:Thể loại:Lớp Hoàng đạo|Lớp Hoàng đạo]] · [[:Thể loại:Lớp Hoàng cung|Lớp Hoàng cung]] · [[:Thể loại:Nhân viên trường THCS Ngân Hà|Giáo viên trường Ngân Hà]]
+  |list1  = [[:Thể loại:Lớp Hoàng Đạo|Lớp Hoàng đạo]] · [[:Thể loại:Lớp Hoàng Cung|Lớp Hoàng cung]] · [[:Thể loại:Nhân viên trường THCS Ngân Hà|Giáo viên trường Ngân Hà]]
   |group2 = [[:Thể loại:Chương truyện|Chương truyện]]
-  |list2  = [[:Thể loại:Phát hành lần đầu trên Thiên Thần Nhỏ|Phát hành lần đầu trên báo Thiên Thần Nhỏ]] · [[:Thể loại:Chương truyện mới hơn|Mới hơn]] · [[:Thể loại:Ngoại truyện|Ngoại truyện]]
+  |list2  = [[:Thể loại:Chương truyện được phát hành trên báo TTN|Phát hành lần đầu trên báo Thiên Thần Nhỏ]] · [[:Thể loại:Chương truyện mới hơn|Mới hơn]] · [[:Thể loại:Ngoại truyện|Ngoại truyện]]
   |group3 = [[:Thể loại:Tác phẩm|Tác phẩm]]
-  |list3  = [[:Thể loại:Tập in riêng|Tập in riêng]] · [[:Thể loại:Tập đặc biệt|Tập đặc biệt]] · [[:Thể loại:Tuyển tập đặc biệt|Tuyển tập đặc biệt]] · [[:Thể loại:Trổ tài hoạ sĩ|Trổ tài hoạ sĩ]] · [[:Thể loại:Ngoại truyện 12 chòm sao|Ngoại truyện 12 chòm sao]] · [[:Thể loại:Tác phẩm hợp tác|Hợp tác]]
+  |list3  = [[:Thể loại:Tập in riêng|Tập in riêng]] · [[:Thể loại:Tập đặc biệt|Tập đặc biệt]] · [[:Thể loại:Tuyển tập đặc biệt|Tuyển tập đặc biệt]] · [[:Thể loại:Trổ Tài Họa Sĩ|Trổ tài hoạ sĩ]] · [[:Thể loại:Ngoại truyện 12 chòm sao|Ngoại truyện 12 chòm sao]] · [[:Thể loại:Ấn phẩm hợp tác|Hợp tác]]
   |group4 = [[:Thể loại:Boardgame|Boardgame]]
   |list4  = [[Cuộc Đua Sao Chổi (boardgame)|Cuộc Đua Sao Chổi]] · [[Siêu Thú Ngân Hà (boardgame)|Siêu Thú Ngân Hà]]
   |group5 = Khác
