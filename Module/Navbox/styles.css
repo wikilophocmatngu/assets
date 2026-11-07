@@ -81,6 +81,12 @@
 	border-bottom: 0;
 }
 
+/* Citizen bo góc ô đầu/cuối của mọi .wikitable bằng bộ chọn con cháu, nên lan cả vào
+ * hộp con; :nth-child(n) chỉ để tăng độ đặc hiệu vượt quy tắc đó (không lọc phần tử nào) */
+.navbox .navbox-subgroup tr:nth-child( n ) > :nth-child( n ) {
+	border-radius: 0;
+}
+
 /* Màn hình hẹp: nhóm xếp chồng lên danh sách */
 @media screen and ( max-width: 639.98px ) {
 	.navbox-group {
