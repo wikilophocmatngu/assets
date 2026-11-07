@@ -3,12 +3,12 @@
 |name = Bản mẫu:Wikinavbox
 |state = plain
 |navbar = off
-|image = [[Tập tin:Logo Wiki.png]]
+|image = [[Tập tin:Wiki Logo.svg]]
 <!----------------------- Tiêu đề cho hộp ------------------------------------>
 |title = Wiki Lớp Học Mật Ngữ
 <!----------------------- Nhóm 1: Wiki ---------------------------------------->
 |group1 = Wiki
-|list1  = [[WLHMN:Giới thiệu|Giới thiệu]] {{c}} [[WLHMN:Quy tắc|Các quy tắc]] {{c}} [[WLHMN:Từ điển|Từ điển]] {{c}} [[WLHMN:Bản quyền|Bản quyền]] {{c}} [[Wiki:Quy định khóa trang|Quy định khoá trang]]
+|list1  = [[WLHMN:Giới thiệu|Giới thiệu]] · [[WLHMN:Quy tắc|Các quy tắc]] · [[WLHMN:Từ điển|Từ điển]] · [[WLHMN:Bản quyền|Bản quyền]] · [[Wiki:Quy định khóa trang|Quy định khoá trang]]
 <!----------------------- Nhóm 2: Cộng đồng (Có navbox con!) ------------------------------->
 |group2 = Cộng đồng
 |list2  = {{Hộp điều hướng|child
@@ -17,7 +17,7 @@
   |group1 = Wiki
   |list1  = [https://www.facebook.com/wikilophocmatngu Fanpage chính thức]
   |group2 = Chính thức
-  |list2  = [https://www.facebook.com/groups/771042066661760 Nhóm "Trường Học Ngân Hà"] {{c}} [https://www.facebook.com/lophocmatngu Fanpage trên Facebook] {{c}} [https://youtube.com/lophocmatngu Kênh Youtube chính thức]
+  |list2  = [https://www.facebook.com/groups/771042066661760 Nhóm "Trường Học Ngân Hà"] · [https://www.facebook.com/lophocmatngu Fanpage trên Facebook] · [https://youtube.com/lophocmatngu Kênh Youtube chính thức]
  }}
 <!----------------------- Nhóm 3: Content của Wiki (Có navbox con!) ----------------------->
 |group3 = Nội dung Wiki
@@ -25,14 +25,14 @@
   |border = none
   |evenodd = swap
   |group1 = [[:Thể loại:Nhân vật|Nhân vật]]
-  |list1  = [[:Thể loại:Lớp Hoàng đạo|Lớp Hoàng đạo]] {{c}} [[:Thể loại:Lớp Hoàng cung|Lớp Hoàng cung]] {{c}} [[:Thể loại:Nhân viên trường THCS Ngân Hà|Giáo viên trường Ngân Hà]]
+  |list1  = [[:Thể loại:Lớp Hoàng đạo|Lớp Hoàng đạo]] · [[:Thể loại:Lớp Hoàng cung|Lớp Hoàng cung]] · [[:Thể loại:Nhân viên trường THCS Ngân Hà|Giáo viên trường Ngân Hà]]
   |group2 = [[:Thể loại:Chương truyện|Chương truyện]]
-  |list2  = [[:Thể loại:Phát hành lần đầu trên Thiên Thần Nhỏ|Phát hành lần đầu trên báo Thiên Thần Nhỏ]] {{c}} [[:Thể loại:Chương truyện mới hơn|Mới hơn]] {{c}} [[:Thể loại:Ngoại truyện|Ngoại truyện]]
+  |list2  = [[:Thể loại:Phát hành lần đầu trên Thiên Thần Nhỏ|Phát hành lần đầu trên báo Thiên Thần Nhỏ]] · [[:Thể loại:Chương truyện mới hơn|Mới hơn]] · [[:Thể loại:Ngoại truyện|Ngoại truyện]]
   |group3 = [[:Thể loại:Tác phẩm|Tác phẩm]]
-  |list3  = [[:Thể loại:Tập in riêng|Tập in riêng]] {{c}} [[:Thể loại:Tập đặc biệt|Tập đặc biệt]] {{c}} [[:Thể loại:Tuyển tập đặc biệt|Tuyển tập đặc biệt]] {{c}} [[:Thể loại:Trổ tài hoạ sĩ|Trổ tài hoạ sĩ]] {{c}} [[:Thể loại:Ngoại truyện 12 chòm sao|Ngoại truyện 12 chòm sao]] {{c}} [[:Thể loại:Tác phẩm hợp tác|Hợp tác]]
+  |list3  = [[:Thể loại:Tập in riêng|Tập in riêng]] · [[:Thể loại:Tập đặc biệt|Tập đặc biệt]] · [[:Thể loại:Tuyển tập đặc biệt|Tuyển tập đặc biệt]] · [[:Thể loại:Trổ tài hoạ sĩ|Trổ tài hoạ sĩ]] · [[:Thể loại:Ngoại truyện 12 chòm sao|Ngoại truyện 12 chòm sao]] · [[:Thể loại:Tác phẩm hợp tác|Hợp tác]]
   |group4 = [[:Thể loại:Boardgame|Boardgame]]
-  |list4  = [[Cuộc Đua Sao Chổi (boardgame)|Cuộc Đua Sao Chổi]] {{c}} [[Siêu Thú Ngân Hà (boardgame)|Siêu Thú Ngân Hà]]
+  |list4  = [[Cuộc Đua Sao Chổi (boardgame)|Cuộc Đua Sao Chổi]] · [[Siêu Thú Ngân Hà (boardgame)|Siêu Thú Ngân Hà]]
   |group5 = Khác
-  |list5  = [[Lớp Học Mật Ngữ]] {{c}} [[B.R.O Comics]] {{c}} [[Sản phẩm ăn theo]]
+  |list5  = [[Lớp Học Mật Ngữ]] · [[B.R.O Comics]] · [[Sản phẩm ăn theo]]
  }}
 }}

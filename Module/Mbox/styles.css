@@ -59,3 +59,8 @@
 	opacity: 1;
 	visibility: visible;
 }
+
+/* Icon có màu (vd. Củ Cải của {{Stub}}): không đảo màu ở chế độ tối */
+.mbox.lhmn-stub .mbox-icon img {
+	filter: none;
+}
