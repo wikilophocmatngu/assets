@@ -109,9 +109,14 @@ function p._main( args, frame )
 		} )
 	end
 	
-	--local seoModule = require( 'Module:InfoboxSEO' )
-	--local currentFrame = mw.getCurrentFrame()
-	--local seoMetadata = seoModule.setSEO( currentFrame, args )
+	-- SEO: từ khóa, ảnh và mô tả ngắn lấy từ chính tham số hộp thông tin
+	local seo = require( 'Module:InfoboxSEO' )
+	local aff = seo.plain( args.affiliation )
+	local seoMetadata = seo.setSEO( frame, args, {
+		imageAlt = 'Hình ảnh của nhân vật ' .. mw.title.getCurrentTitle().text .. ' trong Lớp Học Mật Ngữ.',
+		keywords = { 'nhân vật', args.gender, args.nickname, args.affiliation, args.occupation, args.first_appearance },
+		shortdesc = 'Một ' .. ( aff and ( 'thành viên của ' .. aff .. '.' ) or 'nhân vật trong Lớp Học Mật Ngữ.' )
+	} )
 	
 	local customStyles = frame:extensionTag { 
 		name = 'templatestyles', 
@@ -121,7 +126,7 @@ function p._main( args, frame )
 	-- 5. Render Output HTML
 	local outputHtml = infobox:renderInfobox( nil, args.snippet or 'Nhân vật' )
 	
-	return customStyles .. outputHtml -- .. seoMetadata
+	return customStyles .. outputHtml .. seoMetadata
 	
 end
 

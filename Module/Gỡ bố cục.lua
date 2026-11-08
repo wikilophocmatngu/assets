@@ -23,6 +23,8 @@ local function gallery( s )
 	if not s then return nil end
 	s = mw.text.trim( unpipe( s ) )
 	if s == '' then return nil end
+	-- Khi subst, thẻ <gallery> đầy đủ đến đây dưới dạng strip marker: giữ nguyên
+	if s:find( 'UNIQ%-%-gallery%-' ) then return s end
 	if s:find( '<gallery', 1, true ) then
 		-- Một số bài quên đóng thẻ
 		if not s:find( '</gallery>', 1, true ) then s = s .. '\n</gallery>' end
@@ -64,14 +66,6 @@ local function hidden( args )
 	return table.concat( out, '\n' )
 end
 
-local function seo( t )
-	local out = { '{{#seo:' }
-	for _, kv in ipairs( t ) do
-		table.insert( out, ' |' .. kv[ 1 ] .. ' = ' .. kv[ 2 ] )
-	end
-	table.insert( out, '}}' )
-	return table.concat( out, '\n' )
-end
 
 --- Nối các khối, bỏ khối rỗng
 local function join( blocks )
@@ -90,14 +84,6 @@ local function finish( frame, text )
 	return frame:preprocess( text )
 end
 
-local function kw( ... )
-	local out = {}
-	for i = 1, select( '#', ... ) do
-		local v = select( i, ... )
-		if v and v ~= '' then table.insert( out, v ) end
-	end
-	return table.concat( out, ', ' )
-end
 
 function p.nhanVat( frame )
 	local a = getArgs( frame )
@@ -107,7 +93,7 @@ function p.nhanVat( frame )
 	return finish( frame, join( {
 		a.templates,
 		infobox( 'Hộp thông tin nhân vật', a,
-			{ 'image', 'gender', 'affiliation', 'occupation', 'first_appearance', 'first_appearance_year' },
+			{ 'image', 'gender', 'affiliation', 'occupation', 'first_appearance', 'first_appearance_year', 'nickname', 'description' },
 			{ image = page .. '.png' } ),
 		a.content or 'Không có thông tin.',
 		imgs and ( '\n==Hình ảnh==\n' .. imgs ),
@@ -116,15 +102,6 @@ function p.nhanVat( frame )
 		'[[Thể loại:Nhân vật]]',
 		a.gender and ( '[[Thể loại:Nhân vật ' .. a.gender .. ']]' ),
 		aff and ( '[[Thể loại:' .. aff .. ']]' ),
-		seo( {
-			{ 'image', a.image or '' },
-			{ 'image_alt', 'Hình ảnh của nhân vật {{PAGENAME}} trong Lớp Học Mật Ngữ.' },
-			{ 'description', a.description or '' },
-			{ 'locale', 'vi_VN' },
-			{ 'keywords', kw( '{{PAGENAME}}, {{SITENAME}}, wiki, lớp học mật ngữ, nhân vật, thú cưng, nhân vật phụ, mật ngữ, lớp học',
-				a.gender, a.nickname, aff, a.occupation, a.first_appearance ) }
-		} ),
-		'{{SHORTDESC:Một ' .. ( aff and ( 'thành viên của ' .. aff .. '.' ) or 'nhân vật trong Lớp Học Mật Ngữ.' ) .. '}}',
 		a.wikibase and ( '{{MNDb|' .. a.wikibase .. '}} {{#unlinkedwikibase: id=Q' .. a.wikibase .. '}}' )
 	} ) )
 end
@@ -133,17 +110,8 @@ function p.anPham( frame )
 	local a = getArgs( frame )
 	local imgs = gallery( a.gallery )
 	return finish( frame, join( {
-		seo( {
-			{ 'image', a.image or '' },
-			{ 'image_alt', 'Hình ảnh của ấn phẩm {{PAGENAME}} trong Lớp Học Mật Ngữ.' },
-			{ 'description', a.description or '' },
-			{ 'locale', 'vi_VN' },
-			{ 'keywords', kw( '{{PAGENAME}}, {{SITENAME}}, wiki, lớp học mật ngữ, tác phẩm, ấn phẩm, truyện tranh, mật ngữ, lớp học',
-				a.type, a.previous, a.next ) }
-		} ),
-		'{{SHORTDESC:Chỉ là một trang về một cuốn ' .. ( a.version == 'Mini' and 'Phiên bản Mini' or ( a.type or '' ) ) .. '.}}',
 		infobox( 'Hộp thông tin ấn phẩm', a,
-			{ 'image', 'series', 'publisher', 'release_date', 'pages', 'previous', 'next' } ),
+			{ 'image', 'series', 'publisher', 'release_date', 'pages', 'previous', 'next', 'type', 'version' } ),
 		a.description,
 		a.cover and ( '\n==Thiết kế bìa==\n' .. a.cover ),
 		'\n==Mục lục==\n' .. ( a.contents or '' ),
@@ -163,19 +131,8 @@ function p.chuongTruyen( frame )
 	local imgs = gallery( a.gallery )
 	a.image = galleryToList( a.image )
 	return finish( frame, join( {
-		seo( {
-			{ 'title', '{{PAGENAME}}' },
-			{ 'image', a.image or '' },
-			{ 'image_alt', '(Các) hình ảnh của chương {{PAGENAME}} trong Lớp Học Mật Ngữ.' },
-			{ 'description', a.description or '' },
-			{ 'locale', 'vi_VN' },
-			{ 'keywords', kw( '{{PAGENAME}}, {{SITENAME}}, wiki, lớp học mật ngữ, chương truyện, chương, truyện, truyện tranh, mật ngữ, lớp học',
-				a.type, a.main, a.publications ) }
-		} ),
-		'{{SHORTDESC:Một chương ' .. ( a.type == 'Ngoại truyện' and 'ngoại ' or '' ) .. 'truyện '
-			.. ( a.ttn and mw.ustring.lower( a.ttn ) ~= 'không' and 'phát hành trên báo Thiên Thần Nhỏ.' or 'trong Lớp Học Mật Ngữ.' ) .. '}}',
 		infobox( 'Hộp thông tin chương truyện', a,
-			{ 'image', 'release_date', 'publications', 'ttn', 'parts', 'pages', 'main' } ),
+			{ 'image', 'release_date', 'publications', 'ttn', 'parts', 'pages', 'main', 'type' } ),
 		a.description,
 		'\n== Cốt truyện ==\n' .. ( a.plot or '' ),
 		'\n== Thông tin cơ sở ==\n' .. ( a.background or '' ),

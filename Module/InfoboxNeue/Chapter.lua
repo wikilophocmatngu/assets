@@ -163,6 +163,15 @@ function p._main( args, frame )
 		} )
 	end
 	
+	-- SEO: từ khóa, ảnh và mô tả ngắn lấy từ chính tham số hộp thông tin
+	local ttn = args.ttn and mw.ustring.lower( args.ttn ) ~= 'không'
+	local seoMetadata = require( 'Module:InfoboxSEO' ).setSEO( frame, args, {
+		imageAlt = '(Các) hình ảnh của chương ' .. mw.title.getCurrentTitle().text .. ' trong Lớp Học Mật Ngữ.',
+		keywords = { 'chương truyện', 'truyện tranh', args.type, args.main, args.publications },
+		shortdesc = 'Một chương ' .. ( args.type == 'Ngoại truyện' and 'ngoại ' or '' ) .. 'truyện '
+			.. ( ttn and 'phát hành trên báo Thiên Thần Nhỏ.' or 'trong Lớp Học Mật Ngữ.' )
+	} )
+
 	local customStyles = frame:extensionTag { 
 		name = 'templatestyles', 
 		args = { src = 'Mô_đun:InfoboxNeue/Chapter/styles.css' } 
@@ -171,7 +180,7 @@ function p._main( args, frame )
 	-- 5. Trả về kết quả
 	local outputHtml = infobox:renderInfobox( nil, args.snippet or 'Chương truyện' )
 	
-	return customStyles .. outputHtml -- .. seoMetadata
+	return customStyles .. outputHtml .. seoMetadata
 end
 
 return p
