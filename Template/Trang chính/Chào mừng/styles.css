@@ -168,6 +168,8 @@
 .home-header__title {
 	width: 100%;
 	max-width: 16rem;
+	/* Cùng margin-top: auto với hàng nút: chia đều khoảng trống, cụm giới thiệu nằm giữa theo chiều dọc */
+	margin-top: auto;
 }
 
 .home-header__title img {
