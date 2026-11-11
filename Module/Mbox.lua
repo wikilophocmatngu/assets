@@ -20,7 +20,7 @@ end
 function p.mbox( frame )
 	mArguments = require( 'Module:Arguments' )
 	local args = mArguments.getArgs( frame )
-	local title = args[ 1 ] or args[ 'title' ]
+	local title = args[ 1 ] or args[ 'title' ] or args[ 'header' ]
 	local text = args[ 2 ] or args[ 'text' ]
 	-- Chỉ cần ít nhất một trong hai: tiêu đề hoặc nội dung
 	if not title and not text then
@@ -37,6 +37,9 @@ function p.mbox( frame )
 		iconsize = args.iconsize
 	} )
 end
+
+-- Tên cũ từ bản Fandom ({{#invoke:Mbox|main}}) vẫn dùng ở trang tài liệu
+p.main = p.mbox
 
 function p._mbox( title, text, options )
 	checkType( '_mbox', 1, title, 'string' )
