@@ -348,7 +348,12 @@
 		min-height: 13rem;
 	}
 
+	/* Tab đối xứng qua trục giữa: cột trái icon bên trái, cột phải icon bên phải; chữ dạt về phía giữa */
 	.home-header__tab {
-		justify-content: flex-start;
+		justify-content: space-between;
+	}
+
+	.home-header__tab:nth-child( even ) {
+		flex-direction: row-reverse;
 	}
 }
