@@ -177,10 +177,25 @@ function p._main( args, frame )
 		args = { src = 'Mô_đun:InfoboxNeue/Chapter/styles.css' } 
 	}
 
+	-- Bucket: ghi dữ liệu chương để truy vấn từ trang khác
+	local B = require( 'Module:InfoboxBucket' )
+	local bucketOut = B.put( 'Chapter', {
+		title = B.text( args.title ) or mw.title.getCurrentTitle().text,
+		subtitle = B.text( args.subtitle ),
+		status = B.text( args.status ),
+		release_date = B.text( args.release_date ),
+		parts = B.int( args.parts ),
+		pages = B.int( args.pages ),
+		main = B.list( args.main, B.page ),
+		publications = B.list( args.publications, B.text ),
+		previous = B.page( args.previous ),
+		next = B.page( args['next'] )
+	} )
+
 	-- 5. Trả về kết quả
 	local outputHtml = infobox:renderInfobox( nil, args.snippet or 'Chương truyện' )
-	
-	return customStyles .. outputHtml .. seoMetadata
+
+	return customStyles .. outputHtml .. seoMetadata .. bucketOut
 end
 
 return p

@@ -148,10 +148,24 @@ function p._main( args, frame )
 		args = { src = 'Mô_đun:InfoboxNeue/Publication/styles.css' } 
 	}
 
+	-- Bucket: ghi dữ liệu ấn phẩm để truy vấn từ trang khác
+	local B = require( 'Module:InfoboxBucket' )
+	local bucketOut = B.put( 'Anpham', {
+		title = B.text( args.title ) or mw.title.getCurrentTitle().text,
+		subtitle = B.text( args.subtitle ),
+		series = B.text( args.series ),
+		character = B.text( args.character ),
+		release_date = B.text( args.release_date ),
+		pages = B.int( args.pages ),
+		publisher = B.text( args.publisher ),
+		previous = B.page( args.previous ),
+		next = B.page( args['next'] )
+	} )
+
 	-- 5. Render Output HTML
 	local outputHtml = infobox:renderInfobox( nil, args.snippet or 'Ấn phẩm' )
-	
-	return customStyles .. outputHtml .. seoMetadata
+
+	return customStyles .. outputHtml .. seoMetadata .. bucketOut
 end
 
 return p

@@ -123,10 +123,20 @@ function p._main( args, frame )
 		args = { src = 'Mô_đun:InfoboxNeue/Character/styles.css' } 
 	}
 
+	-- Bucket: ghi dữ liệu nhân vật để truy vấn từ trang khác
+	local B = require( 'Module:InfoboxBucket' )
+	local bucketOut = B.put( 'Nhanvat', {
+		name = B.text( args.name ) or mw.title.getCurrentTitle().text,
+		gender = B.text( args.gender ),
+		occupation = B.text( args.occupation ),
+		affiliation = B.text( args.affiliation ),
+		first_appearance = B.page( args.first_appearance )
+	} )
+
 	-- 5. Render Output HTML
 	local outputHtml = infobox:renderInfobox( nil, args.snippet or 'Nhân vật' )
-	
-	return customStyles .. outputHtml .. seoMetadata
+
+	return customStyles .. outputHtml .. seoMetadata .. bucketOut
 	
 end
 
