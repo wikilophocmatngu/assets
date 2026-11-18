@@ -187,7 +187,7 @@ function p._main( args, frame )
 		parts = B.int( args.parts ),
 		pages = B.int( args.pages ),
 		main = B.list( args.main, B.page ),
-		publications = B.list( args.publications, B.text ),
+		publications = B.list( args.publications, B.page ),
 		previous = B.page( args.previous ),
 		next = B.page( args['next'] )
 	} )

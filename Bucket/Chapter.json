@@ -1,0 +1,34 @@
+{
+	"title": {
+		"type": "TEXT"
+	},
+	"subtitle": {
+		"type": "TEXT"
+	},
+	"status": {
+		"type": "TEXT"
+	},
+	"release_date": {
+		"type": "TEXT"
+	},
+	"parts": {
+		"type": "INTEGER"
+	},
+	"pages": {
+		"type": "INTEGER"
+	},
+	"main": {
+		"type": "PAGE",
+		"repeated": true
+	},
+	"publications": {
+		"type": "PAGE",
+		"repeated": true
+	},
+	"previous": {
+		"type": "PAGE"
+	},
+	"next": {
+		"type": "PAGE"
+	}
+}
