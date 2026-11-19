@@ -1,7 +1,7 @@
 /**
  * Bản mẫu:Trang chính/Liên kết/styles.css
  *
- * @desc     Phần dưới trang chính: khối liên kết chính thức, khối cộng đồng (ô icon kiểu tab header + hàng nút ủng hộ có tên) và khối IWF (danh sách nối dòng, ngăn bằng dấu chấm giữa)
+ * @desc     Phần dưới trang chính: khối liên kết chính thức, khối cộng đồng (ô icon kiểu tab header + hàng nút ủng hộ có tên) và khối IWF (danh sách nối dòng, ngăn bằng viên ngọc nhỏ)
  * @author   [[Thành viên:Pisces]] (https://songngu.xyz)
  * @site     https://lophocmatngu.wiki/Bản_mẫu:Trang_chính/Liên_kết/styles.css
  * @license  CC BY-SA 4.0
@@ -104,7 +104,7 @@
 	line-height: 1.6;
 }
 
-/* Danh sách IWF: liên kết nối tiếp trên dòng, ngăn bằng dấu chấm giữa mờ (CSS, không cần {{d}}); chữ màu thường, chỉ đổi màu khi rê chuột */
+/* Danh sách IWF: liên kết nối tiếp trên dòng, ngăn bằng viên ngọc ◆ nhỏ, màu mờ (CSS, không cần {{d}}); chữ màu thường, chỉ đổi màu khi rê chuột */
 .home-links__list {
 	color: var( --color-base, #202122 );
 	font-size: var( --font-size-small, 0.875rem );
@@ -120,12 +120,14 @@
 	color: var( --color-link, #36c );
 }
 
-/* inline-block để dấu ngăn không bị gạch chân theo liên kết */
+/* Dấu ngăn: viên ngọc ◆ thu nhỏ, màu mờ; inline-block để không bị gạch chân theo liên kết */
 .home-links__list a + a::before {
-	content: '·';
+	content: '◆';
 	display: inline-block;
 	margin-right: 0.5em;
 	color: var( --color-subtle, #54595d );
+	font-size: 0.5em;
+	vertical-align: 0.25em;
 }
 
 .home-links__iwf-list .home-links__subheading {
