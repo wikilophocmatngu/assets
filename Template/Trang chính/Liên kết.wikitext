@@ -7,7 +7,7 @@ Hàng trên: liên kết chính thức | cộng đồng (tài nguyên + ủng h�
 Hàng dưới: IWF trải hết chiều ngang (thông tin bên trái, danh sách bên phải).
 Discord, Facebook, Instagram, GitHub của wiki đã có ở đầu trang nên không lặp lại.
 Mỗi khối viết liền dòng để không bị bọc <p>.
-Danh sách IWF không cần dấu phân cách: CSS xếp mỗi liên kết thành một ô lưới.
+Danh sách IWF không cần {{d}}: CSS tự chèn dấu chấm giữa giữa các liên kết.
 
 --><div class="home-links"><!--
 
