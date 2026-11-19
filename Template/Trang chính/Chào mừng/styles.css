@@ -1,7 +1,7 @@
 /**
  * Bản mẫu:Trang chính/Chào mừng/styles.css
  *
- * @desc     Header trang chính kiểu H (90%) + F (10%): hàng tab cổng chủ đề, ba thẻ nổi bật, thẻ giới thiệu wiki với ô tìm kiếm rộng, thanh chỉ số một dòng và nút mạng xã hội
+ * @desc     Header trang chính
  * @author   [[Thành viên:Pisces]] (https://songngu.xyz)
  * @site     https://lophocmatngu.wiki/Bản_mẫu:Trang_chính/Chào_mừng/styles.css
  * @license  CC BY-SA 4.0
@@ -306,14 +306,14 @@
 	mask-image: url( https://static.wikitide.net/lhmnwiki/c/c8/Facebook_-_Simple_Icons.svg );
 }
 
-/* Instagram: dùng dạng viền của logo làm mặt nạ */
 .home-header__social-link--instagram a {
 	background-color: #c13584;
 }
 
 .home-header__social-link--instagram a::before {
-	mask-image: url( https://upload.wikimedia.org/wikipedia/commons/9/96/Instagram.svg );
+	mask-image: url( https://upload.wikimedia.org/wikipedia/commons/9/96/Instagram.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original );
 }
+
 
 /* GitHub: đảo theo chủ đề (nền màu chữ, biểu tượng màu nền) để không chìm ở chế độ tối */
 .home-header__social-link--github a {
@@ -338,15 +338,8 @@
 	}
 }
 
-/* ---- Máy tính bảng (< 900px): 6 tab chia 2 hàng 3 cột cho đủ chỗ chữ ---- */
-@media screen and ( max-width: 899.98px ) {
-	.home-header__tabs {
-		grid-template-columns: repeat( 3, minmax( 0, 1fr ) );
-	}
-}
-
-/* ---- Di động (< 640px): tab 2 cột, thẻ nổi bật xếp dọc ---- */
-@media screen and ( max-width: 639.98px ) {
+/* ---- Máy tính bảng trở xuống (< 860px): tab 2 cột, thẻ nổi bật xếp dọc ---- */
+@media screen and ( max-width: 859.98px ) {
 	.home-header {
 		padding-top: var( --space-md, 1rem );
 	}
