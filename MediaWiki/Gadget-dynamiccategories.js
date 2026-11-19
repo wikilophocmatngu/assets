@@ -3,6 +3,9 @@
  *
  * @desc     Trang thể loại có ba kiểu xem (mặc định, danh sách kèm hình, lưới hình) kèm nút chọn và phân trang.
  *           Bản dễ đọc của Dynamic Categories trên dev.miraheze.org (bản gadget store), giữ nguyên hành vi upstream.
+ *           Tác giả gốc: Canadabonk (https://meta.miraheze.org/wiki/User:Canadabonk)
+ *           Mã nguồn gốc: https://github.com/lihaohong6/MirahezeDevScripts/tree/master/gadgets/DynamicCategories
+ *           (https://dev.miraheze.org/wiki/Dynamic_Categories)
  * @author   [[Thành viên:Pisces]] (https://songngu.xyz)
  * @site     https://lophocmatngu.wiki/MediaWiki:Gadget-dynamiccategories.js
  * @license  CC BY-SA 4.0
