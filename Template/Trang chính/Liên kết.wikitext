@@ -32,7 +32,7 @@ Danh sách IWF không cần {{d}}: CSS tự chèn viên ngọc ◆ nhỏ giữa 
 --><span class="home-links__donate-btn" style="--home-links-accent: #24292f"><span class="home-links__donate-icon">[[File:Github.svg|x20px|link=|class=home-links__white]]</span>[https://github.com/sponsors/wikilophocmatngu GitHub]</span><!--
 --><span class="home-links__donate-btn" style="--home-links-accent: #ff5e5b"><span class="home-links__donate-icon">[[File:Kofi - Simple Icons.svg|x20px|link=|class=home-links__white]]</span>[https://ko-fi.com/wikilophocmatngu Ko-fi]</span><!--
 --><span class="home-links__donate-btn" style="--home-links-accent: #003087"><span class="home-links__donate-icon">[[File:Paypal.svg|x20px|link=|class=home-links__white]]</span>[https://paypal.me/songngunam PayPal]</span><!--
---><span class="home-links__donate-btn" style="--home-links-accent: #a50064"><span class="home-links__donate-icon">[[File:MoMo icon.svg|x20px|link=]]</span>[https://me.momo.vn/songngu MoMo]</span><!--
+--><span class="home-links__donate-btn" style="--home-links-accent: #a50064"><span class="home-links__donate-icon">[[File:MoMo icon.svg|x20px|link=|class=home-links__white]]</span>[https://me.momo.vn/songngu MoMo]</span><!--
 --><span class="home-links__donate-btn" style="--home-links-accent: #555"><span class="home-links__donate-icon">[[File:Vietqr.svg|x20px|link=|class=home-links__white]]</span>[[WLHMN:Ủng hộ|Khác]]</span><!--
 --></div></div><!--
 
