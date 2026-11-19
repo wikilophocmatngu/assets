@@ -1,7 +1,7 @@
 /**
  * Bản mẫu:Trang chính/Liên kết/styles.css
  *
- * @desc     Phần dưới trang chính: khối liên kết chính thức, khối cộng đồng (ô icon kiểu tab header + hàng nút ủng hộ) và khối IWF
+ * @desc     Phần dưới trang chính: khối liên kết chính thức, khối cộng đồng (ô icon kiểu tab header + hàng nút ủng hộ có tên) và khối IWF (danh sách dạng lưới)
  * @author   [[Thành viên:Pisces]] (https://songngu.xyz)
  * @site     https://lophocmatngu.wiki/Bản_mẫu:Trang_chính/Liên_kết/styles.css
  * @license  CC BY-SA 4.0
@@ -97,12 +97,33 @@
 	font-weight: 600;
 }
 
-.home-links__text,
-.home-links__list {
+.home-links__text {
 	text-align: center;
 	color: var( --color-base, #202122 );
 	font-size: var( --font-size-small, 0.875rem );
 	line-height: 1.6;
+}
+
+/* Danh sách IWF: mỗi liên kết một ô lưới, căn trái, chữ màu thường; chỉ đổi màu khi rê chuột */
+.home-links__list {
+	display: grid;
+	grid-template-columns: repeat( auto-fill, minmax( 8rem, 1fr ) );
+	gap: 0.25rem var( --space-md, 1rem );
+	font-size: var( --font-size-small, 0.875rem );
+	line-height: 1.5;
+	text-align: left;
+}
+
+.home-links__list a {
+	color: var( --color-base, #202122 );
+}
+
+.home-links__list a:hover {
+	color: var( --color-link, #36c );
+}
+
+.home-links__iwf-list .home-links__subheading {
+	text-align: left;
 }
 
 /* Khối cộng đồng: tiêu đề ở trên, phần nội dung nằm giữa khoảng trống còn lại theo chiều dọc */
@@ -195,42 +216,51 @@ img.home-links__white {
 	filter: brightness( 0 ) invert( 1 );
 }
 
-/* ---- Hàng nút ủng hộ: chỉ biểu tượng, chia đều chiều ngang ---- */
+/* ---- Hàng nút ủng hộ: ô màu thương hiệu chứa biểu tượng, tên nằm bên dưới ---- */
 .home-links__donate {
 	display: flex;
-	gap: 0.375rem;
+	gap: var( --space-xs, 0.5rem );
 }
 
 .home-links__donate-btn {
 	position: relative;
 	flex: 1;
+	min-width: 0;
 	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0.25rem;
+	font-size: var( --font-size-x-small, 0.75rem );
+	line-height: 1.25;
+}
+
+.home-links__donate-icon {
+	display: flex;
+	align-self: stretch;
 	align-items: center;
 	justify-content: center;
-	min-height: 2.75rem;
+	height: 2.75rem;
 	border-radius: var( --border-radius-medium, 8px );
 	background-color: var( --home-links-accent );
-	line-height: 0;
 	transition: filter 150ms ease;
 }
 
-.home-links__donate-btn > span {
+.home-links__donate-icon span {
+	display: block;
 	line-height: 0;
 }
 
-.home-links__donate-btn img {
+.home-links__donate-icon img {
 	display: block;
 	height: 1.25rem;
 	width: auto;
 }
 
-/* Chữ chỉ dành cho trình đọc màn hình (TemplateStyles không nhận clip, dùng cách giống .home-header__sr) */
-.home-links__sr {
-	position: absolute;
-	width: 1px;
-	height: 1px;
+.home-links__donate-btn > a {
+	max-width: 100%;
 	overflow: hidden;
-	margin: -1px;
+	color: var( --color-subtle, #54595d );
+	text-overflow: ellipsis;
 	white-space: nowrap;
 }
 
@@ -251,12 +281,17 @@ img.home-links__white {
 	background-color: var( --color-surface-2, #eaecf0 );
 }
 
-.home-links__donate-btn:hover {
+.home-links__donate-btn:hover .home-links__donate-icon {
 	filter: brightness( 1.15 );
 }
 
+.home-links__donate-btn:hover > a {
+	color: var( --color-emphasized, #101418 );
+	text-decoration: none;
+}
+
 .home-links__tile:focus-within,
-.home-links__donate-btn:focus-within {
+.home-links__donate-btn:focus-within .home-links__donate-icon {
 	box-shadow: 0 0 0 2px var( --color-progressive, #36c );
 }
 

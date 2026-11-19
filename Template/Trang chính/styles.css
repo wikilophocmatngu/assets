@@ -271,3 +271,8 @@
 	font-size: 1.125rem;
 	font-weight: 600;
 }
+
+/* Đoạn trống <p><br></p> do dòng trống sau bản mẫu ở trang chính sinh ra: ẩn để không thừa khoảng dưới [sửa đổi][cài đặt] */
+.home-footer ~ p {
+	display: none;
+}

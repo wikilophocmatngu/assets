@@ -365,6 +365,27 @@ hr {
 	display: initial;
 }
 
+/* Huy hiệu chân trang (từ 640px): các nút rộng bằng nhau để 5 huy hiệu vừa một hàng; điện thoại giữ mặc định của Citizen */
+@media screen and ( min-width: 640px ) {
+	#footer-icons a {
+		box-sizing: border-box;
+		width: 8rem;
+		padding: 0 var( --space-xs );
+	}
+
+	#footer-icons img {
+		max-width: 100%;
+		height: auto;
+		max-height: 2rem;
+		object-fit: contain;
+	}
+}
+
+/* Trang chính: rút khoảng trống mặc định 128px phía trên chân trang */
+.page-WLHMN .citizen-footer {
+	margin-top: var( --space-xl );
+}
+
 img.mw-logo-wordmark {
 	filter: var(--lhmn-wordmark-filter, none) !important; /* làm sáng logo chữ ở chế độ tối; !important để thắng quy tắc filter của skin */
 }
