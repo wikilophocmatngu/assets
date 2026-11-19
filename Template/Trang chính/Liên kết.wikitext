@@ -30,13 +30,12 @@ Mỗi khối viết liền dòng để không bị bọc <p>.
 --><span class="home-links__donate-btn" style="--home-links-accent: #555" title="Mọi cách ủng hộ">[[File:Vietqr.svg|x20px|link=|class=home-links__white]][[WLHMN:Ủng hộ|<span class="home-links__sr">Mọi cách ủng hộ</span>]]</span><!--
 --></div></div><!--
 
-  IWF: phần mô tả luôn hiện, danh sách liên minh & wiki thu gọn
+  IWF: mô tả, liên minh và danh sách wiki thành viên (luôn hiện)
 --><div class="home-links__panel home-links__panel--iwf plainlinks"><div class="home-links__heading">[[File:IWF Footer.svg|160px|link=https://indiewikifederation.org/|Independent Wiki Federation|class=home-links__wordmark]]</div><!--
 --><div class="home-links__text">'''{{SITENAME}}''' cùng [https://indiewikifederation.org/ Independent Wiki Federation] hỗ trợ cung cấp tài nguyên và chuyên môn cần thiết để duy trì các cộng đồng wiki chất lượng cao, tự chủ và độc lập.</div><!--
 --><div class="home-links__tiles"><div class="home-links__tile">[[WLHMN:IWF|Tìm hiểu thêm]]</div><div class="home-links__tile">[https://discord.gg/UrfHSzFff3 Discord IWF]</div></div><!--
---><div class="home-links__more mw-collapsible mw-collapsed" data-expandtext="Xem liên minh và các wiki thành viên" data-collapsetext="Thu gọn"><div class="mw-collapsible-content"><!--
 --><div class="home-links__subheading">Liên minh và đối tác lưu trữ</div><div class="home-links__list">[https://amazingwikis.org/ Amazing Wikis] {{d}} [https://indierobloxwikis.org/ Liên Minh Wiki Roblox Tự Do (IRWA)] {{d}} [https://nexawiki.com/ Nexa Wiki] {{d}} [https://telepedia.net/ Telepedia]</div><!--
 --><div class="home-links__subheading">Dự án wiki</div><div class="home-links__list">[https://orangejuice.wiki/ 100% Orange Juice Wiki] {{d}} [https://www.bloonswiki.com/ Blooncyclopedia] {{d}} [https://wiki.conworld.org/ Constructed World Wiki] {{d}} [https://cookierun.wiki Cookie Run Wiki] {{d}} [https://discoelysium.wiki.gg/ Disco Elysium Wiki] {{d}} [https://liquipedia.net/dota2/Main_Page DOTA2 Wiki] {{d}} [https://fallout.wiki/ Independent Fallout Wiki] {{d}} [https://finalfantasywiki.com/ Final Fantasy Wiki] {{d}} [https://hollowknight.wiki/ Hollow Knight Wiki] {{d}} [https://www.khdatabase.com Kingdom Hearts Database] {{d}} [https://wiki.klonoa.network Klonoa Wiki] {{d}} [https://siivagunner.wiki Official SiIvaGunner Wiki] {{d}} [https://otherkin.wiki/ Otherkin Wiki] {{d}} [https://saintsrow.wiki/ Saints Row Wiki] {{d}} [https://sanriowiki.com/wiki/ Sanrio Wiki] {{d}} [https://skylanderswiki.com Skylanders Wiki] {{d}} [https://www.sonicarchive.com/ Sonic Archive] {{d}} [https://spyrowiki.com Spyro Wiki] {{d}} [https://tolkiengateway.net/ Tolkien Gateway] {{d}} [https://tomclancy.wiki.gg/ Tom Clancy Wiki] {{d}} [https://twewy.wiki/ TWEWY Wiki] {{d}} [https://wiki.wanderinginn.com/ The Wandering Inn Wiki] {{d}} [https://wizardry.wiki.gg/ Wizardry Wiki] {{d}} [https://worldtriggerwiki.com/ World Trigger Wiki]</div><!--
---></div></div></div><!--
+--></div><!--
 
 --></div><templatestyles src="Bản mẫu:Trang chính/Liên kết/styles.css"/>

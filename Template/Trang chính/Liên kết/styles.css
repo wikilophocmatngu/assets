@@ -212,18 +212,6 @@ img.home-links__white {
 	outline: 0;
 }
 
-/* ---- IWF: danh sách dài thu gọn ---- */
-.home-links__more {
-	margin-top: auto;
-}
-
-.home-links__more .mw-collapsible-toggle {
-	float: none;
-	display: block;
-	margin-top: var( --space-xxs, 0.25rem );
-	font-size: var( --font-size-small, 0.875rem );
-}
-
 /* ---- Dưới 900px: hai khối xếp chồng ---- */
 @media screen and ( max-width: 899.98px ) {
 	.home-links {
