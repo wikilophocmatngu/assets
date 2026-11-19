@@ -30,12 +30,11 @@
 	display: grid;
 	grid-template-columns: repeat( 2, minmax( 0, 1fr ) );
 	gap: var( --space-md, 1rem );
-	/* Nền lông vũ IWF trôi chéo như bản mẫu IWF cũ, phủ thêm dải màu xanh ngọc (màu logo IWF) sang tím */
+	/* Nền lông vũ IWF trôi chéo như bản mẫu IWF cũ, trên nền bề mặt trung tính của Citizen */
 	background:
 		url( https://static.wikitide.net/lhmnwiki/5/5f/IWF_Background.png ) repeat center,
-		linear-gradient( 135deg, rgba( 30, 200, 170, 0.22 ), rgba( 120, 80, 220, 0.18 ) ),
 		var( --color-surface-2, #eaecf0 );
-	background-blend-mode: overlay, normal, normal;
+	background-blend-mode: overlay, normal;
 	animation: home-links-iwf-drift 12s linear infinite;
 }
 
@@ -63,13 +62,13 @@
 }
 
 @keyframes home-links-iwf-drift {
-	/* Chỉ lớp lông vũ trôi; dải màu (lớp thứ hai) đứng yên để không lộ đường nối */
+	/* Chỉ lớp lông vũ trôi */
 	from {
-		background-position: 0 0, 0 0;
+		background-position: 0 0;
 	}
 
 	to {
-		background-position: 250px -250px, 0 0;
+		background-position: 250px -250px;
 	}
 }
 
@@ -87,7 +86,7 @@
 	color: var( --color-emphasized, #101418 );
 	font-family: var( --lhmn-font-family-heading, inherit );
 	font-size: 1.125rem;
-	font-weight: 700;
+	font-weight: 600;
 }
 
 .home-links__subheading {

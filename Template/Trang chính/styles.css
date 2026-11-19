@@ -262,3 +262,12 @@
 		grid-template-columns: repeat( 4, minmax( 0, 1fr ) );
 	}
 }
+
+/* ---- Tiêu đề "Các nhân vật": cùng kiểu với tiêu đề khối Liên kết (Bản mẫu:Trang chính/Liên kết/styles.css)
+ * Chỉ áp dụng trên trang chính, không đổi Bản mẫu:Divider ở trang khác. */
+.lhmn-section-divider {
+	color: var( --color-emphasized, #101418 );
+	font-family: var( --lhmn-font-family-heading, inherit );
+	font-size: 1.125rem;
+	font-weight: 600;
+}

@@ -337,9 +337,14 @@ hr {
 	gap: var(--space-xs);
 }
 
+/* Biểu tượng bánh quy nét mảnh (Lucide "cookie", ISC) thay cho emoji, ăn theo màu chữ phụ */
 .mw-cookiewarning-text::before {
-	content: '🍪';
-    font-size: 2rem;
+	content: '';
+	flex-shrink: 0;
+	width: 1.5rem;
+	height: 1.5rem;
+	background-color: var( --color-subtle );
+	mask: url( "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5'/%3E%3Cpath d='M8.5 8.5v.01M16 15.5v.01M12 12v.01M11 17v.01M7 14v.01'/%3E%3C/svg%3E" ) center / contain no-repeat;
 }
 
 /* hide on pageload to prevent FoUC */
