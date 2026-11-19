@@ -386,6 +386,18 @@ hr {
 	margin-top: var( --space-xl );
 }
 
+/* Trang chính trên màn hẹp: thanh công cụ trang nổi cố định nên khối tiêu đề (dời xuống cuối) chỉ còn lề trống */
+@media screen and ( max-width: 1119.98px ) {
+	.page-WLHMN.action-view .citizen-page-header {
+		margin-top: 0;
+	}
+
+	.page-WLHMN.action-view .citizen-page-header-inner {
+		padding-block: 0;
+		border-top: 0;
+	}
+}
+
 img.mw-logo-wordmark {
 	filter: var(--lhmn-wordmark-filter, none) !important; /* làm sáng logo chữ ở chế độ tối; !important để thắng quy tắc filter của skin */
 }
