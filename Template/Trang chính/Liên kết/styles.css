@@ -106,6 +106,15 @@
 	line-height: 1.6;
 }
 
+/* Khối cộng đồng: tiêu đề ở trên, phần nội dung nằm giữa khoảng trống còn lại theo chiều dọc */
+.home-links__panel--community > .home-links__heading + * {
+	margin-top: auto;
+}
+
+.home-links__panel--community > :last-child {
+	margin-bottom: auto;
+}
+
 /* ---- Ô liên kết: cùng kiểu với tab header, thêm dòng phụ ---- */
 .home-links__tiles {
 	display: grid;

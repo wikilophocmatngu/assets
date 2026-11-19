@@ -20,9 +20,13 @@ Mỗi khối viết liền dòng để không bị bọc <p>.
 --></div></div><!--
 
   CỘNG ĐỒNG: tài nguyên do cộng đồng làm và nút ủng hộ SongNgư.xyz
---><div class="home-links__panel plainlinks"><div class="home-links__heading">Cộng đồng</div><div class="home-links__tiles"><!--
+--><div class="home-links__panel home-links__panel--community plainlinks"><div class="home-links__heading">Cộng đồng</div><div class="home-links__tiles"><!--
 --><div class="home-links__tile home-links__tile--icon"><span class="home-links__icon home-links__icon--white" style="--home-links-accent: #d92f4f">[[File:NguYet.svg|x20px|link=]]</span>[https://nguyet.songngu.xyz Ngư nam Yết nữ]<span class="home-links__meta">Sát thủ bồ kết thầy tu</span></div><!--
 --><div class="home-links__tile home-links__tile--icon"><span class="home-links__icon home-links__icon--white" style="--home-links-accent: #a86f04">[[File:Folder.svg|x20px|link=]]</span>[https://fankit.lophocmatngu.wiki Fan-kit]<span class="home-links__meta">Tài nguyên Lớp Học Mật Ngữ</span></div><!--
+
+  Ô ẨN: Wiki Học Sinh Chân Kinh (trải hết chiều ngang để hàng không bị lẻ).
+  Để hiện: điền địa chỉ vào DIA_CHI_WIKI, đổi chữ ẨN-BẮT-ĐẦU thành dấu đóng chú thích và chữ ẨN-KẾT-THÚC thành dấu mở chú thích.
+  ẨN-BẮT-ĐẦU<div class="home-links__tile home-links__tile--icon home-links__tile--wide"><span class="home-links__icon home-links__icon--white" style="--home-links-accent: #2e7d5b">[[File:OOjs UI icon globe.svg|x20px|link=]]</span>[https://DIA_CHI_WIKI Wiki Học Sinh Chân Kinh]<span class="home-links__meta">Dự án wiki của SongNgư.xyz</span></div>ẨN-KẾT-THÚC
 --></div><div class="home-links__subheading">Ủng hộ SongNgư.xyz</div><div class="home-links__donate"><!--
 --><span class="home-links__donate-btn" style="--home-links-accent: #24292f" title="GitHub Sponsors">[[File:Github.svg|x20px|link=|class=home-links__white]][https://github.com/sponsors/wikilophocmatngu <span class="home-links__sr">GitHub Sponsors</span>]</span><!--
 --><span class="home-links__donate-btn" style="--home-links-accent: #ff5e5b" title="Ko-fi">[[File:Kofi - Simple Icons.svg|x20px|link=|class=home-links__white]][https://ko-fi.com/wikilophocmatngu <span class="home-links__sr">Ko-fi</span>]</span><!--
