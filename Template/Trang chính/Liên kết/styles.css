@@ -82,6 +82,25 @@ img.home-links__wordmark,
 	transition: background-color 150ms ease, border-color 150ms ease;
 }
 
+/* Ô có icon: icon (cùng bộ với tab header) bên trái, chiếm cả hai dòng chữ */
+.home-links__tile--icon {
+	display: grid;
+	grid-template-columns: auto minmax( 0, 1fr );
+	column-gap: 0.75rem;
+	align-items: center;
+}
+
+/* line-height: 0 bỏ khoảng trống theo dòng chữ quanh ảnh, để icon căn giữa đúng theo hình */
+.home-links__tile--icon > :first-child {
+	grid-row: span 2;
+	line-height: 0;
+}
+
+.home-links__tile img {
+	display: block;
+	border-radius: 6px;
+}
+
 .home-links__tile > a {
 	color: var( --color-emphasized, #101418 );
 }
