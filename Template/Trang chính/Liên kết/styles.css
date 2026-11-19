@@ -67,6 +67,7 @@
 .home-links__heading {
 	display: flex;
 	align-items: center;
+	justify-content: center;
 	gap: 0.5rem;
 	color: var( --color-emphasized, #101418 );
 	font-family: var( --lhmn-font-family-heading, inherit );
@@ -75,6 +76,7 @@
 }
 
 .home-links__subheading {
+	text-align: center;
 	margin-top: var( --space-xs, 0.5rem );
 	color: var( --color-subtle, #54595d );
 	font-size: var( --font-size-small, 0.875rem );
@@ -83,6 +85,7 @@
 
 .home-links__text,
 .home-links__list {
+	text-align: center;
 	color: var( --color-base, #202122 );
 	font-size: var( --font-size-small, 0.875rem );
 	line-height: 1.6;
