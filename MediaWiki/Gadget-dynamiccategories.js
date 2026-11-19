@@ -105,8 +105,8 @@ $( function () {
 	}
 
 	// Phân trang: lấy liên kết trang trước/sau của MediaWiki, gỡ bản gốc, dựng nút ở trên và dưới danh sách
-	const prevHref = $( '#mw-pages > a[href*="pageuntil"]' ).attr( 'href' ) ?? null;
-	const nextHref = $( '#mw-pages > a[href*="pagefrom"]' ).attr( 'href' ) ?? null;
+	const prevHref = $( '#mw-pages > a[href*="pageuntil"]' ).attr( 'href' ) || null;
+	const nextHref = $( '#mw-pages > a[href*="pagefrom"]' ).attr( 'href' ) || null;
 	$pages.contents().filter( function () {
 		return this.nodeType === Node.TEXT_NODE || this.nodeName === 'A';
 	} ).remove();
