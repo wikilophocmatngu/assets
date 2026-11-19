@@ -139,8 +139,9 @@ function p._main( args, frame )
 	local seoMetadata = require( 'Module:InfoboxSEO' ).setSEO( frame, args, {
 		imageAlt = 'Hình ảnh của ấn phẩm ' .. mw.title.getCurrentTitle().text .. ' trong Lớp Học Mật Ngữ.',
 		keywords = { 'ấn phẩm', 'truyện tranh', args.type, args.series, args.previous, args.next },
-		shortdesc = 'Chỉ là một trang về một cuốn '
-			.. ( args.version == 'Mini' and 'Phiên bản Mini' or args.type or 'ấn phẩm' ) .. '.'
+		shortdesc = args.version == 'Mini' and 'Một ấn phẩm thuộc dòng Lớp Học Mật Ngữ Mini'
+			or args.type and ( 'Một ấn phẩm thuộc dòng ' .. args.type .. ' của Lớp Học Mật Ngữ' )
+			or 'Một ấn phẩm của Lớp Học Mật Ngữ'
 	} )
 	
 	local customStyles = frame:extensionTag { 

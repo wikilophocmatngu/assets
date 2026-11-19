@@ -53,7 +53,7 @@ function p._main( args, frame )
 	if args.occupation then
 		table.insert( basicSection, infobox:renderItem( { 
 			label = 'Nghề nghiệp', 
-			data = args.occupation,
+			data = infobox.commaToList( args.occupation ),
 			iconClass = 'citizen-ui-icon mw-ui-icon-wikimedia-article' 
 		} ) )
 	end

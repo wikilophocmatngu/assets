@@ -63,7 +63,7 @@ function p._main( args, frame )
 	if args.designer then
 		table.insert( mainSection, infobox:renderItem( { 
 			label = 'Thiết kế', 
-			data = args.designer,
+			data = infobox.commaToList( args.designer ),
 			iconClass = 'citizen-ui-icon mw-ui-icon-wikimedia-wikiText',
 			colspan = 2
 		} ) )
@@ -72,7 +72,7 @@ function p._main( args, frame )
 	if args.artist then
 		table.insert( mainSection, infobox:renderItem( { 
 			label = 'Minh họa', 
-			data = args.artist,
+			data = infobox.commaToList( args.artist ),
 			iconClass = 'citizen-ui-icon mw-ui-icon-wikimedia-edit',
 			colspan = 2
 		} ) )
@@ -81,7 +81,7 @@ function p._main( args, frame )
 	if args.publisher then
 		table.insert( mainSection, infobox:renderItem( { 
 			label = 'Phát hành', 
-			data = args.publisher,
+			data = infobox.commaToList( args.publisher ),
 			iconClass = 'citizen-ui-icon mw-ui-icon-wikimedia-home',
 			colspan = 2
 		} ) )
