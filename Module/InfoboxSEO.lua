@@ -61,7 +61,9 @@ function p.setSEO( frame, args, cfg )
 	}
 	local out = frame:callParserFunction( '#seo', seo )
 	if cfg.shortdesc then
-		out = out .. frame:callParserFunction( 'SHORTDESC', { cfg.shortdesc } )
+		-- Mô tả ngắn hiện làm phụ đề dưới tên trang: câu ngắn nên bỏ dấu chấm cuối
+		local shortdesc = mw.text.trim( cfg.shortdesc ):gsub( '%.$', '' )
+		out = out .. frame:callParserFunction( 'SHORTDESC', { shortdesc } )
 	end
 	return out
 end

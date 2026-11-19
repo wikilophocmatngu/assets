@@ -75,6 +75,36 @@ function methodtable.tableToCommaList( data )
 	end
 end
 
+--- Biến chuỗi phân cách bằng dấu phẩy thành danh sách gạch đầu dòng (<ul>)
+--- Một giá trị thì trả nguyên văn; giá trị viết sẵn dạng danh sách wikitext (* hoặc #)
+--- được đưa xuống dòng mới để trình phân tích nhận ra danh sách.
+--- ponytail: tách theo mọi dấu phẩy, kể cả dấu phẩy nằm trong [[liên kết|tên, có phẩy]]
+---
+--- @param s string|nil
+--- @return string|nil
+function methodtable.commaToList( s )
+	if type( s ) ~= 'string' or s == '' then
+		return s
+	end
+
+	if s:match( '^%s*[%*#]' ) then
+		return '\n' .. s
+	end
+
+	local items = mw.text.split( s, '%s*,%s*' )
+	if #items < 2 then
+		return s
+	end
+
+	local list = mw.html.create( 'ul' )
+	for _, item in ipairs( items ) do
+		if item ~= '' then
+			list:tag( 'li' ):wikitext( item )
+		end
+	end
+	return tostring( list )
+end
+
 --- Show range if value1 and value2 are different
 ---
 --- @param s1 string|nil

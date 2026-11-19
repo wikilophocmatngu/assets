@@ -110,8 +110,8 @@ function p._main( args, frame )
 
 	if args.main then
 		table.insert( mainSection, infobox:renderItem( { 
-			label = 'Nhân vật chính', 
-			data = args.main,
+			label = 'Nhân vật chính',
+			data = infobox.commaToList( args.main ),
 			iconClass = 'citizen-ui-icon mw-ui-icon-wikimedia-userAdd'
 		} ) )
 	end

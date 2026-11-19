@@ -47,6 +47,8 @@ $(function () {
     display:block;
 }
 
+/* Màu viền/nền dùng biến của Citizen thay cho #ccc, trắng, xám cố định: tự khớp chế độ sáng/tối */
+
 /*----------- dynamic ---------*/
 
 .dynamic-catlist {
@@ -61,7 +63,7 @@ $(function () {
 }
 
 .dynamic-catlist h3 {
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid var(--border-color-base);
 }
 
 .dynamic-catlist li {
@@ -79,7 +81,7 @@ $(function () {
 img.catlink-thumb {
     object-fit:cover;
     object-position:center top;
-    border:1px solid #ccc;
+    border:1px solid var(--border-color-base);
 }
 div.catlink-thumb {
     display:flex;
@@ -123,14 +125,14 @@ div.catlink-thumb {
 .gallery-catlist .catgallery-thumb {
     width:100%;
     aspect-ratio:1;
-    border:1px solid #ccc;
+    border:1px solid var(--border-color-base);
     object-fit:cover;
     object-position:center top;
     box-sizing:border-box;
 }
 
 .catgallery-noimg .catgallery-thumb {
-    background-color:rgba(150,150,150,0.4);
+    background-color:var(--color-surface-2);
     display:flex;
     justify-content:center;
     align-items:center;
@@ -139,7 +141,7 @@ div.catlink-thumb {
 .catgallery-noimg svg {
     width:30%;
     height:fit-content;
-    fill:#888;
+    fill:var(--color-subtle);
 }
 
 .catgallery-text {
@@ -211,12 +213,13 @@ div.gallery-compacter ul {
 }
 
 .catbtn {
-    border: 1px solid #ccc;
+    border: 1px solid var(--border-color-base);
+    background-color: var(--color-surface-1);
     padding:8px;
     user-select:none;
     cursor:pointer;
     border-radius:6px;
-    transition:background-color 0.2s;
+    transition:background-color 0.2s, border-color 0.2s, color 0.2s;
     position:relative;
     display:flex;
     justify-content:center;
@@ -227,8 +230,15 @@ div.gallery-compacter ul {
     line-height:0;
 }
 
-.catbtn.active, .catbtn:hover {
-    background-color: rgba(200,200,200,0.6);
+.catbtn:hover {
+    background-color: var(--color-surface-3);
+}
+
+/* Nút đang chọn: viền và biểu tượng màu nhấn để nổi trên nền thiên hà ở cả hai chế độ */
+.catbtn.active {
+    background-color: var(--color-surface-3);
+    border-color: var(--border-color-progressive);
+    color: var(--color-progressive);
 }
 
 .catlist-selector .catbtn::before {
@@ -242,8 +252,8 @@ div.gallery-compacter ul {
     display:none;
     line-height:1.2em;
     padding:5px 8px;
-    background-color:white;
-    color:black;
+    background-color:var(--color-surface-1);
+    color:var(--color-base);
     z-index:1;
     white-space:nowrap;
 }
@@ -258,7 +268,7 @@ div.gallery-compacter ul {
 }
 
 .catlist-nav span.catbtn {
-    background-color:rgba(200,200,200,0.6);
+    background-color:var(--color-surface-2);
     opacity: 0.5;
     cursor:unset;
 }
