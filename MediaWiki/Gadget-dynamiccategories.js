@@ -1,452 +1,214 @@
-/*
-		dynamic categories
-		
-		last updated: 28 september 2024
-
-		refer to [[dev:Dynamic Categories]] on dev.miraheze.org
-*/
-
-
-defaultCategoryView = 'Dynamic'; // Choose from 'Classic' , 'Dynamic' or 'Gallery' --- First letter capital, with single quotes
-
-galleryCatStyle = 'Compacter'; // 'Normal' , 'Compact' or 'Compacter'
-
-catlistAlphabets = false; // true or false. Whether you want the menu of navigation alphabets above the category list
-
-//---------------------------------------------------------------------------------------------------
-
-const labels = { 
-	
-	// Change the text labels here. For localization purposes.
-	
-	classic: "Mặc định",
-	dynamic: "Danh sách kèm hình",
-	gallery: "Hình ảnh",
-	prev: "Trang trước",
-	next: "Trang sau"
-
-};
-
-const i18n = {
-	
-	// !!!! IF YOUR WIKI IS NOT IN ENGLISH: Change "previous page" to what it is in your language
-    // How to check this: Go to a category page, add "?pagefrom=A" to the end of the url
-    
-    previouspage: "Trang trước"
-};
-
-//--------------------------------------------------------------------------
-
-$(function () {
-    if ($('body').is('.ns-14')) {
-        mw.util.addCSS(`
-#mw-pages .mw-category, .dynamic-catlist, .gallery-catlist {
-    display:none;
-}
-#mw-pages.catview-Classic .mw-category, .catview-Dynamic .dynamic-catlist, .catview-Gallery .gallery-catlist {
-    display:block;
-}
-
-/* Màu viền/nền dùng biến của Citizen thay cho #ccc, trắng, xám cố định: tự khớp chế độ sáng/tối */
-
-/*----------- dynamic ---------*/
-
-.dynamic-catlist {
-    column-count:3;
-    column-width:24em;
-    column-gap:2em;
-}
-
-.dynamic-catlist ul{
-    list-style:none;
-    margin-left:0;
-}
-
-.dynamic-catlist h3 {
-    border-bottom: 1px solid var(--border-color-base);
-}
-
-.dynamic-catlist li {
-    display:flex;
-    align-items:center;
-    gap:1em;
-    margin:5px 0;
-    break-inside:avoid;
-}
-
-.dynamic-catlist .catlink-thumb {
-    width:4em;
-    aspect-ratio: 1;
-}
-img.catlink-thumb {
-    object-fit:cover;
-    object-position:center top;
-    border:1px solid var(--border-color-base);
-}
-div.catlink-thumb {
-    display:flex;
-    align-items:center;
-    justify-content: center;
-}
-  
-.catlink-thumb svg {
-    width:40%;
-    height:auto;
-    fill:currentcolor;
-}
-
-/*----------- gallery ---------*/
-
-.gallery-catlist ul {
-    list-style:none;
-    margin-left:0;
-    margin-top:1em;
-    display:grid;
-    gap:1.5em;
-    row-gap:2.5em;
-    grid-template-columns: repeat(auto-fill, minmax(10em, 1fr));
-    grid-template-rows: auto;
-    justify-content:center;
-    line-height:1.2em;
-}
-
-.gallery-catlist li {
-    display:contents;
-}
-
-.gallery-catlist li a {
-    position:relative;
-    transition:opacity 0.2s;
-}
-.gallery-catlist li a:hover {
-    opacity:0.8;
-}
-
-.gallery-catlist .catgallery-thumb {
-    width:100%;
-    aspect-ratio:1;
-    border:1px solid var(--border-color-base);
-    object-fit:cover;
-    object-position:center top;
-    box-sizing:border-box;
-}
-
-.catgallery-noimg .catgallery-thumb {
-    background-color:var(--color-surface-2);
-    display:flex;
-    justify-content:center;
-    align-items:center;
-}
-
-.catgallery-noimg svg {
-    width:30%;
-    height:fit-content;
-    fill:var(--color-subtle);
-}
-
-.catgallery-text {
-    margin-top:0.5em;
-}
-
-/*----------- compact gallery ---------*/
-
-div.gallery-compact ul {
-    gap:1em;
-}
-div.gallery-compacter ul {
-    gap:2px;
-    grid-template-columns: repeat(auto-fill, minmax(8em,1fr));
-}
-
-.gallery-compact .catgallery-text, .gallery-compacter .catgallery-text {
-    position:absolute;
-    color:#fff;
-    width:100%;
-    height:100%;
-    box-sizing:border-box;
-    padding:5px 10px;
-    bottom:0;
-    left:0;
-    display:flex;
-    align-items:flex-end;
-    background-image: linear-gradient(7deg, rgba(0,0,0,0.7), transparent 50%);
-    text-shadow: 0 0 10px black;
-    word-break:break-word;
-}
-
-.gallery-compact .catgallery-noimg .catgallery-text, .gallery-compacter .catgallery-noimg .catgallery-text {
-    background-image:unset;
-    background-color:rgba(0,0,0,0.4);
-}
-
-.gallery-compacter .catgallery-thumb, .gallery-compacter .catgallery-blank {
-    border:unset;
-}
-
-/*----------- menu buttons ---------*/
-
-.catlist-menu {
-    display:flex;
-    gap:10px;
-    justify-content:right;
-    flex-flow:row wrap;
-    margin:10px 0;
-}
-
-.catlist-selector, .catlist-nav, .catlist-alphabet {
-    display:flex;
-    gap:10px;
-}
-
-.catlist-nav {
-    flex: 1 0 500px;
-    justify-content:space-between;
-    max-width:100%;
-}
-.catlist-alphabet {
-    overflow:scroll;
-    gap:5px;
-}
-
-#mw-pages > .catlist-nav {
-    margin-top:10px;
-}
-
-.catbtn {
-    border: 1px solid var(--border-color-base);
-    background-color: var(--color-surface-1);
-    padding:8px;
-    user-select:none;
-    cursor:pointer;
-    border-radius:6px;
-    transition:background-color 0.2s, border-color 0.2s, color 0.2s;
-    position:relative;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-}
-
-.catlist-selector .catbtn {
-    line-height:0;
-}
-
-.catbtn:hover {
-    background-color: var(--color-surface-3);
-}
-
-/* Nút đang chọn: viền và biểu tượng màu nhấn để nổi trên nền thiên hà ở cả hai chế độ */
-.catbtn.active {
-    background-color: var(--color-surface-3);
-    border-color: var(--border-color-progressive);
-    color: var(--color-progressive);
-}
-
-.catlist-selector .catbtn::before {
-    content: attr(data-label);
-    position:absolute;
-    bottom:100%;
-    margin-bottom:10px;
-    left:50%;
-    transform:translateX(-50%);
-    border: inherit;
-    display:none;
-    line-height:1.2em;
-    padding:5px 8px;
-    background-color:var(--color-surface-1);
-    color:var(--color-base);
-    z-index:1;
-    white-space:nowrap;
-}
-.catlist-selector .catbtn:hover::before {
-    display:block;
-}
-
-.catbtn svg {
-    width:1.5em;
-    height:1.5em;
-    fill:currentcolor;
-}
-
-.catlist-nav span.catbtn {
-    background-color:var(--color-surface-2);
-    opacity: 0.5;
-    cursor:unset;
-}
-
-.redirect-in-category {
-    display:contents;
-}
-
-@media screen and (max-width:500px) {
-    .gallery-catlist ul {
-        grid-template-columns: repeat(3, 1fr) !important;
-        gap:0.5em;
-    }
-}
-
-#mw-pages img {
-    filter:unset;
-}
-`);
-
-        $('#mw-pages > :not(a)').appendTo($('#mw-pages').clone().empty().insertBefore('#mw-pages'));
-        $('[id=mw-pages]').eq(1).attr('id', 'mw-pages-extra');
-
-        const mwPages = $('#mw-pages');
-
-        if (!localStorage.categoryView) {
-            localStorage.categoryView = defaultCategoryView;
-        }
-
-        // Apply class to #mw-pages based on localStorage
-
-        mwPages.attr('class', 'catview-' + localStorage.categoryView);
-
-        // Check for magic word in page content, apply class if present
-
-        catMagicWords('__CLASSICCAT__', 'catview-Classic');
-        catMagicWords('__DYNAMICCAT__', 'catview-Dynamic');
-        catMagicWords('__GALLERYCAT__', 'catview-Gallery');
-
-        const
-            iconClassic = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/></svg>',
-            iconDynamic = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M40 48C26.7 48 16 58.7 16 72l0 48c0 13.3 10.7 24 24 24l48 0c13.3 0 24-10.7 24-24l0-48c0-13.3-10.7-24-24-24L40 48zM192 64c-17.7 0-32 14.3-32 32s14.3 32 32 32l288 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L192 64zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32l288 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-288 0zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32l288 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-288 0zM16 232l0 48c0 13.3 10.7 24 24 24l48 0c13.3 0 24-10.7 24-24l0-48c0-13.3-10.7-24-24-24l-48 0c-13.3 0-24 10.7-24 24zM40 368c-13.3 0-24 10.7-24 24l0 48c0 13.3 10.7 24 24 24l48 0c13.3 0 24-10.7 24-24l0-48c0-13.3-10.7-24-24-24l-48 0z"/></svg>',
-            iconGallery = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M384 96l0 128-128 0 0-128 128 0zm0 192l0 128-128 0 0-128 128 0zM192 224L64 224 64 96l128 0 0 128zM64 288l128 0 0 128L64 416l0-128zM64 32C28.7 32 0 60.7 0 96L0 416c0 35.3 28.7 64 64 64l320 0c35.3 0 64-28.7 64-64l0-320c0-35.3-28.7-64-64-64L64 32z"/></svg>',
-            iconEmpty = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M384 336l-192 0c-8.8 0-16-7.2-16-16l0-256c0-8.8 7.2-16 16-16l140.1 0L400 115.9 400 320c0 8.8-7.2 16-16 16zM192 384l192 0c35.3 0 64-28.7 64-64l0-204.1c0-12.7-5.1-24.9-14.1-33.9L366.1 14.1c-9-9-21.2-14.1-33.9-14.1L192 0c-35.3 0-64 28.7-64 64l0 256c0 35.3 28.7 64 64 64zM64 128c-35.3 0-64 28.7-64 64L0 448c0 35.3 28.7 64 64 64l192 0c35.3 0 64-28.7 64-64l0-32-48 0 0 32c0 8.8-7.2 16-16 16L64 464c-8.8 0-16-7.2-16-16l0-256c0-8.8 7.2-16 16-16l32 0 0-48-32 0z"/></svg>';
-
-        // Make menu buttons
-
-        $('#mw-pages > p:first-of-type').after(`<div class="catlist-menu"><div class="catlist-selector"><span class="catbtn" data-label="${labels.classic}" title="Classic">${iconClassic}</span><span class="catbtn" data-label="${labels.dynamic}" title="Dynamic">${iconDynamic}</span><span class="catbtn" data-label="${labels.gallery}" title="Gallery">${iconGallery}</span></div></div>`);
-
-        $('.catlist-menu').prepend('<div class="catlist-nav"></div>');
-
-        if (catlistAlphabets) {
-
-            $('.catlist-nav').prepend('<div class="catlist-alphabet"></div>');
-
-            const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
-                alphabetlist = $('.catlist-alphabet');
-
-            for (var x in alphabet) {
-                alphabetlist.append(`<a class="catbtn" href="?pagefrom=${alphabet[x]}">${alphabet[x]}</a>`);
-            }
-
-            alphabetlist.prepend(`<a class="catbtn" href="?">#</a>`);
-
-        }
-
-        if ($('#mw-pages-extra > a').length > 0) {
-            $('.catlist-nav').prepend(`<span class="catbtn catlist-prev">${labels.prev}</span>`).append(`<span class="catbtn catlist-next">${labels.next}</span>`);
-            $('#mw-pages').append(`<div class="catlist-nav"><span class="catbtn catlist-prev">${labels.prev}</span><span class="catbtn catlist-next">${labels.next}</span></div>`);
-
-            if ($('#mw-pages-extra > a').eq(0).text() == i18n.previouspage) {
-                $('.catlist-prev').replaceWith(`<a class="catbtn catlist-prev" href="${$('#mw-pages-extra > a').eq(0).attr('href')}">${labels.prev}</a>`);
-            } else {
-                $('.catlist-next').replaceWith(`<a class="catbtn catlist-next" href="${$('#mw-pages-extra > a').eq(0).attr('href')}">${labels.next}</a>`);
-            }
-
-            if ($('#mw-pages-extra > a').eq(1).text() != $('#mw-pages-extra > a').eq(0).text()) {
-                $('.catlist-next').replaceWith(`<a class="catbtn catlist-next" href="${$('#mw-pages-extra > a').eq(1).attr('href')}">${labels.next}</a>`);
-            }
-        }
-
-        const iconPrev = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z"/></svg>',
-            iconNext = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"/></svg>';
-
-        $('.catlist-prev').prepend(iconPrev);
-        $('.catlist-next').append(iconNext);
-        $('#mw-pages-extra').remove();
-
-        // Make button active based on category view
-
-        $('.catlist-selector .catbtn[title="' + mwPages.attr('class').slice(8) + '"]').addClass('active');
-
-        $('.catlist-selector .catbtn').click($.proxy(catSelect, null));
-
-        // Make Dynamic and Gallery view wrappers
-
-        $('#mw-pages .mw-category').after('<div class="gallery-catlist"><ul></ul></div>');
-        $('#mw-pages .mw-category li').clone().appendTo('.gallery-catlist ul');
-        $('#mw-pages .mw-category').clone().removeClass().addClass('dynamic-catlist').insertAfter('#mw-pages .mw-category');
-
-        switch (galleryCatStyle) {
-            case 'Compact':
-                $('.gallery-catlist').addClass('gallery-compact');
-                break;
-            case 'Compacter':
-                $('.gallery-catlist').addClass('gallery-compacter');
-        }
-
-        api = new mw.Api(),
-            pages = [],
-            pageslice = [];
-
-        // pages is array of all category pages on current page, in order
-
-        $('#mw-pages .mw-category li a').each(function () {
-            pages.push($(this).attr('title'));
-        });
-
-        // slice array into chunks of 50 (page limit by default is 200, and pageimages api max query is 50)
-
-        for (i = 0; pages.length > i * 50; i++) {
-            pageslice[i] = pages.slice(i * 50, (i + 1) * 50);
-        }
-
-        // get pageimages
-
-        Promise.all(pageslice.map(function (value) {
-            const pageimagesparams = {
-                action: 'query',
-                format: 'json',
-                prop: 'pageimages',
-                pithumbsize: '200',
-                titles: value
-            };
-
-            return new Promise((resolve, reject) => {
-                api.get(pageimagesparams).done(function (data) {
-                    resolve(Object.values(data.query.pages));
-                });
-            });
-
-        }))
-            .then(function (values) {
-                // combine all api results into one array and sort based on the 'pages' array
-                imageslist = values.flatMap(a => a);
-                imageslist.sort((a, b) => pages.indexOf(a.title) - pages.indexOf(b.title));
-
-                // Add images to Gallery and Dynamic
-
-                $('.gallery-catlist li a').each(function (index) {
-                    $(this).wrapInner('<div class="catgallery-text"><span></span></div>');
-                    $(this).find('span').html($(this).find('span').text().replaceAll(/(:|\/)/g, "$1<wbr>"));
-                    try { $(this).prepend(`<img class="catgallery-thumb catgallery-img" src="${imageslist[index].thumbnail.source}">`) }
-                    catch (err) { $(this).addClass('catgallery-noimg').prepend(`<div class="catgallery-thumb">${iconEmpty}</div>`) }
-                });
-
-                $('.dynamic-catlist li a').each(function (index) {
-                    try { $(this).before(`<a title="${$(this).attr('title')}" href="${$(this).attr('href')}"><img class="catlink-thumb" src="${imageslist[index].thumbnail.source}"></a>`) }
-                    catch (err) { $(this).before(`<div class="catlink-thumb">${iconEmpty}</div>`) }
-                });
-
-            });
-
-        if ($('.ext-darkmode-link').length > 0) {
-            $('#mw-pages > div').addClass('mw-no-invert');
-        }
-    }
-});
-
-function catSelect() {
-    $(this).addClass('active').siblings().removeClass('active');
-    localStorage.categoryView = $(this).attr('title');
-    $('#mw-pages').attr('class', 'catview-' + $(this).attr('title'));
-}
-
-function catMagicWords(magicword, addclass) {
-    if ($('.mw-parser-output').html().search(magicword) > -1) {
-        $('.mw-parser-output').html($('.mw-parser-output').html().replace(magicword, ''));
-        $('#mw-pages').attr('class', addclass);
-    }
-}
+/**
+ * MediaWiki:Gadget-dynamiccategories.js
+ *
+ * @desc     Trang thể loại có ba kiểu xem (mặc định, danh sách kèm hình, lưới hình) kèm nút chọn và phân trang.
+ *           Bản dễ đọc của Dynamic Categories trên dev.miraheze.org (bản gadget store), giữ nguyên hành vi upstream.
+ * @author   [[Thành viên:Pisces]] (https://songngu.xyz)
+ * @site     https://lophocmatngu.wiki/MediaWiki:Gadget-dynamiccategories.js
+ * @license  CC BY-SA 4.0
+ *
+ * Kiểu dáng ở MediaWiki:Gadget-dynamiccategories.css.
+ * Cấu hình thêm (tùy chọn): window.dynamicCategoriesConfig, hoặc thẻ #dynamic-categories-config
+ * với data-gallery-cat-style / data-catlist-alphabets / data-thumb-size trên trang thể loại.
+ * Từ khóa trong nội dung trang: __CLASSICCAT__, __DYNAMICCAT__, __GALLERYCAT__.
+ */
+$( function () {
+	if ( mw.config.get( 'wgNamespaceNumber' ) !== 14 ) {
+		return;
+	}
+
+	const defaults = {
+		defaultCategoryView: 'dynamic',
+		galleryCatStyle: 'compacter',
+		catlistAlphabets: false,
+		thumbSize: 200,
+		labels: {
+			classic: 'Mặc định',
+			dynamic: 'Danh sách kèm hình',
+			gallery: 'Hình ảnh',
+			prev: 'Trang trước',
+			next: 'Trang sau'
+		}
+	};
+	const userConfig = window.dynamicCategoriesConfig || {};
+	const pageConfig = ( function () {
+		const $el = $( '#dynamic-categories-config' );
+		if ( $el.length === 0 ) {
+			return {};
+		}
+		const data = $el[ 0 ].dataset;
+		const out = {};
+		for ( const key of [ 'galleryCatStyle', 'catlistAlphabets', 'thumbSize' ] ) {
+			if ( data[ key ] ) {
+				out[ key ] = data[ key ];
+			}
+		}
+		return out;
+	}() );
+	const config = Object.assign( {}, defaults, userConfig, pageConfig, {
+		labels: Object.assign( {}, defaults.labels, userConfig.labels, pageConfig.labels )
+	} );
+	const labels = config.labels;
+	const $pages = $( '#mw-pages' );
+
+	// Bản cũ lưu 'Classic' / 'Dynamic' / 'Gallery'; bản mới dùng chữ thường, không đổi thì danh sách bị ẩn hết
+	localStorage.categoryView = ( localStorage.categoryView || config.defaultCategoryView ).toLowerCase();
+	$pages.attr( 'class', 'catview-' + localStorage.categoryView );
+
+	// Từ khóa trong nội dung trang ép kiểu xem cho riêng trang đó
+	( function () {
+		const $content = $( '.mw-parser-output' );
+		const html = $content.html();
+		const words = [
+			[ '__CLASSICCAT__', 'catview-classic' ],
+			[ '__DYNAMICCAT__', 'catview-dynamic' ],
+			[ '__GALLERYCAT__', 'catview-gallery' ]
+		];
+		for ( const [ word, cls ] of words ) {
+			const i = html.indexOf( word );
+			if ( i > -1 ) {
+				$content.html( html.slice( 0, i ) + html.slice( i + word.length ) );
+				$pages.attr( 'class', cls );
+				break;
+			}
+		}
+	}() );
+
+	// Biểu tượng: Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.
+	const iconEmpty = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M384 336l-192 0c-8.8 0-16-7.2-16-16l0-256c0-8.8 7.2-16 16-16l140.1 0L400 115.9 400 320c0 8.8-7.2 16-16 16zM192 384l192 0c35.3 0 64-28.7 64-64l0-204.1c0-12.7-5.1-24.9-14.1-33.9L366.1 14.1c-9-9-21.2-14.1-33.9-14.1L192 0c-35.3 0-64 28.7-64 64l0 256c0 35.3 28.7 64 64 64zM64 128c-35.3 0-64 28.7-64 64L0 448c0 35.3 28.7 64 64 64l192 0c35.3 0 64-28.7 64-64l0-32-48 0 0 32c0 8.8-7.2 16-16 16L64 464c-8.8 0-16-7.2-16-16l0-256c0-8.8 7.2-16 16-16l32 0 0-48-32 0z"/></svg>';
+	const iconClassic = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/></svg>';
+	const iconDynamic = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M40 48C26.7 48 16 58.7 16 72l0 48c0 13.3 10.7 24 24 24l48 0c13.3 0 24-10.7 24-24l0-48c0-13.3-10.7-24-24-24L40 48zM192 64c-17.7 0-32 14.3-32 32s14.3 32 32 32l288 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L192 64zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32l288 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-288 0zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32l288 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-288 0zM16 232l0 48c0 13.3 10.7 24 24 24l48 0c13.3 0 24-10.7 24-24l0-48c0-13.3-10.7-24-24-24l-48 0c-13.3 0-24 10.7-24 24zM40 368c-13.3 0-24 10.7-24 24l0 48c0 13.3 10.7 24 24 24l48 0c13.3 0 24-10.7 24-24l0-48c0-13.3-10.7-24-24-24l-48 0z"/></svg>';
+	const iconGallery = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M384 96l0 128-128 0 0-128 128 0zm0 192l0 128-128 0 0-128 128 0zM192 224L64 224 64 96l128 0 0 128zM64 288l128 0 0 128L64 416l0-128zM64 32C28.7 32 0 60.7 0 96L0 416c0 35.3 28.7 64 64 64l320 0c35.3 0 64-28.7 64-64l0-320c0-35.3-28.7-64-64-64L64 32z"/></svg>';
+	const iconPrev = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z"/></svg>';
+	const iconNext = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"/></svg>';
+
+	// Hàng nút chọn kiểu xem
+	$( '#mw-pages > p:first-of-type' ).after(
+		'<div class="catlist-menu"><div class="catlist-selector">' +
+		`<span class="catbtn" data-label="${ labels.classic }" title="classic">${ iconClassic }</span>` +
+		`<span class="catbtn" data-label="${ labels.dynamic }" title="dynamic">${ iconDynamic }</span>` +
+		`<span class="catbtn" data-label="${ labels.gallery }" title="gallery">${ iconGallery }</span>` +
+		'</div></div>'
+	);
+	$pages.find( '.catlist-menu' ).prepend( '<div class="catlist-nav"></div>' );
+
+	if ( config.catlistAlphabets ) {
+		$pages.find( '.catlist-nav' ).prepend( '<div class="catlist-alphabet"></div>' );
+		const $alphabet = $pages.find( '.catlist-alphabet' );
+		for ( const letter of 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' ) {
+			$alphabet.append( $( '<a>' ).addClass( 'catbtn' ).attr( 'href', '?pagefrom=' + letter ).text( letter ) );
+		}
+		$alphabet.prepend( $( '<a>' ).addClass( 'catbtn' ).attr( 'href', '?' ).text( '#' ) );
+	}
+
+	// Phân trang: lấy liên kết trang trước/sau của MediaWiki, gỡ bản gốc, dựng nút ở trên và dưới danh sách
+	const prevHref = $( '#mw-pages > a[href*="pageuntil"]' ).attr( 'href' ) ?? null;
+	const nextHref = $( '#mw-pages > a[href*="pagefrom"]' ).attr( 'href' ) ?? null;
+	$pages.contents().filter( function () {
+		return this.nodeType === Node.TEXT_NODE || this.nodeName === 'A';
+	} ).remove();
+
+	if ( prevHref || nextHref ) {
+		const $navTop = $pages.find( '.catlist-nav' );
+		const $navBottom = $( '<div>' ).addClass( 'catlist-nav' ).appendTo( $pages );
+		for ( const $nav of [ $navTop, $navBottom ] ) {
+			$nav.prepend( prevHref ?
+				$( '<a>' ).addClass( 'catbtn catlist-prev' ).attr( 'href', prevHref ).text( labels.prev ) :
+				$( '<span>' ).addClass( 'catbtn catlist-prev' ).text( labels.prev )
+			).append( nextHref ?
+				$( '<a>' ).addClass( 'catbtn catlist-next' ).attr( 'href', nextHref ).text( labels.next ) :
+				$( '<span>' ).addClass( 'catbtn catlist-next' ).text( labels.next )
+			);
+		}
+	}
+	$pages.find( '.catlist-prev' ).prepend( iconPrev );
+	$pages.find( '.catlist-next' ).append( iconNext );
+
+	$pages.find( '.catlist-selector .catbtn[title="' + $pages.attr( 'class' ).slice( 8 ) + '"]' ).addClass( 'active' );
+	$pages.find( '.catlist-selector .catbtn' ).on( 'click', function () {
+		const $btn = $( this );
+		$btn.addClass( 'active' ).siblings().removeClass( 'active' );
+		localStorage.categoryView = $btn.attr( 'title' );
+		$pages.attr( 'class', 'catview-' + $btn.attr( 'title' ) );
+	} );
+
+	// Dựng hai bản sao danh sách: lưới hình và danh sách kèm hình
+	$pages.find( '.mw-category' ).after( '<div class="gallery-catlist"><ul></ul></div>' );
+	$pages.find( '.mw-category li' ).clone().appendTo( $pages.find( '.gallery-catlist ul' ) );
+	$pages.find( '.mw-category' ).clone().removeClass().addClass( 'dynamic-catlist' ).insertAfter( $pages.find( '.mw-category' ) );
+
+	const galleryStyle = config.galleryCatStyle.toLowerCase();
+	if ( galleryStyle === 'compact' || galleryStyle === 'compacter' ) {
+		$pages.find( '.gallery-catlist' ).addClass( 'gallery-' + galleryStyle );
+	}
+
+	// Ảnh đại diện (PageImages), hỏi API theo lô 50 tiêu đề
+	const api = new mw.Api();
+	const titles = [];
+	$pages.find( '.mw-category li a' ).each( function () {
+		titles.push( $( this ).attr( 'title' ) );
+	} );
+	const batches = [];
+	for ( let i = 0; i < titles.length; i += 50 ) {
+		batches.push( titles.slice( i, i + 50 ) );
+	}
+
+	Promise.all( batches.map( ( batch ) => new Promise( ( resolve, reject ) => {
+		api.get( {
+			action: 'query',
+			format: 'json',
+			prop: 'pageimages',
+			pithumbsize: config.thumbSize,
+			titles: batch
+		} ).done( ( data ) => {
+			resolve( data.query && data.query.pages ? Object.values( data.query.pages ) : [] );
+		} ).fail( reject );
+	} ) ) ).then( ( results ) => {
+		const byTitle = new Map();
+		for ( const page of results.flat() ) {
+			byTitle.set( page.title, page );
+		}
+
+		$pages.find( '.gallery-catlist li a' ).each( function () {
+			const $link = $( this );
+			$link.wrapInner( '<div class="catgallery-text"><span></span></div>' );
+
+			// Cho phép xuống dòng sau dấu : và / trong tên dài
+			const $span = $link.find( 'span' );
+			const text = $span.text();
+			$span.empty();
+			text.split( /([:/])/ ).forEach( ( part ) => {
+				$span.append( document.createTextNode( part ) );
+				if ( /[:/]/.test( part ) ) {
+					$span.append( document.createElement( 'wbr' ) );
+				}
+			} );
+
+			const page = byTitle.get( $link.attr( 'title' ) );
+			const src = page && page.thumbnail && page.thumbnail.source;
+			if ( src ) {
+				$( '<img>' ).addClass( 'catgallery-thumb catgallery-img' ).attr( { src: src, alt: page.title } ).prependTo( this );
+			} else {
+				$link.addClass( 'catgallery-noimg' ).prepend( `<div class="catgallery-thumb">${ iconEmpty }</div>` );
+			}
+		} );
+
+		$pages.find( '.dynamic-catlist li a' ).each( function () {
+			const $link = $( this );
+			const page = byTitle.get( $link.attr( 'title' ) );
+			const src = page && page.thumbnail && page.thumbnail.source;
+			if ( src ) {
+				$( '<a>' ).attr( { title: $link.attr( 'title' ), href: $link.attr( 'href' ) } )
+					.append( $( '<img>' ).addClass( 'catlink-thumb' ).attr( { src: src, alt: page.title } ) )
+					.insertBefore( this );
+			} else {
+				$link.before( `<div class="catlink-thumb">${ iconEmpty }</div>` );
+			}
+		} );
+	} );
+
+	// Tiện ích DarkMode: không đảo màu ảnh
+	if ( $( '.ext-darkmode-link' ).length > 0 ) {
+		$pages.find( '> div' ).addClass( 'mw-no-invert' );
+	}
+} );
