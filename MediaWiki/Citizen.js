@@ -1,13 +1,14 @@
 /**
- * MediaWiki:Common.js
+ * MediaWiki:Citizen.js
  *
- * @description	Mã JavaScript cho giao diện Citizen tại Wiki Lớp Học Mật Ngữ
+ * @desc		Mã JavaScript cho giao diện Citizen tại Wiki Lớp Học Mật Ngữ
  * @author		[[Thành viên:Pisces]] (https://songngu.xyz)
- * @site		https://lophocmatngu.wiki/MediaWiki:Common.js
+ * @site		https://lophocmatngu.wiki/MediaWiki:Citizen.js
  * @license		CC BY-SA-4.0
  */
 
-const popoutData = [
+// MenuIcon.js (Splatched) đọc cấu hình từ window.menuIconConfig.popoutData
+window.menuIconConfig = { popoutData: [
 	{
 		heading: 'Các dự án khác của SongNgư.xyz',
 		icon: `https://static.wikitide.net/lhmnwiki/9/9e/SongNguXYZ-icon.svg`,
@@ -34,7 +35,7 @@ const popoutData = [
 			}
 		]
 	}
-];
+] };
 
 mw.loader.load('https://dev.miraheze.org/wiki/User:Splatched/MenuIcon.js?action=raw&ctype=text/javascript');
 
