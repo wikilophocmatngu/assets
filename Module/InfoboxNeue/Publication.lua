@@ -26,6 +26,37 @@ local function processReleaseDate( dateString )
 	return dateString
 end
 
+-- Tên hiển thị của một số dòng ấn phẩm (giá trị series/version → tên đầy đủ)
+local LINES = { ['Mini'] = 'Lớp Học Mật Ngữ Mini', ['THE BEST'] = 'Tuyển tập đặc biệt THE BEST' }
+
+-- Mẫu lấy số thứ tự từ tên trang đã viết thường ("Tập 10", "Tập đặc biệt 3", "Vol.2")
+local NUMBER_PATTERNS = { 'tập%s+(%d+)', 'đặc biệt%s+(%d+)', 'vol%.%s*(%d+)' }
+
+--- Mô tả ngắn dạng "Ấn phẩm thứ X của dòng Y"
+-- X: tham số number, không có thì lấy từ tên trang; Y: series (trừ series gốc), rồi version Mini, rồi type
+local function shortdesc( args )
+	local series = args.series and require( 'Module:InfoboxSEO' ).plain( args.series )
+	if series == 'Lớp Học Mật Ngữ' or series == 'Lớp học Mật Ngữ' then series = nil end
+	local line = series or ( args.version == 'Mini' and 'Mini' ) or args.type
+	line = line and ( LINES[ line ] or line )
+
+	local n = args.number
+	if not n then
+		local title = mw.ustring.lower( mw.title.getCurrentTitle().text )
+		for _, pat in ipairs( NUMBER_PATTERNS ) do
+			n = title:match( pat )
+			if n then break end
+		end
+	end
+
+	if line and n then
+		return 'Ấn phẩm thứ ' .. n .. ' của dòng ' .. line
+	elseif line then
+		return 'Một ấn phẩm thuộc dòng ' .. line .. ' của Lớp Học Mật Ngữ'
+	end
+	return 'Một ấn phẩm của Lớp Học Mật Ngữ'
+end
+
 --- Main entry point for #invoke
 function p.main( frame )
 	local args = getArgs( frame )
@@ -139,9 +170,7 @@ function p._main( args, frame )
 	local seoMetadata = require( 'Module:InfoboxSEO' ).setSEO( frame, args, {
 		imageAlt = 'Hình ảnh của ấn phẩm ' .. mw.title.getCurrentTitle().text .. ' trong Lớp Học Mật Ngữ.',
 		keywords = { 'ấn phẩm', 'truyện tranh', args.type, args.series, args.previous, args.next },
-		shortdesc = args.version == 'Mini' and 'Một ấn phẩm thuộc dòng Lớp Học Mật Ngữ Mini'
-			or args.type and ( 'Một ấn phẩm thuộc dòng ' .. args.type .. ' của Lớp Học Mật Ngữ' )
-			or 'Một ấn phẩm của Lớp Học Mật Ngữ'
+		shortdesc = shortdesc( args )
 	} )
 	
 	local customStyles = frame:extensionTag { 
