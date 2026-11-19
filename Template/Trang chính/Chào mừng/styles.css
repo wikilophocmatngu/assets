@@ -19,7 +19,7 @@
 /* ---- Hàng tab cổng chủ đề ---- */
 .home-header__tabs {
 	display: grid;
-	grid-template-columns: repeat( 4, minmax( 0, 1fr ) );
+	grid-template-columns: repeat( 6, minmax( 0, 1fr ) );
 	gap: var( --space-xs, 0.5rem );
 }
 
@@ -306,6 +306,15 @@
 	mask-image: url( https://static.wikitide.net/lhmnwiki/c/c8/Facebook_-_Simple_Icons.svg );
 }
 
+/* Instagram: dùng dạng viền của logo làm mặt nạ */
+.home-header__social-link--instagram a {
+	background-color: #c13584;
+}
+
+.home-header__social-link--instagram a::before {
+	mask-image: url( https://upload.wikimedia.org/wikipedia/commons/9/96/Instagram.svg );
+}
+
 /* GitHub: đảo theo chủ đề (nền màu chữ, biểu tượng màu nền) để không chìm ở chế độ tối */
 .home-header__social-link--github a {
 	background-color: var( --color-emphasized, #24292f );
@@ -326,6 +335,13 @@
 
 	.home-header__site {
 		order: -1;
+	}
+}
+
+/* ---- Máy tính bảng (< 900px): 6 tab chia 2 hàng 3 cột cho đủ chỗ chữ ---- */
+@media screen and ( max-width: 899.98px ) {
+	.home-header__tabs {
+		grid-template-columns: repeat( 3, minmax( 0, 1fr ) );
 	}
 }
 

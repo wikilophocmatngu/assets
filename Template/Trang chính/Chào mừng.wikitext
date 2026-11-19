@@ -1,9 +1,12 @@
 <div class="home-header">
 <div class="home-header__tabs">
+<div class="home-header__tab">[[File:Trang chính - Nhân vật.svg|32x32px|link=Thể loại:Nhân vật|]][[:Thể loại:Nhân vật|Nhân vật]]</div>
+<div class="home-header__tab">[[File:Trang chính - Ấn phẩm.svg|32x32px|link=Thể loại:Ấn phẩm|]][[:Thể loại:Ấn phẩm|Ấn phẩm]]</div>
 <div class="home-header__tab">[[File:Trang chính - Truyện tranh.svg|32x32px|link=Thể loại:Chương truyện|]][[:Thể loại:Chương truyện|Truyện tranh]]</div>
 <div class="home-header__tab">[[File:Trang chính - Boardgame.svg|32x32px|link=Thể loại:Boardgame|]][[:Thể loại:Boardgame|Boardgame]]</div>
+<div class="home-header__tab">[[File:Trang chính - Cạc bo góc.svg|32x32px|link=FollowMe|]][[FollowMe|Thẻ bo góc]]</div>
 <div class="home-header__tab">[[File:Trang chính - Hoạt hình.svg|32x32px|link=Show Your Star (series hoạt hình)|]][[Show Your Star (series hoạt hình)|Hoạt hình]]</div>
-<div class="home-header__tab">[[File:Trang chính - Nhân vật.svg|32x32px|link=Thể loại:Nhân vật|]][[:Thể loại:Nhân vật|Nhân vật]]</div>
+
 </div>
 <div class="home-header__main">
 <div class="home-header__highlights">
@@ -16,7 +19,7 @@
 <div class="home-header__intro">Bách khoa toàn thư về [[Lớp Học Mật Ngữ]], do cộng đồng người hâm mộ duy trì. '''[[WLHMN:Giới thiệu|Ai cũng có thể đóng góp!]]'''</div>
 <div class="home-header__search citizen-search-trigger" role="button" tabindex="0">Tìm kiếm trên wiki…</div>
 <div class="home-header__stats">'''{{NUMBEROFARTICLES}}''' bài viết · '''{{NUMBEROFFILES}}''' tập tin · '''{{NUMBEROFUSERS}}''' thành viên</div>
-<!-- Viết liền một dòng để trình phân tích không bọc <p> --><div class="home-header__social plainlinks"><span class="home-header__social-link home-header__social-link--discord" title="Discord">[https://go.lophocmatngu.wiki/discord <span class="home-header__sr">Discord</span>]</span><span class="home-header__social-link home-header__social-link--facebook" title="Facebook">[https://www.facebook.com/wikilophocmatngu <span class="home-header__sr">Facebook</span>]</span><span class="home-header__social-link home-header__social-link--github" title="GitHub">[https://github.com/wikilophocmatngu <span class="home-header__sr">GitHub</span>]</span></div>
+<!-- Viết liền một dòng để trình phân tích không bọc <p> --><div class="home-header__social plainlinks"><span class="home-header__social-link home-header__social-link--discord" title="Discord">[https://go.lophocmatngu.wiki/discord <span class="home-header__sr">Discord</span>]</span><span class="home-header__social-link home-header__social-link--facebook" title="Facebook">[https://www.facebook.com/wikilophocmatngu <span class="home-header__sr">Facebook</span>]</span><span class="home-header__social-link home-header__social-link--instagram" title="Instagram">[https://instagram.com/wlhmn <span class="home-header__sr">Instagram</span>]</span><span class="home-header__social-link home-header__social-link--github" title="GitHub">[https://github.com/wikilophocmatngu <span class="home-header__sr">GitHub</span>]</span></div>
 </div>
 </div>
 </div><templatestyles src="Trang_chính/Chào_mừng/styles.css"/><noinclude>{{/doc}}</noinclude>

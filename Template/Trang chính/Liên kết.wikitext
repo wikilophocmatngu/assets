@@ -2,16 +2,10 @@
 
 Bản mẫu:Trang chính/Liên kết
 --------------------
-Phần dưới trang chính (sau hàng chọn nhân vật): khám phá thêm, liên kết chính thức,
+Phần dưới trang chính (sau hàng chọn nhân vật): liên kết chính thức,
 cộng đồng & ủng hộ, dự án SongNgư.xyz và IWF. Mỗi khối viết liền dòng để không bị bọc <p>.
 
 --><div class="home-links"><!--
-
-  KHÁM PHÁ THÊM: chỉ những mục chưa có ở hàng tab đầu trang
---><div class="home-links__panel home-links__panel--wide"><div class="home-links__heading">Khám phá thêm</div><div class="home-links__tiles"><!--
---><div class="home-links__tile home-links__tile--icon">[[File:Trang chính - Ấn phẩm.svg|32x32px|link=|]][[:Thể loại:Ấn phẩm|Ấn phẩm]]<span class="home-links__meta">{{PAGESINCATEGORY:Ấn phẩm|pages}} trang</span></div><!--
---><div class="home-links__tile home-links__tile--icon">[[File:Trang chính - Cạc bo góc.svg|32x32px|link=|]][[FollowMe|Cạc bo góc]]<span class="home-links__meta">FollowMe</span></div><!--
---></div></div><!--
 
   LIÊN KẾT CHÍNH THỨC
 --><div class="home-links__panel plainlinks"><div class="home-links__heading">Lớp Học Mật Ngữ chính thức</div><div class="home-links__chips"><!--
@@ -24,10 +18,9 @@ cộng đồng & ủng hộ, dự án SongNgư.xyz và IWF. Mỗi khối viết 
 --><span class="home-links__chip home-links__chip--wide">[https://www.facebook.com/groups/771042066661760 Trường Học Ngân Hà — Cộng đồng Lớp Học Mật Ngữ]</span><!--
 --></div></div><!--
 
-  CỘNG ĐỒNG & ỦNG HỘ: Facebook/GitHub wiki đã có ở đầu trang nên chỉ còn Discord, Instagram và quyên góp
+  CỘNG ĐỒNG & ỦNG HỘ: Facebook/Instagram/GitHub wiki đã có ở đầu trang nên chỉ còn Discord và quyên góp
 --><div class="home-links__panel plainlinks"><div class="home-links__heading">Cộng đồng</div><!--
 --><span class="home-links__cta">[[File:Discord - Simple Icons.svg|20px|link=]][https://go.lophocmatngu.wiki/discord Tham gia máy chủ Discord]</span><!--
---><div class="home-links__chips"><span class="home-links__chip">[[File:Instagram.svg|16px|link=]][https://www.instagram.com/wlhmn Instagram]</span></div><!--
 --><div class="home-links__subheading">Ủng hộ SongNgư.xyz</div><div class="home-links__chips"><!--
 --><span class="home-links__chip">[[File:Github.svg|16px|link=|class=home-links__mono]][https://github.com/sponsors/wikilophocmatngu GitHub Sponsors]</span><!--
 --><span class="home-links__chip">[[File:Kofi - Simple Icons.svg|16px|link=|class=home-links__mono]][https://ko-fi.com/wikilophocmatngu Ko-fi]</span><!--
