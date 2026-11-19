@@ -218,9 +218,10 @@
 	object-fit: contain;
 }
 
-/* Biểu tượng một màu trên nền thương hiệu: luôn trắng */
+/* Biểu tượng một màu trên nền thương hiệu: luôn trắng.
+ * [[File:…|class=home-links__white]] gắn class lên thẻ span bọc ảnh (mw:File), không phải lên img */
 .home-links__icon--white img,
-img.home-links__white {
+.home-links__white img {
 	filter: brightness( 0 ) invert( 1 );
 }
 
