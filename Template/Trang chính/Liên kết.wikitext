@@ -11,7 +11,6 @@ cộng đồng & ủng hộ, dự án SongNgư.xyz và IWF. Mỗi khối viết 
 --><div class="home-links__panel home-links__panel--wide"><div class="home-links__heading">Khám phá thêm</div><div class="home-links__tiles"><!--
 --><div class="home-links__tile home-links__tile--icon">[[File:Trang chính - Ấn phẩm.svg|32x32px|link=|]][[:Thể loại:Ấn phẩm|Ấn phẩm]]<span class="home-links__meta">{{PAGESINCATEGORY:Ấn phẩm|pages}} trang</span></div><!--
 --><div class="home-links__tile home-links__tile--icon">[[File:Trang chính - Cạc bo góc.svg|32x32px|link=|]][[FollowMe|Cạc bo góc]]<span class="home-links__meta">FollowMe</span></div><!--
---><div class="home-links__tile">[[:Thể loại:Sự kiện|Sự kiện]]<span class="home-links__meta">{{PAGESINCATEGORY:Sự kiện|pages}} trang</span></div><!--
 --></div></div><!--
 
   LIÊN KẾT CHÍNH THỨC
