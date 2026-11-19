@@ -3,19 +3,23 @@
 Bản mẫu:Trang chính/Liên kết
 --------------------
 Phần dưới trang chính (sau hàng chọn nhân vật): hai khối cạnh nhau.
-Trái: liên kết chính thức, tài nguyên và nút ủng hộ SongNgư.xyz. Phải: IWF.
+Trái: liên kết chính thức. Phải: cộng đồng (tài nguyên + ủng hộ SongNgư.xyz) ở trên, IWF ở dưới.
 Discord, Facebook, Instagram, GitHub của wiki đã có ở đầu trang nên không lặp lại.
 Mỗi khối viết liền dòng để không bị bọc <p>.
 
 --><div class="home-links"><!--
 
-  LIÊN KẾT CHÍNH THỨC + TÀI NGUYÊN + ỦNG HỘ
---><div class="home-links__panel plainlinks"><div class="home-links__heading">Lớp Học Mật Ngữ chính thức</div><div class="home-links__tiles"><!--
+  LIÊN KẾT CHÍNH THỨC: cao bằng cả cột phải
+--><div class="home-links__panel home-links__panel--tall plainlinks"><div class="home-links__heading">Lớp Học Mật Ngữ chính thức</div><div class="home-links__tiles"><!--
 --><div class="home-links__tile home-links__tile--icon"><span class="home-links__icon home-links__icon--white" style="--home-links-accent: #7b2fd1">[[File:OOjs UI icon globe.svg|x20px|link=]]</span>[https://lophocmatngu.com Website]<span class="home-links__meta">lophocmatngu.com</span></div><!--
 --><div class="home-links__tile home-links__tile--icon"><span class="home-links__icon" style="--home-links-accent: #fff">[[File:YouTube full-color icon (2017).svg|x20px|link=]]</span>[https://www.youtube.com/@lophocmatngu8860 YouTube]<span class="home-links__meta">@lophocmatngu8860</span></div><!--
 --><div class="home-links__tile home-links__tile--icon"><span class="home-links__icon home-links__icon--white" style="--home-links-accent: #111">[[File:Ionicons logo-tiktok.svg|x20px|link=]]</span>[https://tiktok.com/@lophocmatngu_official TikTok]<span class="home-links__meta">@lophocmatngu_official</span></div><!--
 --><div class="home-links__tile home-links__tile--icon"><span class="home-links__icon home-links__icon--white" style="--home-links-accent: #0866ff">[[File:Facebook - Simple Icons.svg|x20px|link=]]</span>[https://facebook.com/lophocmatngu Fanpage]<span class="home-links__meta">facebook.com/lophocmatngu</span></div><!--
 --><div class="home-links__tile home-links__tile--icon home-links__tile--wide"><span class="home-links__icon home-links__icon--white" style="--home-links-accent: #0866ff">[[File:Facebook - Simple Icons.svg|x20px|link=]]</span>[https://www.facebook.com/groups/771042066661760 Trường Học Ngân Hà]<span class="home-links__meta">Nhóm cộng đồng Lớp Học Mật Ngữ trên Facebook</span></div><!--
+--></div></div><!--
+
+  CỘNG ĐỒNG: tài nguyên do cộng đồng làm và nút ủng hộ SongNgư.xyz
+--><div class="home-links__panel plainlinks"><div class="home-links__heading">Cộng đồng</div><div class="home-links__tiles"><!--
 --><div class="home-links__tile home-links__tile--icon"><span class="home-links__icon home-links__icon--white" style="--home-links-accent: #d92f4f">[[File:NguYet.svg|x20px|link=]]</span>[https://nguyet.songngu.xyz Ngư nam Yết nữ]<span class="home-links__meta">Sát thủ bồ kết thầy tu</span></div><!--
 --><div class="home-links__tile home-links__tile--icon"><span class="home-links__icon home-links__icon--white" style="--home-links-accent: #a86f04">[[File:Folder.svg|x20px|link=]]</span>[https://fankit.lophocmatngu.wiki Fan-kit]<span class="home-links__meta">Tài nguyên Lớp Học Mật Ngữ</span></div><!--
 --></div><div class="home-links__subheading">Ủng hộ SongNgư.xyz</div><div class="home-links__donate"><!--

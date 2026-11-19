@@ -1,13 +1,13 @@
 /**
  * Bản mẫu:Trang chính/Liên kết/styles.css
  *
- * @desc     Phần dưới trang chính: khối liên kết chính thức (ô icon kiểu tab header + hàng nút ủng hộ) và khối IWF
+ * @desc     Phần dưới trang chính: khối liên kết chính thức, khối cộng đồng (ô icon kiểu tab header + hàng nút ủng hộ) và khối IWF
  * @author   [[Thành viên:Pisces]] (https://songngu.xyz)
  * @site     https://lophocmatngu.wiki/Bản_mẫu:Trang_chính/Liên_kết/styles.css
  * @license  CC BY-SA 4.0
  */
 
-/* Lưới 2 cột: liên kết chính thức bên trái, IWF bên phải */
+/* Lưới 2 cột: liên kết chính thức bên trái; cộng đồng và IWF xếp chồng bên phải */
 .home-links {
 	display: grid;
 	grid-template-columns: repeat( 2, minmax( 0, 1fr ) );
@@ -23,6 +23,10 @@
 	border: var( --border-width-base, 1px ) solid var( --border-color-base, #c8ccd1 );
 	border-radius: var( --border-radius-medium, 8px );
 	background-color: var( --color-surface-1, #f8f9fa );
+}
+
+.home-links__panel--tall {
+	grid-row: span 2;
 }
 
 .home-links__heading {
@@ -224,5 +228,9 @@ img.home-links__white {
 @media screen and ( max-width: 899.98px ) {
 	.home-links {
 		grid-template-columns: minmax( 0, 1fr );
+	}
+
+	.home-links__panel--tall {
+		grid-row: auto;
 	}
 }
