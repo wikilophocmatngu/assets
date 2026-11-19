@@ -7,7 +7,7 @@
  * @license  CC BY-SA 4.0
  */
 
-/* Lưới 2 cột: liên kết chính thức bên trái; cộng đồng và IWF xếp chồng bên phải */
+/* Lưới 2 cột: chính thức | cộng đồng; IWF trải hết hàng dưới */
 .home-links {
 	display: grid;
 	grid-template-columns: repeat( 2, minmax( 0, 1fr ) );
@@ -25,13 +25,49 @@
 	background-color: var( --color-surface-1, #f8f9fa );
 }
 
-.home-links__panel--tall {
-	grid-row: span 2;
+.home-links__panel--iwf {
+	grid-column: 1 / -1;
+	display: grid;
+	grid-template-columns: repeat( 2, minmax( 0, 1fr ) );
+	gap: var( --space-md, 1rem );
+	/* Nền lông vũ IWF trôi chéo, giữ như bản mẫu IWF cũ */
+	background: url( https://static.wikitide.net/lhmnwiki/5/5f/IWF_Background.png ) repeat center, var( --color-surface-2, #eaecf0 );
+	background-blend-mode: overlay;
+	animation: home-links-iwf-drift 12s linear infinite;
+}
+
+.home-links__iwf-info,
+.home-links__iwf-list {
+	display: flex;
+	flex-direction: column;
+	gap: var( --space-xs, 0.5rem );
+}
+
+/* Danh sách: bỏ khoảng trên của tiêu đề đầu để thẳng hàng với tiêu đề bên trái */
+.home-links__iwf-list > .home-links__subheading:first-child {
+	margin-top: 0;
+}
+
+@keyframes home-links-iwf-drift {
+	from {
+		background-position: 0 0;
+	}
+
+	to {
+		background-position: 250px -250px;
+	}
+}
+
+@media ( prefers-reduced-motion: reduce ) {
+	.home-links__panel--iwf {
+		animation: none;
+	}
 }
 
 .home-links__heading {
 	display: flex;
 	align-items: center;
+	gap: 0.5rem;
 	color: var( --color-emphasized, #101418 );
 	font-family: var( --lhmn-font-family-heading, inherit );
 	font-size: 1.125rem;
@@ -50,15 +86,6 @@
 	color: var( --color-base, #202122 );
 	font-size: var( --font-size-small, 0.875rem );
 	line-height: 1.6;
-}
-
-/* Logo chữ IWF: đổi màu theo giao diện sáng/tối; logo có chữ nhỏ bên trong nên cao 2.5rem */
-img.home-links__wordmark,
-.home-links__wordmark img {
-	display: block;
-	height: 2.5rem;
-	width: auto;
-	filter: var( --lhmn-wordmark-filter, none );
 }
 
 /* ---- Ô liên kết: cùng kiểu với tab header, thêm dòng phụ ---- */
@@ -218,7 +245,7 @@ img.home-links__white {
 		grid-template-columns: minmax( 0, 1fr );
 	}
 
-	.home-links__panel--tall {
-		grid-row: auto;
+	.home-links__panel--iwf {
+		grid-template-columns: minmax( 0, 1fr );
 	}
 }

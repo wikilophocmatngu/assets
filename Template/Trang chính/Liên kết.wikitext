@@ -3,14 +3,15 @@
 Bản mẫu:Trang chính/Liên kết
 --------------------
 Phần dưới trang chính (sau hàng chọn nhân vật): hai khối cạnh nhau.
-Trái: liên kết chính thức. Phải: cộng đồng (tài nguyên + ủng hộ SongNgư.xyz) ở trên, IWF ở dưới.
+Hàng trên: liên kết chính thức | cộng đồng (tài nguyên + ủng hộ SongNgư.xyz).
+Hàng dưới: IWF trải hết chiều ngang (thông tin bên trái, danh sách bên phải).
 Discord, Facebook, Instagram, GitHub của wiki đã có ở đầu trang nên không lặp lại.
 Mỗi khối viết liền dòng để không bị bọc <p>.
 
 --><div class="home-links"><!--
 
-  LIÊN KẾT CHÍNH THỨC: cao bằng cả cột phải
---><div class="home-links__panel home-links__panel--tall plainlinks"><div class="home-links__heading">Lớp Học Mật Ngữ chính thức</div><div class="home-links__tiles"><!--
+  LIÊN KẾT CHÍNH THỨC
+--><div class="home-links__panel plainlinks"><div class="home-links__heading">Lớp Học Mật Ngữ chính thức</div><div class="home-links__tiles"><!--
 --><div class="home-links__tile home-links__tile--icon"><span class="home-links__icon home-links__icon--white" style="--home-links-accent: #7b2fd1">[[File:OOjs UI icon globe.svg|x20px|link=]]</span>[https://lophocmatngu.com Website]<span class="home-links__meta">lophocmatngu.com</span></div><!--
 --><div class="home-links__tile home-links__tile--icon"><span class="home-links__icon" style="--home-links-accent: #fff">[[File:YouTube full-color icon (2017).svg|x20px|link=]]</span>[https://www.youtube.com/@lophocmatngu8860 YouTube]<span class="home-links__meta">@lophocmatngu8860</span></div><!--
 --><div class="home-links__tile home-links__tile--icon"><span class="home-links__icon home-links__icon--white" style="--home-links-accent: #111">[[File:Ionicons logo-tiktok.svg|x20px|link=]]</span>[https://tiktok.com/@lophocmatngu_official TikTok]<span class="home-links__meta">@lophocmatngu_official</span></div><!--
@@ -30,12 +31,12 @@ Mỗi khối viết liền dòng để không bị bọc <p>.
 --><span class="home-links__donate-btn" style="--home-links-accent: #555" title="Mọi cách ủng hộ">[[File:Vietqr.svg|x20px|link=|class=home-links__white]][[WLHMN:Ủng hộ|<span class="home-links__sr">Mọi cách ủng hộ</span>]]</span><!--
 --></div></div><!--
 
-  IWF: mô tả, liên minh và danh sách wiki thành viên (luôn hiện)
---><div class="home-links__panel home-links__panel--iwf plainlinks"><div class="home-links__heading">[[File:IWF Footer.svg|160px|link=https://indiewikifederation.org/|Independent Wiki Federation|class=home-links__wordmark]]</div><!--
+  IWF: nền lông vũ chuyển động như bản cũ; thông tin bên trái, danh sách bên phải
+--><div class="home-links__panel home-links__panel--iwf plainlinks"><div class="home-links__iwf-info"><div class="home-links__heading">[[File:IWF Logo.svg|28px|link=https://indiewikifederation.org/|Independent Wiki Federation]]Independent Wiki Federation</div><!--
 --><div class="home-links__text">'''{{SITENAME}}''' cùng [https://indiewikifederation.org/ Independent Wiki Federation] hỗ trợ cung cấp tài nguyên và chuyên môn cần thiết để duy trì các cộng đồng wiki chất lượng cao, tự chủ và độc lập.</div><!--
---><div class="home-links__tiles"><div class="home-links__tile">[[WLHMN:IWF|Tìm hiểu thêm]]</div><div class="home-links__tile">[https://discord.gg/UrfHSzFff3 Discord IWF]</div></div><!--
+--><div class="home-links__tiles"><div class="home-links__tile">[[WLHMN:IWF|Tìm hiểu thêm]]</div><div class="home-links__tile">[https://discord.gg/UrfHSzFff3 Discord IWF]</div></div></div><div class="home-links__iwf-list"><!--
 --><div class="home-links__subheading">Liên minh và đối tác lưu trữ</div><div class="home-links__list">[https://amazingwikis.org/ Amazing Wikis] {{d}} [https://indierobloxwikis.org/ Liên Minh Wiki Roblox Tự Do (IRWA)] {{d}} [https://nexawiki.com/ Nexa Wiki] {{d}} [https://telepedia.net/ Telepedia]</div><!--
 --><div class="home-links__subheading">Dự án wiki</div><div class="home-links__list">[https://orangejuice.wiki/ 100% Orange Juice Wiki] {{d}} [https://www.bloonswiki.com/ Blooncyclopedia] {{d}} [https://wiki.conworld.org/ Constructed World Wiki] {{d}} [https://cookierun.wiki Cookie Run Wiki] {{d}} [https://discoelysium.wiki.gg/ Disco Elysium Wiki] {{d}} [https://liquipedia.net/dota2/Main_Page DOTA2 Wiki] {{d}} [https://fallout.wiki/ Independent Fallout Wiki] {{d}} [https://finalfantasywiki.com/ Final Fantasy Wiki] {{d}} [https://hollowknight.wiki/ Hollow Knight Wiki] {{d}} [https://www.khdatabase.com Kingdom Hearts Database] {{d}} [https://wiki.klonoa.network Klonoa Wiki] {{d}} [https://siivagunner.wiki Official SiIvaGunner Wiki] {{d}} [https://otherkin.wiki/ Otherkin Wiki] {{d}} [https://saintsrow.wiki/ Saints Row Wiki] {{d}} [https://sanriowiki.com/wiki/ Sanrio Wiki] {{d}} [https://skylanderswiki.com Skylanders Wiki] {{d}} [https://www.sonicarchive.com/ Sonic Archive] {{d}} [https://spyrowiki.com Spyro Wiki] {{d}} [https://tolkiengateway.net/ Tolkien Gateway] {{d}} [https://tomclancy.wiki.gg/ Tom Clancy Wiki] {{d}} [https://twewy.wiki/ TWEWY Wiki] {{d}} [https://wiki.wanderinginn.com/ The Wandering Inn Wiki] {{d}} [https://wizardry.wiki.gg/ Wizardry Wiki] {{d}} [https://worldtriggerwiki.com/ World Trigger Wiki]</div><!--
---></div><!--
+--></div></div><!--
 
 --></div><templatestyles src="Bản mẫu:Trang chính/Liên kết/styles.css"/>
