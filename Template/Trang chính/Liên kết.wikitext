@@ -25,8 +25,8 @@ Mỗi khối viết liền dòng để không bị bọc <p>.
 --><div class="home-links__tile home-links__tile--icon"><span class="home-links__icon home-links__icon--white" style="--home-links-accent: #a86f04">[[File:Folder.svg|x20px|link=]]</span>[https://fankit.lophocmatngu.wiki Fan-kit]<span class="home-links__meta">Tài nguyên Lớp Học Mật Ngữ</span></div><!--
 
   Ô ẨN: Wiki Học Sinh Chân Kinh (trải hết chiều ngang để hàng không bị lẻ).
-  Để hiện: điền địa chỉ vào DIA_CHI_WIKI, rồi ở dòng ngay dưới thêm dấu đóng chú thích vào đầu dòng và dấu mở chú thích vào cuối dòng.
-<div class="home-links__tile home-links__tile--icon home-links__tile--wide"><span class="home-links__icon home-links__icon--white" style="--home-links-accent: #2e7d5b">[[File:OOjs UI icon globe.svg|x20px|link=]]</span>[https://DIA_CHI_WIKI Wiki Học Sinh Chân Kinh]<span class="home-links__meta">Dự án wiki của SongNgư.xyz</span></div>
+  Để hiện: ở dòng ngay dưới thêm dấu đóng chú thích vào đầu dòng và dấu mở chú thích vào cuối dòng.
+<div class="home-links__tile home-links__tile--icon home-links__tile--wide"><span class="home-links__icon home-links__icon--white" style="--home-links-accent: #2e7d5b">[[File:OOjs UI icon globe.svg|x20px|link=]]</span>[https://hsck.lophocmatngu.wiki Wiki Học Sinh Chân Kinh]<span class="home-links__meta">Dự án wiki của SongNgư.xyz</span></div>
 --></div><div class="home-links__subheading">Ủng hộ SongNgư.xyz</div><div class="home-links__donate"><!--
 --><span class="home-links__donate-btn" style="--home-links-accent: #24292f" title="GitHub Sponsors">[[File:Github.svg|x20px|link=|class=home-links__white]][https://github.com/sponsors/wikilophocmatngu <span class="home-links__sr">GitHub Sponsors</span>]</span><!--
 --><span class="home-links__donate-btn" style="--home-links-accent: #ff5e5b" title="Ko-fi">[[File:Kofi - Simple Icons.svg|x20px|link=|class=home-links__white]][https://ko-fi.com/wikilophocmatngu <span class="home-links__sr">Ko-fi</span>]</span><!--
