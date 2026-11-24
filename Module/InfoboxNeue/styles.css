@@ -182,6 +182,11 @@ summary.infobox__snippet .mw-collapsible-toggle {
 	transition-property: opacity, transform;
 }
 
+/* Ảnh dạng tab: hạ chỉ báo xuống dưới thanh tab (cao 2.375em = đệm 0.5em × 2 + dòng 1.375em, cùng cỡ chữ với hộp) để không che tab */
+.infobox__image:has( .tabber__header ) ~ .infobox__indicators {
+	top: 2.375em;
+}
+
 .infobox__indicator {
 	padding: var(--space-xxs) var(--space-xs);
 	background: var(--color-surface-2);
@@ -196,7 +201,7 @@ summary.infobox__snippet .mw-collapsible-toggle {
 }
 
 .infobox__indicator.infobox__indicator--red {
-	background-color: var(--background-ccoolor-destructive-subtle);
+	background-color: var(--background-color-destructive-subtle);
 	color: var(--color-destructive);
 }
 
