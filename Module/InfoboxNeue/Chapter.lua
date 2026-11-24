@@ -119,7 +119,7 @@ function p._main( args, frame )
 	if args.publications then
 		table.insert( mainSection, infobox:renderItem( { 
 			label = 'Ấn phẩm phát hành', 
-			data = args.publications,
+			data = infobox.commaToList( args.publications ),
 			iconClass = 'citizen-ui-icon mw-ui-icon-wikimedia-tray',
 			colspan = 2
 		} ) )
