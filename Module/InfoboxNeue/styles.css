@@ -196,12 +196,9 @@ summary.infobox__snippet .mw-collapsible-toggle {
 	line-height: var(--line-height-xxx-small);
 }
 
-/* Chỉ báo có màu: viền cùng màu chữ, chấm màu nằm cùng hàng với nhãn */
+/* Chỉ báo có màu: viền cùng màu chữ */
 .infobox__indicator[ class*='infobox__indicator--' ] {
 	border-color: currentcolor;
-	display: flex;
-	align-items: center;
-	gap: var(--space-xxs);
 }
 
 .infobox__indicator .infobox__data {
@@ -222,16 +219,6 @@ summary.infobox__snippet .mw-collapsible-toggle {
 .infobox__indicator.infobox__indicator--green {
 	background-color: var(--background-color-success-subtle);
 	color: var(--color-success);
-}
-
-/* Chỉ báo có màu: chấm tròn cùng màu chữ đứng trước nhãn */
-.infobox__indicator[ class*='infobox__indicator--' ]::before {
-	content: '';
-	flex-shrink: 0;
-	width: 0.5em;
-	height: 0.5em;
-	border-radius: 50%;
-	background-color: currentcolor;
 }
 
 .infobox__header,
